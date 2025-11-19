@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { BookOpen, ChefHat, Leaf, Home } from 'lucide-react';
+import { BookOpen, ChefHat, Salad, Home } from 'lucide-react';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -60,22 +60,22 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
 
             <div className="space-y-1">
                 <NavLink to="/recipes/nicoise" className={linkClass} onClick={() => setIsOpen(false)}>
-                    <Leaf size={16} /> <span className="text-sm">Niçoise</span>
+                    <Salad size={16} /> <span className="text-sm">Niçoise</span>
                 </NavLink>
                 <NavLink to="/recipes/thai" className={linkClass} onClick={() => setIsOpen(false)}>
-                    <Leaf size={16} /> <span className="text-sm">Thai Steak</span>
+                    <Salad size={16} /> <span className="text-sm">Thai Steak</span>
                 </NavLink>
                  <NavLink to="/recipes/cobb" className={linkClass} onClick={() => setIsOpen(false)}>
-                    <Leaf size={16} /> <span className="text-sm">Cobb</span>
+                    <Salad size={16} /> <span className="text-sm">Cobb</span>
                 </NavLink>
                 <NavLink to="/recipes/banhmi" className={linkClass} onClick={() => setIsOpen(false)}>
-                    <Leaf size={16} /> <span className="text-sm">Banh Mi</span>
+                    <Salad size={16} /> <span className="text-sm">Banh Mi</span>
                 </NavLink>
                  <NavLink to="/recipes/noodle" className={linkClass} onClick={() => setIsOpen(false)}>
-                    <Leaf size={16} /> <span className="text-sm">Soba Noodle</span>
+                    <Salad size={16} /> <span className="text-sm">Soba Noodle</span>
                 </NavLink>
                  <NavLink to="/recipes/cauliflower" className={linkClass} onClick={() => setIsOpen(false)}>
-                    <Leaf size={16} /> <span className="text-sm">Cauliflower</span>
+                    <Salad size={16} /> <span className="text-sm">Cauliflower</span>
                 </NavLink>
             </div>
           </nav>
