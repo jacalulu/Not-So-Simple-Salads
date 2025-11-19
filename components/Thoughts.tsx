@@ -14,14 +14,14 @@ const Thoughts: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Ingredients Laydown Image - Simulating the user's upload */}
             <div className="col-span-1 md:col-span-2 mb-8">
-                <div className="relative w-full h-64 md:h-96 bg-stone-100 rounded-xl overflow-hidden">
+                <div className="relative w-full h-64 md:h-96 bg-stone-100 rounded-xl overflow-hidden shadow-lg group">
                      <img 
-                        src="https://images.unsplash.com/photo-1615485290382-441e4d04fcad?q=80&w=2580&auto=format&fit=crop"
+                        src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2070&auto=format&fit=crop"
                         alt="Fresh Ingredients Laydown"
-                        className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700"
+                        className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 ease-out"
                      />
-                     <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="bg-white/80 backdrop-blur-md px-8 py-4 text-2xl font-serif text-stone-800 rounded-full shadow-sm">
+                     <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/0 transition-colors">
+                        <span className="bg-white/90 backdrop-blur-md px-8 py-4 text-2xl font-serif text-stone-800 rounded-full shadow-sm border border-stone-100">
                             Mise en place
                         </span>
                      </div>
