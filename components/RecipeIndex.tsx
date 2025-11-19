@@ -19,10 +19,11 @@ const RecipeIndex: React.FC = () => {
                         to={`/recipes/${recipe.id}`}
                         className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
                     >
-                        <div className="aspect-square overflow-hidden">
+                        <div className="aspect-square overflow-hidden bg-stone-200">
                             <img 
                                 src={recipe.image} 
                                 alt={recipe.title} 
+                                loading="lazy"
                                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                             />
                         </div>

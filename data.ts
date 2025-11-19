@@ -1,5 +1,9 @@
 import { Recipe, Note } from './types';
 
+// Helper to generate optimized Google Drive image URLs
+// w1200 is a good balance between quality for retina screens and file size
+const getDriveImage = (id: string) => `https://drive.google.com/thumbnail?id=${id}&sz=w1200`;
+
 export const appNotes: Note[] = [
   {
     title: "Some notes on pepper",
@@ -26,7 +30,7 @@ export const recipes: Recipe[] = [
     subtitle: "Where You Bean?",
     description: "A fresh take on the classic French Riviera staple, featuring seared ahi tuna and crisp vegetables.",
     colorTheme: "green-600",
-    image: "https://lh3.googleusercontent.com/d/1dEqYhHTz8IqLnbUtBDHRLVMOunFCD0hy",
+    image: getDriveImage("1dEqYhHTz8IqLnbUtBDHRLVMOunFCD0hy"),
     ingredients: [
       {
         title: "Salad Ingredients",
@@ -71,7 +75,7 @@ export const recipes: Recipe[] = [
     subtitle: "A Spicy Steak Salad",
     description: "Bold flavors collide in this steak salad featuring fresh herbs and a fish sauce vinaigrette.",
     colorTheme: "emerald-600",
-    image: "https://lh3.googleusercontent.com/d/1Ec0TeLgM8k7aPuVn6BWwmDBXkALpIjBu",
+    image: getDriveImage("1Ec0TeLgM8k7aPuVn6BWwmDBXkALpIjBu"),
     ingredients: [
       {
         title: "Salad Ingredients",
@@ -116,7 +120,7 @@ export const recipes: Recipe[] = [
     subtitle: "The Classic, Elevated",
     description: "Hearty, rich, and satisfying. The ultimate lunch salad with blue cheese and thick cut bacon.",
     colorTheme: "lime-600",
-    image: "https://lh3.googleusercontent.com/d/1byufOGqJyW5FM9reweTjjXCXHAbouI01",
+    image: getDriveImage("1byufOGqJyW5FM9reweTjjXCXHAbouI01"),
     ingredients: [
       {
         title: "Salad Ingredients",
@@ -154,7 +158,7 @@ export const recipes: Recipe[] = [
     subtitle: "Vietnamese Inspired",
     description: "Crunchy, pickled vegetables meet savory marinated chicken in this fresh bowl.",
     colorTheme: "green-700",
-    image: "https://lh3.googleusercontent.com/d/1LKGBdLHMmVOHU2KxXDEzHWHyoASASk7s",
+    image: getDriveImage("1LKGBdLHMmVOHU2KxXDEzHWHyoASASk7s"),
     ingredients: [
       {
         title: "Salad Ingredients",
@@ -187,7 +191,7 @@ export const recipes: Recipe[] = [
     subtitle: "Soba & Spice",
     description: "A cold noodle salad that packs a punch with kimchi and ginger soy dressing.",
     colorTheme: "teal-600",
-    image: "https://lh3.googleusercontent.com/d/1dHJEaTSDMgg9rbMVWWOQ232G8EVad42j",
+    image: getDriveImage("1dHJEaTSDMgg9rbMVWWOQ232G8EVad42j"),
     ingredients: [
       {
         title: "Salad Ingredients",
@@ -222,7 +226,7 @@ export const recipes: Recipe[] = [
     subtitle: "Roasted & Rustic",
     description: "Nutty roasted cauliflower pairs with bright citrus vinaigrette and salty capers.",
     colorTheme: "olive-600",
-    image: "https://lh3.googleusercontent.com/d/1cC9O_d3g57QnwYp-QB22IESHiaeJoP7u",
+    image: getDriveImage("1cC9O_d3g57QnwYp-QB22IESHiaeJoP7u"),
     ingredients: [
       {
         title: "Salad Ingredients",

@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  // Optimized URL for the cover image
+  const coverImage = "https://drive.google.com/thumbnail?id=1Ywyd5sRD6-PKp3T0Zi-rRD6K-vf1_tDb&sz=w2000";
+
   return (
     <div className="relative w-full min-h-screen bg-stone-50 flex flex-col lg:block">
       {/* 
@@ -12,9 +15,11 @@ const Hero: React.FC = () => {
       */}
       <div className="relative h-[55vh] lg:absolute lg:inset-0 lg:h-full w-full overflow-hidden">
         <img 
-          src="https://lh3.googleusercontent.com/d/1Ywyd5sRD6-PKp3T0Zi-rRD6K-vf1_tDb" 
+          src={coverImage} 
           alt="Not So Simple Salads Spread" 
           className="w-full h-full object-cover object-center transition-all duration-700"
+          // @ts-ignore - fetchPriority is valid but sometimes TS complains
+          fetchPriority="high"
         />
         
         {/* Desktop-only Gradient: Creates artificial negative space on the right if the screen gets too narrow */}
@@ -48,7 +53,7 @@ const Hero: React.FC = () => {
                     to="/thoughts"
                     className="text-stone-900 font-bold border-b-2 border-stone-200 hover:border-green-800 transition-colors pb-1"
                 >
-                    Read Philosophy
+                    Jaclyn's Thoughts
                 </Link>
 
                 <Link 
