@@ -30,8 +30,7 @@ export const mealSalads = [
       { item: "Pinch", name: "ground white pepper" },
       { item: "1 clove", name: "garlic, grated" }
     ],
-    isLab: false,
-    imagePlaceholder: "salad_1_cauli_marble"
+    isLab: false
   },
   {
     id: 'noodle-me-this',
@@ -59,8 +58,7 @@ export const mealSalads = [
       { item: "1 tsp", name: "black sesame seeds" },
       { item: "1 tsp", name: "Korean chili flakes" }
     ],
-    isLab: false,
-    imagePlaceholder: "salad_2_noodle_marble"
+    isLab: false
   },
   {
     id: 'banh-mi-over',
@@ -86,8 +84,7 @@ export const mealSalads = [
       { item: "3 Tbsp", name: "grapeseed oil" },
       { item: "1 tsp", name: "sesame oil" }
     ],
-    isLab: true,
-    imagePlaceholder: "salad_3_banhmi_marble"
+    isLab: true
   },
   {
     id: 'keep-cobb-and-carry-on',
@@ -116,8 +113,7 @@ export const mealSalads = [
       { item: "½ tsp", name: "dried mustard" },
       { item: "Maple syrup", name: "1 tsp" }
     ],
-    isLab: true,
-    imagePlaceholder: "salad_4_cobb_marble"
+    isLab: true
   },
   {
     id: 'thaid-and-true',
@@ -144,8 +140,7 @@ export const mealSalads = [
       { item: "Half bunch", name: "Cilantro stems" },
       { item: "1 clove", name: "garlic" }
     ],
-    isLab: false,
-    imagePlaceholder: "salad_5_thai_flank_marble"
+    isLab: false
   },
   {
     id: 'nicoise-to-meet-you',
@@ -172,8 +167,7 @@ export const mealSalads = [
       { item: "1 tsp", name: "Dijon mustard" },
       { item: "¼ tsp", name: "honey" }
     ],
-    isLab: false,
-    imagePlaceholder: "salad_6_nicoise_marble"
+    isLab: false
   },
   {
     id: 'greek-expectations',
@@ -199,8 +193,7 @@ export const mealSalads = [
       { item: "1 Tbsp", name: "dried oregano" },
       { item: "½ tsp", name: "Dijon mustard" }
     ],
-    isLab: false,
-    imagePlaceholder: "salad_7_greek_marble"
+    isLab: false
   },
   {
     id: 'romaine-calm',
@@ -226,8 +219,7 @@ export const mealSalads = [
       { item: "¼ cup", name: "grapeseed oil" },
       { item: "¼ cup", name: "finely grated Parmesan" }
     ],
-    isLab: true,
-    imagePlaceholder: "salad_8_caesar_marble"
+    isLab: true
   },
   {
     id: 'winner-winner-wonton',
@@ -254,8 +246,7 @@ export const mealSalads = [
       { item: "2 cloves", name: "garlic, minced" },
       { item: "1 Tbsp", name: "freshly minced ginger" }
     ],
-    isLab: false,
-    imagePlaceholder: "salad_9_wonton_marble"
+    isLab: false
   },
   {
     id: 'thai-me-a-river',
@@ -285,8 +276,7 @@ export const mealSalads = [
       { item: "1 tsp", name: "sesame oil" },
       { item: "2 cloves", name: "garlic, grated" }
     ],
-    isLab: false,
-    imagePlaceholder: "salad_10_thai_peanut_marble"
+    isLab: false
   },
   {
     id: 'salmon-situation',
@@ -312,8 +302,7 @@ export const mealSalads = [
       { item: "4 tsp", name: "Dijon mustard" },
       { item: "½ cup", name: "extra virgin olive oil" }
     ],
-    isLab: false,
-    imagePlaceholder: "salad_11_salmon_marble"
+    isLab: false
   },
   {
     id: 'packn-pasta',
@@ -341,8 +330,7 @@ export const mealSalads = [
       { item: "½ tsp", name: "black pepper" },
       { item: "½ tsp", name: "salt" }
     ],
-    isLab: true,
-    imagePlaceholder: "salad_12_pasta_marble"
+    isLab: true
   }
 ];
 
@@ -369,8 +357,7 @@ export const lighterSalads = [
       { item: "½ tsp", name: "Maldon salt flakes" },
       { item: "Top with", name: "Runny fried egg" }
     ],
-    isLab: true,
-    imagePlaceholder: "salad_1_cauli_marble" // Fallback
+    isLab: true
   },
   {
     id: 'salad-days',
@@ -395,8 +382,7 @@ export const lighterSalads = [
       { item: "1 tsp", name: "maple syrup" },
       { item: "Top with", name: "Runny fried egg" }
     ],
-    isLab: true,
-    imagePlaceholder: "salad_2_noodle_marble" // Fallback
+    isLab: true
   },
   {
     id: 'caprese-edit',
@@ -415,8 +401,7 @@ export const lighterSalads = [
       { item: "Drizzle", name: "balsamic reduction" },
       { item: "To taste", name: "Flaked sea salt" }
     ],
-    isLab: false,
-    imagePlaceholder: "salad_3_banhmi_marble" // Fallback
+    isLab: false
   },
   {
     id: 'couscous',
@@ -445,8 +430,7 @@ export const lighterSalads = [
       { item: "1", name: "shallot, chopped" },
       { item: "2 Tbsp", name: "fennel fronds, chopped" }
     ],
-    isLab: true,
-    imagePlaceholder: "salad_1_cauli_marble" // Fallback
+    isLab: true
   },
   {
     id: 'water-fire-feta',
@@ -468,8 +452,7 @@ export const lighterSalads = [
       { item: "Pinch", name: "kosher salt" },
       { item: "To taste", name: "Korean chili flakes" }
     ],
-    isLab: false,
-    imagePlaceholder: "salad_2_noodle_marble" // Fallback
+    isLab: false
   },
   {
     id: 'zest-coast',
@@ -493,7 +476,6 @@ export const lighterSalads = [
       { item: "2 Tbsp", name: "honey" },
       { item: "1 tsp", name: "Tajín" }
     ],
-    isLab: false,
-    imagePlaceholder: "salad_3_banhmi_marble" // Fallback
+    isLab: false
   }
 ];
