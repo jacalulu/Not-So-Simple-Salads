@@ -4,24 +4,25 @@ import { IngredientScrap } from '../components/IngredientScrap';
 import './RecipeDetail.css';
 
 export const RecipeDetail = ({ salad, onBack }) => {
-  let img = salad.imagePlaceholder;
   const availableImages = [
-    'salad_1_cauli_marble.png', 
-    'salad_2_noodle_marble.png', 
-    'salad_3_banhmi_marble.png',
-    'salad_4_cobb_marble.jpg',
-    'salad_5_thai_flank_marble.jpg',
-    'salad_6_nicoise_marble.jpg',
-    'salad_7_greek_marble.jpg',
-    'salad_8_caesar_marble.jpg',
-    'salad_9_wonton_marble.jpg',
-    'salad_10_thai_peanut_marble.jpg',
-    'salad_11_salmon_marble.jpg',
-    'salad_12_pasta_marble.jpg'
+    'cauli-fornia-dreamin.png', 
+    'noodle-me-this.png', 
+    'banh-mi-over.png',
+    'keep-cobb-and-carry-on.jpg',
+    'thaid-and-true.jpg',
+    'nicoise-to-meet-you.jpg',
+    'greek-expectations.jpg',
+    'romaine-calm.jpg',
+    'winner-winner-wonton.jpg',
+    'thai-me-a-river.jpg',
+    'salmon-situation.jpg',
+    'packn-pasta.jpg',
+    'bacon-me-crazy.jpg',
+    'salad-days.jpg'
   ];
   
-  let imgSrc = `/${img}.png`;
-  const foundMatch = availableImages.find(f => f.startsWith(img));
+  let imgSrc = `/${salad.id}.png`;
+  const foundMatch = availableImages.find(f => f.startsWith(salad.id));
   if (foundMatch) {
     imgSrc = `/${foundMatch}`;
   } else {
@@ -40,17 +41,8 @@ export const RecipeDetail = ({ salad, onBack }) => {
 
       {/* The Artistic Header */}
       <header className="artistic-header">
-        <div className="header-scatter-bg">
-            <span className="scatter-item" style={{top: '10%', left: '15%'}}>🍃</span>
-            <span className="scatter-item" style={{top: '80%', left: '10%'}}>🍋</span>
-            <span className="scatter-item" style={{top: '30%', right: '20%'}}>🌶️</span>
-            <span className="scatter-item" style={{bottom: '20%', right: '15%'}}>🌿</span>
-        </div>
-        
+        <div className="header-overlay"></div>
         <div className="header-text-content">
-          <LabelMd className="recipe-meta">
-            {salad.time} · {salad.serves} SERVINGS
-          </LabelMd>
           <DisplayLg className="recipe-title-huge">{salad.title}</DisplayLg>
         </div>
       </header>
@@ -58,6 +50,26 @@ export const RecipeDetail = ({ salad, onBack }) => {
       {/* The Content Body */}
       <div className="recipe-content-grid">
         <div className="recipe-story">
+          <div className="recipe-meta-cards">
+             <div className="meta-card time-card cabbage-drop">
+               <LabelMd>Time</LabelMd>
+               <TitleLg>{salad.time}</TitleLg>
+             </div>
+             <div className="meta-card serves-card cabbage-drop">
+               <LabelMd>Serves</LabelMd>
+               <TitleLg>{salad.serves}</TitleLg>
+             </div>
+             {salad.hero && (
+               <div className="meta-card hero-card cabbage-drop">
+                 <LabelMd>The Hero</LabelMd>
+                 <TitleLg>{salad.hero}</TitleLg>
+               </div>
+             )}
+          </div>
+          
+          {salad.vibe && (
+            <BodyLg className="recipe-vibe"><strong>Vibe:</strong> {salad.vibe}</BodyLg>
+          )}
           <BodyLg className="recipe-headnote">"{salad.headnote}"</BodyLg>
           
           <div className="recipe-images-inline">

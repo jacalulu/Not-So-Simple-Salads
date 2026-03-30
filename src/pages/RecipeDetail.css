@@ -25,38 +25,36 @@
 
 .artistic-header {
   position: relative;
-  height: 60vh;
-  min-height: 400px;
-  background: var(--accent-pink); /* Soft pastel background for the top */
+  height: 25vh;
+  min-height: 250px;
+  background-color: var(--accent-pink);
+  background-image: url('/hero_cauli_dream.png');
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   margin: 0 2%;
   border-radius: var(--border-radius-lg);
-  margin-bottom: var(--spacing-16);
+  margin-bottom: var(--spacing-8);
 }
 
-.header-scatter-bg {
+.header-overlay {
   position: absolute;
   inset: 0;
-  pointer-events: none;
-  opacity: 0.15;
-  font-size: 3rem;
-  filter: grayscale(0.5);
-}
-
-.scatter-item {
-  position: absolute;
-  transform: rotate(calc(-20deg + 40deg));
+  background: var(--surface-container-low);
+  opacity: 0.85; /* Flattens image into negative space */
+  backdrop-filter: blur(4px);
+  z-index: 1;
 }
 
 .header-text-content {
   position: relative;
   z-index: 2;
   text-align: center;
-  max-width: 800px;
-  padding: var(--spacing-8);
+  max-width: 900px;
+  padding: var(--spacing-4);
 }
 
 .recipe-meta {
@@ -70,10 +68,35 @@
   text-transform: lowercase;
 }
 
+.recipe-meta-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-8);
+}
+
+.meta-card {
+  padding: var(--spacing-3) var(--spacing-6);
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+.time-card { background: var(--accent-lavender); transform: rotate(-2deg); }
+.serves-card { background: var(--accent-yellow); transform: rotate(1deg); }
+.hero-card { background: var(--accent-mint); transform: rotate(-1deg); flex: 1; min-width: 250px; }
+
+.recipe-vibe {
+  font-style: italic;
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-4);
+  color: var(--primary);
+}
+
 .recipe-title-huge {
   color: var(--primary);
-  font-size: clamp(4rem, 10vw, 8rem);
-  line-height: 0.9;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1;
   letter-spacing: -0.04em;
   font-weight: 700;
 }
@@ -98,7 +121,7 @@
   line-height: 1.6;
   font-style: italic;
   font-weight: 300;
-  margin-bottom: var(--spacing-12);
+  margin-bottom: var(--spacing-8);
   border-left: 2px solid var(--primary);
   padding-left: var(--spacing-4);
 }

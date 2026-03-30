@@ -1,10 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Home } from './pages/Home';
 import { RecipeDetail } from './pages/RecipeDetail';
 import { TitleLg } from './components/Typography';
+import { mealSalads, lighterSalads } from './data/salads';
+
+const allSalads = [...mealSalads, ...lighterSalads];
 
 function App() {
   const [selectedSalad, setSelectedSalad] = useState(null);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash) {
+        const found = allSalads.find(s => s.id === hash);
+        setSelectedSalad(found || null);
+      } else {
+        setSelectedSalad(null);
+      }
+    };
+    
+    // Check on mount
+    handleHashChange();
+    
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const handleSelectSalad = (salad) => {
+    window.location.hash = salad.id;
+  };
+
+  const handleBack = () => {
+    window.location.hash = ''; // clear hash, triggers navigate back
+  };
 
   return (
     <div className="app-container">
@@ -12,16 +41,14 @@ function App() {
         <TitleLg className="brand-logotype">Not So Simple Salads</TitleLg>
         <nav className="main-nav">
           <a href="#" className="nav-link active">Recipes</a>
-          <a href="#" className="nav-link">Philosophy</a>
-          <a href="#" className="nav-link">About</a>
         </nav>
       </header>
 
       <main className="app-main">
         {selectedSalad ? (
-          <RecipeDetail salad={selectedSalad} onBack={() => setSelectedSalad(null)} />
+          <RecipeDetail salad={selectedSalad} onBack={handleBack} />
         ) : (
-          <Home onSelectSalad={setSelectedSalad} />
+          <Home onSelectSalad={handleSelectSalad} />
         )}
       </main>
       
@@ -34,14 +61,11 @@ function App() {
           <div className="footer-links">
             <div>
               <span className="footer-title">Explore</span>
-              <a href="#">Join the Salad Lab</a>
-              <a href="#">Bookshelf</a>
-              <a href="#">Philosophy</a>
+              <a href="#">All Recipes</a>
             </div>
             <div>
               <span className="footer-title">Follow</span>
               <a href="#">Instagram</a>
-              <a href="#">Pinterest</a>
             </div>
           </div>
         </div>

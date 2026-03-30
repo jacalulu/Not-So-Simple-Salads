@@ -24,28 +24,30 @@ export const Home = ({ onSelectSalad }) => {
       {/* Masonry Grid */}
       <section className="masonry-gallery">
         {allSalads.map((salad, index) => {
-          // Handle .png vs .jpg and fallbacks
-          let img = salad.imagePlaceholder;
+          // Handle dynamically using salad IDs instead of placeholders
           const availableImages = [
-            'salad_1_cauli_marble.png', 
-            'salad_2_noodle_marble.png', 
-            'salad_3_banhmi_marble.png',
-            'salad_4_cobb_marble.jpg',
-            'salad_5_thai_flank_marble.jpg',
-            'salad_6_nicoise_marble.jpg',
-            'salad_7_greek_marble.jpg',
-            'salad_8_caesar_marble.jpg',
-            'salad_9_wonton_marble.jpg',
-            'salad_10_thai_peanut_marble.jpg',
-            'salad_11_salmon_marble.jpg',
-            'salad_12_pasta_marble.jpg'
+            'cauli-fornia-dreamin.png', 
+            'noodle-me-this.png', 
+            'banh-mi-over.png',
+            'keep-cobb-and-carry-on.jpg',
+            'thaid-and-true.jpg',
+            'nicoise-to-meet-you.jpg',
+            'greek-expectations.jpg',
+            'romaine-calm.jpg',
+            'winner-winner-wonton.jpg',
+            'thai-me-a-river.jpg',
+            'salmon-situation.jpg',
+            'packn-pasta.jpg',
+            'bacon-me-crazy.jpg',
+            'salad-days.jpg'
           ];
           
-          let imgSrc = `/${img}.png`;
-          const foundMatch = availableImages.find(f => f.startsWith(img));
+          let imgSrc = `/${salad.id}.png`; // fallback if neither hit
+          const foundMatch = availableImages.find(f => f.startsWith(salad.id));
           if (foundMatch) {
             imgSrc = `/${foundMatch}`;
           } else {
+            // Pick a robust fallback out of existing loaded assets
             imgSrc = `/${availableImages[index % availableImages.length]}`;
           }
 
