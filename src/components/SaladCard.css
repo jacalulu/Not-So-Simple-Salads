@@ -1,0 +1,64 @@
+.salad-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-16);
+}
+
+.salad-card-image-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.salad-card-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.salad-card:hover .salad-card-image {
+  transform: scale(1.02) rotate(1deg);
+}
+
+.salad-card-content {
+  position: relative;
+  z-index: 2;
+  margin-top: calc(var(--spacing-12) * -1); /* Overlap logic */
+  margin-left: var(--spacing-4);
+  margin-right: var(--spacing-4);
+  padding: var(--spacing-4);
+  border-radius: 1rem;
+}
+
+.salad-card-title {
+  color: var(--primary);
+  margin-bottom: var(--spacing-2);
+}
+
+.salad-card-headnote {
+  color: var(--on-surface-variant);
+  margin-bottom: var(--spacing-4);
+}
+
+/* Horizontal variant for larger lists */
+@media (min-width: 768px) {
+  .salad-card-horizontal {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-8);
+  }
+
+  .salad-card-horizontal .salad-card-image-wrapper {
+    flex: 1;
+  }
+
+  .salad-card-horizontal .salad-card-content {
+    flex: 1;
+    margin-top: 0;
+    margin-left: calc(var(--spacing-16) * -1);
+    padding: var(--spacing-8);
+  }
+}

@@ -1,0 +1,49 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-label);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dim) 100%);
+  color: var(--on-primary);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(60, 106, 53, 0.2);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid rgba(178, 178, 171, 0.15); /* Ghost Border */
+}
+
+.btn-secondary:hover {
+  background: var(--surface-container-lowest);
+  border-color: rgba(178, 178, 171, 0.3);
+}
+
+.btn-tertiary {
+  background: transparent;
+  color: var(--on-surface);
+  padding: 0;
+  border-radius: 0;
+  border-bottom: 1px solid var(--on-surface);
+}
+
+.btn-tertiary:hover {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}

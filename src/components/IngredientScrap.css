@@ -1,0 +1,18 @@
+.ingredient-scrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--spacing-4) 0;
+  border-bottom: 1px solid rgba(178, 178, 171, 0.15); /* Ghost Border */
+}
+
+.scrap-title {
+  color: var(--on-surface);
+}
+
+.scrap-note {
+  color: var(--on-surface-variant);
+  background: var(--surface-container-low);
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: 4px;
+}
