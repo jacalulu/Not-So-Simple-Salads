@@ -145,7 +145,7 @@ export const mealSalads = [
       { item: "1 clove", name: "garlic" }
     ],
     isLab: false,
-    imagePlaceholder: "salad_2_noodle_marble" // Fallback
+    imagePlaceholder: "salad_5_thai_flank_marble"
   },
   {
     id: 'nicoise-to-meet-you',
@@ -173,7 +173,7 @@ export const mealSalads = [
       { item: "¼ tsp", name: "honey" }
     ],
     isLab: false,
-    imagePlaceholder: "salad_3_banhmi_marble" // Fallback
+    imagePlaceholder: "salad_6_nicoise_marble"
   },
   {
     id: 'greek-expectations',
@@ -200,7 +200,7 @@ export const mealSalads = [
       { item: "½ tsp", name: "Dijon mustard" }
     ],
     isLab: false,
-    imagePlaceholder: "salad_1_cauli_marble" // Fallback
+    imagePlaceholder: "salad_7_greek_marble"
   },
   {
     id: 'romaine-calm',
@@ -227,7 +227,7 @@ export const mealSalads = [
       { item: "¼ cup", name: "finely grated Parmesan" }
     ],
     isLab: true,
-    imagePlaceholder: "salad_2_noodle_marble" // Fallback
+    imagePlaceholder: "salad_8_caesar_marble"
   },
   {
     id: 'winner-winner-wonton',
@@ -255,7 +255,7 @@ export const mealSalads = [
       { item: "1 Tbsp", name: "freshly minced ginger" }
     ],
     isLab: false,
-    imagePlaceholder: "salad_3_banhmi_marble" // Fallback
+    imagePlaceholder: "salad_9_wonton_marble"
   },
   {
     id: 'thai-me-a-river',
@@ -286,7 +286,7 @@ export const mealSalads = [
       { item: "2 cloves", name: "garlic, grated" }
     ],
     isLab: false,
-    imagePlaceholder: "salad_1_cauli_marble" // Fallback
+    imagePlaceholder: "salad_10_thai_peanut_marble"
   },
   {
     id: 'salmon-situation',
@@ -313,7 +313,7 @@ export const mealSalads = [
       { item: "½ cup", name: "extra virgin olive oil" }
     ],
     isLab: false,
-    imagePlaceholder: "salad_2_noodle_marble" // Fallback
+    imagePlaceholder: "salad_11_salmon_marble"
   },
   {
     id: 'packn-pasta',
@@ -342,7 +342,7 @@ export const mealSalads = [
       { item: "½ tsp", name: "salt" }
     ],
     isLab: true,
-    imagePlaceholder: "salad_3_banhmi_marble" // Fallback
+    imagePlaceholder: "salad_12_pasta_marble"
   }
 ];
 
