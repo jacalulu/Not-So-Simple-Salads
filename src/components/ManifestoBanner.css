@@ -1,0 +1,94 @@
+.manifesto-banner {
+  margin-top: var(--spacing-24);
+  padding: var(--spacing-24) 10vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  
+  /* Edge to Edge Block Styling */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.manifesto-banner.scheme-green {
+  background: #3A5F39;
+  color: #A3CF91;
+}
+
+.manifesto-banner.scheme-pink {
+  background: #E91E63;
+  color: #FFE4EC; /* Very pale pink text */
+}
+
+.manifesto-banner.scheme-amber {
+  background: #FFC107;
+  color: #5D4037; /* Deep brown text for high contrast */
+}
+
+.manifesto-banner:hover {
+  transform: scale(1.01);
+}
+
+.manifesto-quote {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--spacing-8);
+  max-width: 900px;
+  color: currentColor; /* Matches scheme */
+}
+
+.manifesto-author {
+  font-family: var(--font-label);
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-12);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  color: currentColor;
+}
+
+.manifesto-author::before,
+.manifesto-author::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.manifesto-btn {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: currentColor;
+  padding: var(--spacing-3) var(--spacing-8);
+  border-radius: 40px;
+  font-family: var(--font-label);
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+/* Hover inversions */
+.manifesto-banner.scheme-green:hover .manifesto-btn { background: #A3CF91; color: #3A5F39; }
+.manifesto-banner.scheme-pink:hover .manifesto-btn { background: #FFE4EC; color: #E91E63; }
+.manifesto-banner.scheme-amber:hover .manifesto-btn { background: #5D4037; color: #FFC107; }

@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { TitleLg, DisplayLg, BodyLg, LabelMd } from '../components/Typography';
+import { ManifestoBanner } from '../components/ManifestoBanner';
 import { mealSalads, lighterSalads } from '../data/salads';
 import './Home.css';
 
@@ -141,11 +142,7 @@ export const Home = ({ onSelectSalad }) => {
       </section>
 
       {/* Manifesto Banner */}
-      <section className="manifesto-banner" onClick={() => window.location.hash = 'how-to'}>
-        <DisplayLg className="manifesto-quote">"Vegetables are the new Haute Couture."</DisplayLg>
-        <div className="manifesto-author">NOT SO SIMPLE SALADS</div>
-        <button className="manifesto-btn">READ HOW TO USE THIS BOOK</button>
-      </section>
+      <ManifestoBanner />
       
     </div>
   );

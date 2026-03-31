@@ -1,6 +1,6 @@
-import React from 'react';
 import { TitleLg, DisplayLg, BodyLg, LabelMd } from '../components/Typography';
 import { IngredientScrap } from '../components/IngredientScrap';
+import { ManifestoBanner } from '../components/ManifestoBanner';
 import { mealSalads, lighterSalads } from '../data/salads';
 import './RecipeDetail.css';
 
@@ -98,6 +98,11 @@ export const RecipeDetail = ({ salad, onBack }) => {
           </section>
         </div>
       </div>
+
+      <ManifestoBanner 
+        colorScheme={['green', 'pink', 'amber'][saladIndex % 3]}
+        quote={salad.manifestoQuote || "Vegetables are the new Haute Couture."}
+      />
     </article>
   );
 };
