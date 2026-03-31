@@ -139,6 +139,77 @@
     column-count: 3;
     column-gap: var(--spacing-12);
   }
+
+.manifesto-banner {
+  background: #3A5F39;
+  color: #A3CF91;
+  margin: var(--spacing-24) 5%;
+  border-radius: var(--border-radius-lg);
+  padding: clamp(3rem, 10vw, 8rem) 5%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.manifesto-banner:hover {
+  transform: scale(1.02);
+}
+
+.manifesto-quote {
+  color: #A3CF91;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--spacing-8);
+  max-width: 900px;
+}
+
+.manifesto-author {
+  font-family: var(--font-label);
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-12);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.manifesto-author::before,
+.manifesto-author::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+}
+
+.manifesto-btn {
+  background: transparent;
+  border: 1px solid #A3CF91;
+  color: #A3CF91;
+  padding: var(--spacing-3) var(--spacing-8);
+  border-radius: 40px;
+  font-family: var(--font-label);
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.manifesto-banner:hover .manifesto-btn {
+  background: #A3CF91;
+  color: #3A5F39;
+}
 }
 
 .masonry-tile {

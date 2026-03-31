@@ -1,0 +1,32 @@
+.static-page-layout {
+  padding: 0 5%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: var(--spacing-24);
+}
+
+.static-header {
+  margin: var(--spacing-16) 0;
+  text-align: center;
+}
+
+.static-title {
+  color: var(--primary);
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.static-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  color: var(--on-surface-variant);
+}
+
+.static-content p {
+  color: var(--on-surface);
+  line-height: 1.8;
+  font-size: 1.15rem;
+}

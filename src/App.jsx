@@ -1,22 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Home } from './pages/Home';
 import { RecipeDetail } from './pages/RecipeDetail';
+import { Introduction, HowToUse } from './pages/StaticPages';
 import { TitleLg } from './components/Typography';
 import { mealSalads, lighterSalads } from './data/salads';
 
 const allSalads = [...mealSalads, ...lighterSalads];
 
 function App() {
-  const [selectedSalad, setSelectedSalad] = useState(null);
+  const [currentRoute, setCurrentRoute] = useState({ type: 'home' });
 
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '');
-      if (hash) {
+      if (hash === 'intro') {
+        setCurrentRoute({ type: 'intro' });
+      } else if (hash === 'how-to') {
+        setCurrentRoute({ type: 'how-to' });
+      } else if (hash) {
         const found = allSalads.find(s => s.id === hash);
-        setSelectedSalad(found || null);
+        setCurrentRoute(found ? { type: 'recipe', data: found } : { type: 'home' });
       } else {
-        setSelectedSalad(null);
+        setCurrentRoute({ type: 'home' });
       }
     };
     
@@ -38,16 +43,20 @@ function App() {
   return (
     <div className="app-container">
       <header className="app-header">
-        <TitleLg className="brand-logotype">Not So Simple Salads</TitleLg>
+        <a href="#" style={{textDecoration: 'none'}}><TitleLg className="brand-logotype">Not So Simple Salads</TitleLg></a>
         <nav className="main-nav">
-          <a href="#" className="nav-link active">Recipes</a>
+          <a href="#" className={`nav-link ${['home', 'recipe'].includes(currentRoute.type) ? 'active' : ''}`}>Recipes</a>
+          <a href="#intro" className={`nav-link ${currentRoute.type === 'intro' ? 'active' : ''}`}>Introduction</a>
         </nav>
       </header>
 
       <main className="app-main">
-        {selectedSalad ? (
-          <RecipeDetail salad={selectedSalad} onBack={handleBack} />
-        ) : (
+        {currentRoute.type === 'intro' && <Introduction />}
+        {currentRoute.type === 'how-to' && <HowToUse />}
+        {currentRoute.type === 'recipe' && (
+          <RecipeDetail salad={currentRoute.data} onBack={handleBack} />
+        )}
+        {currentRoute.type === 'home' && (
           <Home onSelectSalad={handleSelectSalad} />
         )}
       </main>
@@ -61,7 +70,8 @@ function App() {
           <div className="footer-links">
             <div>
               <span className="footer-title">Explore</span>
-              <a href="#">All Recipes</a>
+              <a href="#">Recipes</a>
+              <a href="#how-to">How To Use This Book</a>
             </div>
             <div>
               <span className="footer-title">Follow</span>
