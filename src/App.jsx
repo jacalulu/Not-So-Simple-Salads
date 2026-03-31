@@ -12,6 +12,8 @@ function App() {
 
   useEffect(() => {
     const handleHashChange = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      
       const hash = window.location.hash.replace('#', '');
       if (hash === 'intro') {
         setCurrentRoute({ type: 'intro' });
@@ -47,6 +49,7 @@ function App() {
         <nav className="main-nav">
           <a href="#" className={`nav-link ${['home', 'recipe'].includes(currentRoute.type) ? 'active' : ''}`}>Recipes</a>
           <a href="#intro" className={`nav-link ${currentRoute.type === 'intro' ? 'active' : ''}`}>Introduction</a>
+          <a href="#how-to" className={`nav-link ${currentRoute.type === 'how-to' ? 'active' : ''}`}>How To Use</a>
         </nav>
       </header>
 
