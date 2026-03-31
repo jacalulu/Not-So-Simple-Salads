@@ -124,14 +124,14 @@
 }
 
 .tm-card-title {
-  color: var(--surface);
+  color: #A3CF91;
   font-size: 1.5rem;
   margin-bottom: var(--spacing-4);
   line-height: 1.2;
 }
 
 .tm-card-body {
-  color: var(--accent-mint);
+  color: #A3CF91;
   font-size: 0.95rem;
   line-height: 1.5;
   opacity: 0.9;
