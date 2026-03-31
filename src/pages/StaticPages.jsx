@@ -2,6 +2,14 @@ import React from 'react';
 import { TitleLg, DisplayLg, BodyLg, LabelMd } from '../components/Typography';
 import './StaticPages.css';
 
+const BeakerIcon = ({ size = 24, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={{display: 'inline-block', verticalAlign: 'middle', margin: '0 4px', color: 'var(--primary)'}}>
+    <path d="M4.5 3h15"/>
+    <path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3"/>
+    <path d="M6 14h12"/>
+  </svg>
+);
+
 export const Introduction = () => {
   return (
     <article className="static-page-layout">
@@ -35,7 +43,7 @@ export const Introduction = () => {
           The salads here are ones I've built, lovingly borrowed, adapted, and obsessed over for years. Some were inspired by chefs I deeply admire — Ottolenghi, obviously, who has permanently rewired how I think about flavor combinations. Some came out of the most unexpectedly great food I've ever eaten at Google's Mixit café, where the in-house chefs are quietly doing things with salads that have no business being as good as they are. I've been sitting there eating something extraordinary, mentally reverse-engineering it, then going home to make my version. This book is full of those moments.
         </BodyLg>
         <BodyLg>
-          A note on the dressings: some of them have been made so many times they're locked in. Others are still alive — still evolving, still being tweaked. You'll see a lab marker [🧪] next to those. Think of it as an invitation. Try the recipe, make it your own, and tell me what you changed. The best recipes are always a conversation.
+          A note on the dressings: some of them have been made so many times they're locked in. Others are still alive — still evolving, still being tweaked. You'll see a lab marker <BeakerIcon size={20}/> next to those. Think of it as an invitation. Try the recipe, make it your own, and tell me what you changed. The best recipes are always a conversation.
         </BodyLg>
         <BodyLg>
           This is a labor of love. Make a mess. Eat well.<br/><br/>
@@ -68,24 +76,46 @@ export const HowToUse = () => {
           The second section is <strong>Lighter Salads</strong>. Still packed with flavor — nothing in this book is timid — but scaled back in heft. These are for summer evenings, or the days when lunch already got out of control, or when you need something bright alongside something heavy. They are not afterthoughts. They are just not trying to be dinner.
         </BodyLg>
         
-        <TitleLg style={{marginTop: '2rem'}}>A note on the lab marker [🧪]</TitleLg>
+        <TitleLg style={{marginTop: '2rem'}}>A note on the lab marker <BeakerIcon size={28}/></TitleLg>
         <BodyLg>
           Some dressings are marked with a beaker symbol. That means the dressing is still evolving — I've made it enough times to know it's delicious, but I haven't fully locked in the ratios. The version in the book is my best current starting point. Try it, taste it, adjust it, and if you land on something better: I genuinely want to know.
         </BodyLg>
         
-        <TitleLg style={{marginTop: '2rem'}}>A note on technique</TitleLg>
-        <BodyLg>
-          <em>Julienning</em> — I do this with a sharp knife. You can use a mandoline. I won't judge you. Much.
-        </BodyLg>
-        <BodyLg>
-          <em>Salt</em> — I use kosher salt unless I specify Maldon flaked salt. When I say Maldon, I mean it — it's a finishing salt and it behaves differently. I'll always tell you which one.
-        </BodyLg>
-        <BodyLg>
-          <em>Pepper</em> — I use both freshly ground black pepper and powdered black pepper, and occasionally white pepper powder. I specify which in each recipe. They are not interchangeable.
-        </BodyLg>
-        <BodyLg>
-          <em>Fresh everything</em> — fresh lemon, fresh lime, fresh ginger, fresh garlic. Always. If you're in a pinch, pre-prepared works. But fresh is the difference between good and the kind of salad people ask you about.
-        </BodyLg>
+        <section className="technique-manifesto">
+          <div className="tm-header">
+            <div className="tm-header-text">
+              <DisplayLg className="tm-title">A Note on Technique</DisplayLg>
+              <BodyLg className="tm-subtitle">
+                My philosophy is rooted in these four fundamental pillars of preparation.
+              </BodyLg>
+            </div>
+            <div className="tm-header-icon">
+              <BeakerIcon size={120} className="tm-huge-beaker" />
+            </div>
+          </div>
+          
+          <div className="tm-grid">
+            <div className="tm-card">
+              <TitleLg className="tm-card-title">Julienning</TitleLg>
+              <p className="tm-card-body">I do this with a sharp knife. You can use a mandoline. I won't judge you. Much.</p>
+            </div>
+            
+            <div className="tm-card tm-stagger">
+              <TitleLg className="tm-card-title">Salt</TitleLg>
+              <p className="tm-card-body">I use kosher salt unless I specify Maldon flaked salt. When I say Maldon, I mean it — it's a finishing salt and it behaves differently. I'll always tell you which one.</p>
+            </div>
+            
+            <div className="tm-card">
+              <TitleLg className="tm-card-title">Pepper</TitleLg>
+              <p className="tm-card-body">I use both freshly ground black pepper and powdered black pepper, and occasionally white pepper powder. I specify which in each recipe. They are not interchangeable.</p>
+            </div>
+            
+            <div className="tm-card tm-stagger">
+              <TitleLg className="tm-card-title">Fresh Everything</TitleLg>
+              <p className="tm-card-body">Fresh lemon, fresh lime, fresh ginger, fresh garlic. Always. If you're in a pinch, pre-prepared works. But fresh is the difference between good and the kind of salad people ask you about.</p>
+            </div>
+          </div>
+        </section>
       </div>
     </article>
   )

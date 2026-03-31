@@ -31,3 +31,108 @@
   font-size: 1.15rem;
   letter-spacing: -0.01em;
 }
+
+.technique-manifesto {
+  background: var(--primary); /* Deep Forest Green */
+  color: var(--surface);       /* Cream text */
+  margin-top: var(--spacing-16);
+  padding: var(--spacing-12) var(--spacing-8);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 20px 40px -10px rgba(31, 63, 40, 0.2);
+  /* Break out of standard constraints to be wider */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+}
+
+.tm-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--spacing-16);
+}
+
+.tm-header-text {
+  max-width: 600px;
+}
+
+.tm-title {
+  color: var(--surface);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--spacing-4);
+}
+
+.tm-subtitle {
+  color: var(--accent-mint);
+  opacity: 0.9;
+}
+
+.tm-huge-beaker {
+  color: rgba(255, 255, 255, 0.1);
+  transform: rotate(15deg);
+}
+
+.tm-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+  padding-bottom: var(--spacing-8);
+}
+
+@media (min-width: 768px) {
+  .tm-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tm-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-8);
+  }
+}
+
+.tm-card {
+  background: var(--primary-fixed); /* Slightly lighter green box */
+  padding: var(--spacing-8) var(--spacing-6);
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.tm-card:hover {
+  transform: translateY(-5px);
+}
+
+@media (min-width: 1024px) {
+  .tm-stagger {
+    margin-top: 40px;
+  }
+}
+
+.tm-card-title {
+  color: var(--surface);
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-4);
+  line-height: 1.2;
+}
+
+.tm-card-body {
+  color: var(--accent-mint);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
