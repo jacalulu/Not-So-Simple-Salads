@@ -1,3 +1,4 @@
+@import url('https://cdn.jsdelivr.net/npm/geist@1.0.3/dist/fonts/geist-sans/style.css');
 @import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&family=Space+Grotesk:wght@400;500;600&family=Work+Sans:wght@300;400;500;600&display=swap');
 
 :root {
@@ -24,7 +25,7 @@
 
   /* Typography */
   --font-display: 'Rufina', serif; /* Statement serif */
-  --font-body: 'Work Sans', sans-serif;
+  --font-body: 'Geist', 'Geist Sans', system-ui, sans-serif;
   --font-label: 'Space Grotesk', sans-serif;
 
   /* Geometry & Rhythm */
@@ -55,6 +56,7 @@ body {
   background-color: var(--surface);
   color: var(--on-surface);
   line-height: 1.6;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -85,7 +87,7 @@ body {
 .body-lg {
   font-family: var(--font-body);
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.6;
 }
 
