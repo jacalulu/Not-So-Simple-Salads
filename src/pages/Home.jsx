@@ -86,40 +86,7 @@ export const Home = ({ onSelectSalad }) => {
         )}
 
         {filteredSalads.map((salad, index) => {
-          // Handle dynamically using salad IDs instead of placeholders
-          const availableImages = [
-            'cauli-fornia-dreamin.png', 
-            'noodle-me-this.png', 
-            'banh-mi-over.png',
-            'keep-cobb-and-carry-on.jpg',
-            'thaid-and-true.jpg',
-            'nicoise-to-meet-you.jpg',
-            'greek-expectations.jpg',
-            'romaine-calm.jpg',
-            'winner-winner-wonton.jpg',
-            'thai-me-a-river.jpg',
-            'salmon-situation.jpg',
-            'packn-pasta.jpg',
-            'bacon-me-crazy.jpg',
-            'salad-days.jpg',
-            'caprese-edit.jpg',
-            'couscous.jpg',
-            'water-fire-feta.jpg',
-            'zest-coast.jpg'
-          ];
-          
-          let imgSrc = `/${salad.id}.png`; // fallback if no match
-          const foundjpg = availableImages.find(f => f.startsWith(salad.id + '.jpg'));
-          const foundpng = availableImages.find(f => f.startsWith(salad.id + '.png'));
-          
-          if (foundjpg) {
-            imgSrc = `/${foundjpg}`;
-          } else if (foundpng) {
-            imgSrc = `/${foundpng}`;
-          } else {
-            // Pick a robust fallback out of existing loaded assets
-            imgSrc = `/${availableImages[index % availableImages.length]}`;
-          }
+          const imgSrc = `/${salad.id}.jpg`;
 
           const heights = ['tall', 'medium', 'short', 'xtall'];
           const tileHeight = heights[index % heights.length];
