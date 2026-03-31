@@ -1,5 +1,7 @@
-.recipe-detail-page {
+.recipe-editorial-page {
   padding: 0;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .recipe-nav {
@@ -7,176 +9,154 @@
 }
 
 .btn-back {
-  background: var(--surface-container-low);
-  padding: var(--spacing-3) var(--spacing-6);
-  border-radius: var(--border-radius-lg);
+  background: transparent;
+  padding: var(--spacing-2) 0;
   border: none;
   cursor: pointer;
-  color: var(--primary);
+  color: var(--on-surface-variant);
   font-weight: 700;
-  text-transform: lowercase;
-  transition: background 0.2s ease, transform 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  transition: color 0.2s ease;
 }
 
 .btn-back:hover {
-  background: var(--accent-lavender);
-  transform: scale(1.05);
+  color: var(--primary);
 }
 
-.artistic-header {
-  position: relative;
-  height: 30vh;
-  min-height: 300px;
-  background-color: var(--surface);
-  background-image: url('/header_generic.jpg');
-  background-size: cover;
-  background-position: center;
+.editorial-header {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin: 0 2%;
-  border-radius: var(--border-radius-lg);
+  flex-direction: column;
+  padding: var(--spacing-8) 5%;
+  gap: var(--spacing-12);
+  margin-bottom: var(--spacing-16);
+}
+
+@media (min-width: 1024px) {
+  .editorial-header {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-24);
+  }
+}
+
+.editorial-text-col {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.editorial-watermark {
+  position: absolute;
+  top: -80px;
+  left: -20px;
+  font-size: clamp(8rem, 25vw, 18rem);
+  font-weight: 900;
+  color: var(--surface-container-low);
+  line-height: 1;
+  z-index: -1;
+  letter-spacing: -0.05em;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.editorial-tracking-text {
+  display: block;
+  font-weight: 700;
+  color: var(--on-surface-variant);
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  margin-bottom: var(--spacing-8);
+  text-transform: uppercase;
+}
+
+.editorial-title {
+  color: var(--primary);
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-style: italic;
   margin-bottom: var(--spacing-12);
 }
 
-.header-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.4); /* Much lighter overlay to let the crisp white background shine through */
-  backdrop-filter: blur(2px);
-  z-index: 1;
-}
-
-.header-text-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  max-width: 900px;
-  padding: var(--spacing-4);
-}
-
-.recipe-meta {
-  display: inline-block;
-  background: var(--surface);
-  color: var(--primary);
-  padding: var(--spacing-2) var(--spacing-4);
-  border-radius: var(--border-radius-lg);
-  margin-bottom: var(--spacing-6);
-  font-weight: 700;
-  text-transform: lowercase;
-}
-
-.recipe-meta-cards {
+.editorial-pills {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-3);
-  margin-bottom: var(--spacing-8);
-  margin-top: calc(var(--spacing-8) * -1); /* Pull up subtly */
 }
 
-.meta-card {
-  padding: var(--spacing-3) var(--spacing-4);
-  border-radius: 16px; /* Squarer so it doesn't form massive circles */
+.editorial-pill {
+  background: var(--surface-container-low);
+  color: var(--primary);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: 4px; /* Crisp minimal pills like the image */
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.editorial-image-col {
+  flex: 1;
+}
+
+.editorial-main-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px -10px rgba(31, 63, 40, 0.15);
+}
+
+.editorial-body {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.time-card { background: var(--accent-lavender); transform: rotate(-2deg); }
-.serves-card { background: var(--accent-yellow); transform: rotate(1deg); }
-.hero-card { background: var(--accent-mint); transform: rotate(-1deg); }
-
-.recipe-vibe {
-  font-style: italic;
-  font-size: 1.25rem;
-  margin-bottom: var(--spacing-4);
-  color: var(--primary);
-  opacity: 0.8;
-}
-
-.recipe-title-huge {
-  color: var(--primary);
-  font-size: clamp(2rem, 6vw, 4.5rem); /* Smaller to prevent overflow */
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 700;
-  text-shadow: 0 2px 10px rgba(255,255,255,0.8); /* Help text pop against background elements */
-}
-
-.recipe-content-grid {
   padding: 0 5%;
-  max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
   gap: var(--spacing-16);
   margin-bottom: var(--spacing-24);
 }
 
-.recipe-story {
+@media (min-width: 1024px) {
+  .editorial-body {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.editorial-story {
   flex: 1;
 }
 
-.recipe-headnote {
+.editorial-headnote {
   font-size: 1.5rem;
   color: var(--on-surface);
   line-height: 1.6;
   font-style: italic;
   font-weight: 300;
-  margin-bottom: var(--spacing-8);
   border-left: 2px solid var(--primary);
-  padding-left: var(--spacing-4);
+  padding-left: var(--spacing-6);
+  max-width: 600px;
 }
 
-.inline-overhead {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 50%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  margin: 0 auto;
-  display: block;
-  margin-top: 0; /* Stop it from violently overlapping text */
-  position: relative;
-  z-index: 3;
-  border: 4px solid var(--surface);
-}
-
-.recipe-components {
+.editorial-components {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-4); /* Tighter gap for scrapbook overlap logic */
-  margin-top: calc(var(--spacing-12) * -1); /* Pull up to overlap header slightly */
-  position: relative;
-  z-index: 4;
+  gap: var(--spacing-12);
 }
 
-.recipe-ingredients, .recipe-dressing {
-  padding: var(--spacing-12) var(--spacing-8);
-  border-radius: var(--border-radius-lg); /* 60px */
-}
-
-.recipe-ingredients {
-  background: var(--accent-mint);
-}
-
-.recipe-dressing {
-  background: var(--accent-yellow);
-  transform: rotate(1deg); /* Slight funk */
-  margin-top: calc(var(--spacing-8) * -1); /* Overlap the cards */
-}
-
-.section-title {
-  margin-bottom: var(--spacing-6);
+.editorial-section-title {
+  margin-bottom: var(--spacing-4);
   font-weight: 700;
-  text-transform: lowercase;
-  font-size: 2.5rem;
+  font-size: 2rem;
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: var(--spacing-2);
+  display: inline-block;
 }
 
-@media (min-width: 1024px) {
-  .recipe-content-grid {
-    flex-direction: row;
-  }
+.ingredients-list {
+  background: transparent;
 }

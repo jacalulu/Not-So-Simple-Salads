@@ -1,7 +1,10 @@
 import React from 'react';
 import { TitleLg, DisplayLg, BodyLg, LabelMd } from '../components/Typography';
 import { IngredientScrap } from '../components/IngredientScrap';
+import { mealSalads, lighterSalads } from '../data/salads';
 import './RecipeDetail.css';
+
+const allSalads = [...mealSalads, ...lighterSalads];
 
 export const RecipeDetail = ({ salad, onBack }) => {
   const availableImages = [
@@ -18,7 +21,11 @@ export const RecipeDetail = ({ salad, onBack }) => {
     'salmon-situation.jpg',
     'packn-pasta.jpg',
     'bacon-me-crazy.jpg',
-    'salad-days.jpg'
+    'salad-days.jpg',
+    'caprese-edit.jpg',
+    'couscous.jpg',
+    'water-fire-feta.jpg',
+    'zest-coast.jpg'
   ];
   
   let imgSrc = `/${salad.id}.png`;
@@ -31,55 +38,47 @@ export const RecipeDetail = ({ salad, onBack }) => {
     imgSrc = `/${availableImages[idx]}`;
   }
 
+  const saladIndex = allSalads.findIndex(s => s.id === salad.id);
+  const saladNumber = String(saladIndex + 1).padStart(2, '0');
+
   return (
-    <article className="recipe-detail-page">
+    <article className="recipe-editorial-page">
       <nav className="recipe-nav">
         <button className="btn-back" onClick={onBack}>
           <LabelMd>← Back to Index</LabelMd>
         </button>
       </nav>
 
-      {/* The Artistic Header */}
-      <header className="artistic-header">
-        <div className="header-overlay"></div>
-        <div className="header-text-content">
-          <DisplayLg className="recipe-title-huge">{salad.title}</DisplayLg>
+      <header className="editorial-header">
+        <div className="editorial-text-col">
+          <div className="editorial-watermark">{saladNumber}</div>
+          
+          <LabelMd className="editorial-tracking-text">
+            {saladNumber} &nbsp;&mdash;&nbsp; THE {salad.vibe ? salad.vibe.toUpperCase() : "SEASONAL EDIT"}
+          </LabelMd>
+          
+          <DisplayLg className="editorial-title">{salad.title}</DisplayLg>
+          
+          <div className="editorial-pills">
+            <span className="editorial-pill">{salad.time}</span>
+            <span className="editorial-pill">{salad.serves} SERVINGS</span>
+            {salad.hero && <span className="editorial-pill">{salad.hero.substring(0, 15)}</span>}
+          </div>
+        </div>
+        
+        <div className="editorial-image-col">
+          <img src={imgSrc} alt={salad.title} className="editorial-main-image" />
         </div>
       </header>
 
-      {/* The Content Body */}
-      <div className="recipe-content-grid">
-        <div className="recipe-story">
-          <div className="recipe-meta-cards">
-             <div className="meta-card time-card cabbage-drop">
-               <LabelMd>Time</LabelMd>
-               <TitleLg>{salad.time}</TitleLg>
-             </div>
-             <div className="meta-card serves-card cabbage-drop">
-               <LabelMd>Serves</LabelMd>
-               <TitleLg>{salad.serves}</TitleLg>
-             </div>
-             {salad.hero && (
-               <div className="meta-card hero-card cabbage-drop">
-                 <LabelMd>The Hero</LabelMd>
-                 <TitleLg>{salad.hero}</TitleLg>
-               </div>
-             )}
-          </div>
-          
-          {salad.vibe && (
-            <BodyLg className="recipe-vibe"><strong>Vibe:</strong> {salad.vibe}</BodyLg>
-          )}
-          <BodyLg className="recipe-headnote">"{salad.headnote}"</BodyLg>
-          
-          <div className="recipe-images-inline">
-             <img src={imgSrc} alt={salad.title} className="inline-overhead botanical-shadow" />
-          </div>
+      <div className="editorial-body">
+        <div className="editorial-story">
+          <BodyLg className="editorial-headnote">"{salad.headnote}"</BodyLg>
         </div>
 
-        <div className="recipe-components">
-          <section className="recipe-ingredients cabbage-drop hairline-border">
-            <TitleLg className="section-title">The Foundation</TitleLg>
+        <div className="editorial-components">
+          <section className="editorial-section">
+            <TitleLg className="editorial-section-title">The Foundation</TitleLg>
             <div className="ingredients-list">
               {salad.saladIngredients.map((ing, i) => (
                 <IngredientScrap key={i} item={ing.item} note={ing.note} />
@@ -87,8 +86,8 @@ export const RecipeDetail = ({ salad, onBack }) => {
             </div>
           </section>
 
-          <section className="recipe-dressing cabbage-drop hairline-border">
-            <TitleLg className="section-title">
+          <section className="editorial-section">
+            <TitleLg className="editorial-section-title">
                The Elixir: {salad.dressingName}
             </TitleLg>
             <div className="ingredients-list">
