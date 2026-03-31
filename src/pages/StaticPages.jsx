@@ -3,10 +3,10 @@ import { TitleLg, DisplayLg, BodyLg, LabelMd } from '../components/Typography';
 import './StaticPages.css';
 
 const BeakerIcon = ({ size = 24, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} style={{display: 'inline-block', verticalAlign: 'middle', margin: '0 4px', color: 'var(--primary)'}}>
-    <path d="M4.5 3h15"/>
-    <path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3"/>
-    <path d="M6 14h12"/>
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className} style={{display: 'inline-block', verticalAlign: 'middle', margin: '0 4px', color: 'var(--primary)'}}>
+    <path d="M7 3h10"/>
+    <path d="M7 3v15a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V3"/>
+    <path d="M7 11h10"/>
   </svg>
 );
 
