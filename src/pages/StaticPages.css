@@ -133,8 +133,7 @@
 }
 
 .tm-card-body {
-  color: #A3CF91;
+  color: var(--accent-mint); /* Extremely pale, high contrast green */
   font-size: 0.95rem;
   line-height: 1.5;
-  opacity: 0.9;
 }
