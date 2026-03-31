@@ -7,7 +7,10 @@
 .index-hero {
   margin-top: var(--spacing-8);
   margin-bottom: var(--spacing-16);
-  background: var(--surface-container-low);
+  background-color: var(--surface);
+  background-image: url('/header_generic.jpg');
+  background-size: cover;
+  background-position: center;
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-16) var(--spacing-8);
   display: flex;

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: var(--spacing-4) 0;
+  padding: var(--spacing-2) 0;
   border-bottom: 1px solid rgba(178, 178, 171, 0.15); /* Ghost Border */
 }
 

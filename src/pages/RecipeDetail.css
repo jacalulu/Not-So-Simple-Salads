@@ -25,10 +25,10 @@
 
 .artistic-header {
   position: relative;
-  height: 25vh;
-  min-height: 250px;
-  background-color: var(--accent-pink);
-  background-image: url('/hero_cauli_dream.png');
+  height: 30vh;
+  min-height: 300px;
+  background-color: var(--surface);
+  background-image: url('/header_generic.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -37,15 +37,14 @@
   overflow: hidden;
   margin: 0 2%;
   border-radius: var(--border-radius-lg);
-  margin-bottom: var(--spacing-8);
+  margin-bottom: var(--spacing-12);
 }
 
 .header-overlay {
   position: absolute;
   inset: 0;
-  background: var(--surface-container-low);
-  opacity: 0.85; /* Flattens image into negative space */
-  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.4); /* Much lighter overlay to let the crisp white background shine through */
+  backdrop-filter: blur(2px);
   z-index: 1;
 }
 
@@ -71,34 +70,38 @@
 .recipe-meta-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-4);
+  gap: var(--spacing-3);
   margin-bottom: var(--spacing-8);
+  margin-top: calc(var(--spacing-8) * -1); /* Pull up subtly */
 }
 
 .meta-card {
-  padding: var(--spacing-3) var(--spacing-6);
-  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: 16px; /* Squarer so it doesn't form massive circles */
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .time-card { background: var(--accent-lavender); transform: rotate(-2deg); }
 .serves-card { background: var(--accent-yellow); transform: rotate(1deg); }
-.hero-card { background: var(--accent-mint); transform: rotate(-1deg); flex: 1; min-width: 250px; }
+.hero-card { background: var(--accent-mint); transform: rotate(-1deg); }
 
 .recipe-vibe {
   font-style: italic;
   font-size: 1.25rem;
   margin-bottom: var(--spacing-4);
   color: var(--primary);
+  opacity: 0.8;
 }
 
 .recipe-title-huge {
   color: var(--primary);
-  font-size: clamp(3rem, 8vw, 6rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
+  font-size: clamp(2rem, 6vw, 4.5rem); /* Smaller to prevent overflow */
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   font-weight: 700;
+  text-shadow: 0 2px 10px rgba(255,255,255,0.8); /* Help text pop against background elements */
 }
 
 .recipe-content-grid {
@@ -128,16 +131,16 @@
 
 .inline-overhead {
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   border-radius: 50%;
   aspect-ratio: 1/1;
   object-fit: cover;
   margin: 0 auto;
   display: block;
-  margin-top: calc(var(--spacing-16) * -1); /* Overlaps into the header area less aggressively */
+  margin-top: 0; /* Stop it from violently overlapping text */
   position: relative;
   z-index: 3;
-  border: 4px solid var(--surface); /* Hairline-like framing using background color */
+  border: 4px solid var(--surface);
 }
 
 .recipe-components {
