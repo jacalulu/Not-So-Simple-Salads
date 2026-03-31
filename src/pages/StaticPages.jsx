@@ -1,5 +1,4 @@
 import React from 'react';
-import { RequestLayout } from '../components/Typography';
 import { TitleLg, DisplayLg, BodyLg, LabelMd } from '../components/Typography';
 import './StaticPages.css';
 
