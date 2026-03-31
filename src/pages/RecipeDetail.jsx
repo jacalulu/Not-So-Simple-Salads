@@ -42,8 +42,9 @@ export const RecipeDetail = ({ salad, onBack }) => {
   const saladNumber = String(saladIndex + 1).padStart(2, '0');
 
   return (
-    <article className="recipe-editorial-page">
-      <nav className="recipe-nav">
+    <>
+      <article className="recipe-editorial-page">
+        <nav className="recipe-nav">
         <button className="btn-back" onClick={onBack}>
           <LabelMd>← Back to Index</LabelMd>
         </button>
@@ -98,11 +99,12 @@ export const RecipeDetail = ({ salad, onBack }) => {
           </section>
         </div>
       </div>
+      </article>
 
       <ManifestoBanner 
         colorScheme={['green', 'pink', 'amber'][saladIndex % 3]}
         quote={salad.manifestoQuote || "Vegetables are the new Haute Couture."}
       />
-    </article>
+    </>
   );
 };

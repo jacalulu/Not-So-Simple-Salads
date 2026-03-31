@@ -56,12 +56,13 @@ export const Introduction = () => {
 
 export const HowToUse = () => {
   return (
-    <article className="static-page-layout">
-      <nav className="recipe-nav">
-        <button className="btn-back" onClick={() => window.location.hash = ''}>
-          <LabelMd>← Back to Index</LabelMd>
-        </button>
-      </nav>
+    <>
+      <article className="static-page-layout">
+        <nav className="recipe-nav">
+          <button className="btn-back" onClick={() => window.location.hash = ''}>
+            <LabelMd>← Back to Index</LabelMd>
+          </button>
+        </nav>
       
       <header className="static-header">
         <DisplayLg className="static-title">How To Use This Book</DisplayLg>
@@ -80,9 +81,11 @@ export const HowToUse = () => {
         <BodyLg>
           Some dressings are marked with a beaker symbol. That means the dressing is still evolving — I've made it enough times to know it's delicious, but I haven't fully locked in the ratios. The version in the book is my best current starting point. Try it, taste it, adjust it, and if you land on something better: I genuinely want to know.
         </BodyLg>
-        
-        <section className="technique-manifesto">
-          <div className="tm-header">
+      </div>
+    </article>
+    
+    <section className="technique-manifesto">
+      <div className="tm-header">
             <div className="tm-header-text">
               <DisplayLg className="tm-title">A Note on Technique</DisplayLg>
               <BodyLg className="tm-subtitle">
@@ -116,7 +119,6 @@ export const HowToUse = () => {
             </div>
           </div>
         </section>
-      </div>
-    </article>
+    </>
   )
 }

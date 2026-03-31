@@ -38,8 +38,9 @@ export const Home = ({ onSelectSalad }) => {
   }, [allSalads, activeFilter, searchQuery]);
 
   return (
-    <div className="home-layout">
-      {/* Editorial Hero */}
+    <>
+      <div className="home-layout">
+        {/* Editorial Hero */}
       <section className="index-hero">
         <DisplayLg className="index-title">
           Not So<br/>
@@ -140,10 +141,10 @@ export const Home = ({ onSelectSalad }) => {
           )
         })}
       </section>
+      </div>
 
       {/* Manifesto Banner */}
       <ManifestoBanner />
-      
-    </div>
+    </>
   );
 };

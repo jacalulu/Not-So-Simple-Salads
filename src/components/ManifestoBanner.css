@@ -1,21 +1,12 @@
 .manifesto-banner {
-  margin-top: var(--spacing-24);
-  padding: var(--spacing-24) 10vw;
+  padding: clamp(4rem, 10vw, 8rem) 5%;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
   transition: transform 0.4s ease;
-  
-  /* Edge to Edge Block Styling */
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  border-radius: 0;
+  width: 100%;
   box-sizing: border-box;
 }
 
