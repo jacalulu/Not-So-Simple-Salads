@@ -55,7 +55,7 @@ body {
   font-family: var(--font-body);
   background-color: var(--surface);
   color: var(--on-surface);
-  line-height: 1.6;
+  line-height: 1.35;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -88,7 +88,8 @@ body {
   font-family: var(--font-body);
   font-size: 1.125rem;
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
 }
 
 .label-md {
