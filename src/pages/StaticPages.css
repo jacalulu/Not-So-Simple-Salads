@@ -36,8 +36,8 @@
   background: var(--primary); /* Deep Forest Green */
   color: var(--surface);       /* Cream text */
   margin-top: var(--spacing-16);
-  padding: var(--spacing-12) var(--spacing-8);
-  border-radius: var(--border-radius-md);
+  padding: var(--spacing-24) 10vw;
+  border-radius: 0;
   box-shadow: 0 20px 40px -10px rgba(31, 63, 40, 0.2);
   /* Break out of standard constraints to be wider */
   width: 100vw;
@@ -88,7 +88,8 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-6);
-  padding-bottom: var(--spacing-8);
+  padding-bottom: var(--spacing-24);
+  align-items: start;
 }
 
 @media (min-width: 768px) {
@@ -118,9 +119,10 @@
 }
 
 @media (min-width: 1024px) {
-  .tm-stagger {
-    margin-top: 40px;
-  }
+  .tm-card:nth-child(1) { margin-top: 10px; }
+  .tm-card:nth-child(2) { margin-top: 90px; }
+  .tm-card:nth-child(3) { margin-top: -20px; }
+  .tm-card:nth-child(4) { margin-top: 60px; }
 }
 
 .tm-card-title {
