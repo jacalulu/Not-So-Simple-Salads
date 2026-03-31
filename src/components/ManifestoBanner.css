@@ -24,7 +24,7 @@
 
 .manifesto-banner.scheme-amber {
   background: #FFC107;
-  color: #FFDF9E;
+  color: #FFEFD4;
 }
 
 .manifesto-banner:hover {
@@ -84,4 +84,4 @@
 /* Hover inversions */
 .manifesto-banner.scheme-green:hover .manifesto-btn { background: #A3CF91; color: #3A5F39; }
 .manifesto-banner.scheme-pink:hover .manifesto-btn { background: #FFB2BE; color: #E91E63; }
-.manifesto-banner.scheme-amber:hover .manifesto-btn { background: #FFDF9E; color: #FFC107; }
+.manifesto-banner.scheme-amber:hover .manifesto-btn { background: #FFEFD4; color: #FFC107; }
