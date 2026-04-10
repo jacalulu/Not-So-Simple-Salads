@@ -4,6 +4,28 @@ import { ManifestoBanner } from '../components/ManifestoBanner';
 import { mealSalads, lighterSalads } from '../data/salads';
 import './Home.css';
 
+const ProgressiveImage = ({ src, placeholder, alt, className }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <div className="progressive-wrap">
+      <img 
+        src={placeholder} 
+        alt={alt} 
+        className={`${className} progressive-placeholder ${isLoaded ? 'loaded' : ''}`}
+      />
+      <img
+        src={src}
+        alt={alt}
+        className={`${className} progressive-main ${isLoaded ? 'loaded' : ''}`}
+        onLoad={() => setIsLoaded(true)}
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  );
+};
+
 export const Home = ({ onSelectSalad }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState('All'); // 'All', 'Meal', 'Lighter'
@@ -102,7 +124,12 @@ export const Home = ({ onSelectSalad }) => {
               onClick={() => onSelectSalad(salad)}
             >
               <div className="tile-image-wrapper">
-                <img src={imgSrc} alt={salad.title} className="tile-image" />
+                <ProgressiveImage 
+                  src={imgSrc} 
+                  placeholder={`/${salad.id}_thumb.jpg`} 
+                  alt={salad.title} 
+                  className="tile-image" 
+                />
                 <div className="tile-overlay">
                   <TitleLg className="tile-title">{salad.title}</TitleLg>
                   <LabelMd className="tile-meta">{salad.time} · {salad.vibe || salad.category}</LabelMd>
