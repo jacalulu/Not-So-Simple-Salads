@@ -32,4 +32,52 @@ html = html.replace(/<noscript id="seo-content">[\s\S]*?<\/noscript>/g, '');
 const insertion = `<noscript id="seo-content">\n${seoText}\n</noscript>\n    <div id="root">`;
 html = html.replace('<div id="root">', insertion);
 fs.writeFileSync('./index.html', html);
+
+// Generate sitemap.xml
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://notsosimplesalads.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://notsosimplesalads.com/manifesto</loc>
+    <priority>0.8</priority>
+  </url>
+  ${allSalads.map(s => `
+  <url>
+    <loc>https://notsosimplesalads.com/recipe/${s.id}</loc>
+    <priority>0.9</priority>
+  </url>`).join('')}
+</urlset>`;
+fs.writeFileSync('./public/sitemap.xml', sitemap);
+
+// Generate robots.txt
+const robots = `User-agent: *
+Allow: /
+Sitemap: https://notsosimplesalads.com/sitemap.xml`;
+fs.writeFileSync('./public/robots.txt', robots);
+
+// Generate JSON-LD Structured Data
+const jsonLd = allSalads.map(s => ({
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": s.title,
+  "description": s.headnote,
+  "recipeIngredient": [
+    ...s.saladIngredients.map(ing => `${ing.note || ''} ${ing.item}`.trim()),
+    ...s.dressingIngredients.map(ing => `${ing.item || ''} ${ing.name}`.trim())
+  ],
+  "recipeInstructions": [{
+    "@type": "HowToStep",
+    "text": "Assemble the base ingredients and toss well with the described dressing."
+  }]
+}));
+
+const jsonLdScript = `<script type="application/ld+json">\n${JSON.stringify(jsonLd, null, 2)}\n</script>\n</head>`;
+html = html.replace('</head>', jsonLdScript);
+fs.writeFileSync('./index.html', html);
+
 console.log("Headless scraper SEO payload statically injected into index.html successfully!");
+console.log("Generated sitemap.xml and robots.txt, and injected JSON-LD Structured Data!");

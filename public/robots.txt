@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://notsosimplesalads.com/sitemap.xml

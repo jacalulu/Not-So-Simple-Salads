@@ -12,6 +12,12 @@ export const RecipeDetail = ({ salad, onBack }) => {
   const saladIndex = allSalads.findIndex(s => s.id === salad.id);
   const saladNumber = String(saladIndex + 1).padStart(2, '0');
 
+  React.useEffect(() => {
+    const originalTitle = document.title;
+    document.title = `${salad.title} | Not So Simple Salads`;
+    return () => { document.title = originalTitle; };
+  }, [salad.title]);
+
   return (
     <>
       <article className="recipe-editorial-page">
