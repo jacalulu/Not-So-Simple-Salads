@@ -7,36 +7,7 @@ import './RecipeDetail.css';
 const allSalads = [...mealSalads, ...lighterSalads];
 
 export const RecipeDetail = ({ salad, onBack }) => {
-  const availableImages = [
-    'cauli-fornia-dreamin.png', 
-    'noodle-me-this.png', 
-    'banh-mi-over.png',
-    'keep-cobb-and-carry-on.jpg',
-    'thaid-and-true.jpg',
-    'nicoise-to-meet-you.jpg',
-    'greek-expectations.jpg',
-    'romaine-calm.jpg',
-    'winner-winner-wonton.jpg',
-    'thai-me-a-river.jpg',
-    'salmon-situation.jpg',
-    'packn-pasta.jpg',
-    'bacon-me-crazy.jpg',
-    'salad-days.jpg',
-    'caprese-edit.jpg',
-    'couscous.jpg',
-    'water-fire-feta.jpg',
-    'zest-coast.jpg'
-  ];
-  
-  let imgSrc = `/${salad.id}.png`;
-  const foundMatch = availableImages.find(f => f.startsWith(salad.id));
-  if (foundMatch) {
-    imgSrc = `/${foundMatch}`;
-  } else {
-    // Generate deterministic hash from title to keep placeholder consistent across rerenders 
-    const idx = salad.title.length % availableImages.length;
-    imgSrc = `/${availableImages[idx]}`;
-  }
+  const imgSrc = `/${salad.id}.jpg`;
 
   const saladIndex = allSalads.findIndex(s => s.id === salad.id);
   const saladNumber = String(saladIndex + 1).padStart(2, '0');
