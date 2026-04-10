@@ -7,7 +7,7 @@ const quotes = [
   "Eat vegetables like you're plotting revenge.",
   "We don't do limp lettuce here. We do high-fashion horticulture.",
   "If a salad doesn't crunch, it's just a sad smoothie.",
-  "Croutons are pedestrian. Give me frizzled shallots or give me death.",
+  "Croutons are pedestrian. Frizzled shallots are non-negotiable.",
   "Dress your greens better than you dress yourself.",
   "A naked leaf is an unfulfilled promise.",
   "Your fork is a weapon. Choose your ingredients wisely.",
