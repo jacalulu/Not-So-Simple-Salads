@@ -3,8 +3,8 @@
 
 :root {
   /* Color Palette - Cabbage Crush */
-  --primary: #1F3F28; /* Deep Forest Green */
-  --primary-fixed: #2A5A3B;
+  --primary: #425a3d; /* User specified dark green */
+  --primary-fixed: #4b6645;
   --on-primary: #F4F6F0; /* Soft Cream */
   --on-primary-fixed: #FFFFFF;
   --secondary: #6B7C6E; /* Muted Sage */
