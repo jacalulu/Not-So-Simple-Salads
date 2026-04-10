@@ -39,18 +39,22 @@ export const Home = ({ onSelectSalad }) => {
 
   return (
     <>
-      <div className="home-layout">
-        {/* Editorial Hero */}
-      <section className="index-hero">
-        <DisplayLg className="index-title">
-          Not So<br/>
-          <span className="highlight-simple">Simple</span><br/>
-          Salads
-        </DisplayLg>
-        <div className="hero-badge">
-          i have opinions about salads. strong ones.
+      {/* Epic Cinematic Hero */}
+      <section className="epic-hero">
+        <div className="epic-hero-bg"></div>
+        <div className="epic-hero-content">
+          <DisplayLg className="index-title">
+            Not So<br/>
+            <span className="highlight-simple">Simple</span><br/>
+            Salads
+          </DisplayLg>
+          <div className="hero-badge">
+            i have opinions about salads. strong ones.
+          </div>
         </div>
       </section>
+
+      <div className="home-layout">
 
       {/* Discovery / Filter Bar */}
       <section className="discovery-bar">
