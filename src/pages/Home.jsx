@@ -63,7 +63,16 @@ export const Home = ({ onSelectSalad }) => {
     <>
       {/* Epic Cinematic Hero */}
       <section className="epic-hero">
-        <div className="epic-hero-bg"></div>
+        <div className="epic-hero-bg">
+          <video 
+            src="/Hero-background-video.mp4" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="epic-hero-video"
+          />
+        </div>
         <div className="epic-hero-content">
           <DisplayLg className="index-title">
             Not So<br/>
