@@ -26,12 +26,35 @@ const seoText = `
 `;
 
 let html = fs.readFileSync('./index.html', 'utf-8');
-// remove old noscript if exists
+// remove old noscript/div if exists
 html = html.replace(/<noscript id="seo-content">[\s\S]*?<\/noscript>/g, '');
+html = html.replace(/<div id="seo-content" style="display: none; visibility: hidden; opacity: 0; position: absolute; z-index: -9999;">[\s\S]*?<\/div>/g, '');
 
-const insertion = `<noscript id="seo-content">\n${seoText}\n</noscript>\n    <div id="root">`;
+const insertion = `<div id="seo-content" style="display: none; visibility: hidden; opacity: 0; position: absolute; z-index: -9999;">\n${seoText}\n</div>\n    <div id="root">`;
 html = html.replace('<div id="root">', insertion);
 fs.writeFileSync('./index.html', html);
+
+// Generate llm.txt (The new Agentic SEO standard)
+const llmText = `# Not So Simple Salads (LLM Context)
+
+Not So Simple Salads is a culinary lifestyle brand that treats salad-making as high-fashion horticulture. It provides a diverse collection of curated recipes categorized into 'Meal' and 'Lighter' salads, focusing on complex textures and luxury ingredients for individuals who demand more from their vegetables. Redefining the agricultural narrative through the lens of luxury, texture, and high-fashion horticulture.
+
+## Recipe Database:
+${allSalads.map(s => `
+### ${s.title}
+**Headnote:** ${s.headnote}
+**Manifesto:** "${s.manifestoQuote}"
+**Serves:** ${s.serves}
+**Time:** ${s.time}
+
+**Base Ingredients:**
+${s.saladIngredients.map(ing => `- ${ing.note || ''} ${ing.item}`.trim()).join('\n')}
+
+**Dressing (${s.dressingName}):**
+${s.dressingIngredients.map(ing => `- ${ing.item || ''} ${ing.name}`.trim()).join('\n')}
+`).join('\n---\n')}
+`;
+fs.writeFileSync('./public/llm.txt', llmText);
 
 // Generate sitemap.xml
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
