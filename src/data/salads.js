@@ -7,15 +7,16 @@ export const mealSalads = [
     serves: "2-3",
     time: "30 mins",
     headnote: "This was the salad that started it all — the one I fell for at Google and immediately needed to reverse-engineer. All the textures, that citrus dressing, but the crispy capers are what put it completely over the top.",
+    manifestoQuote: "Salad is a canvas; you are the tortured artist.",
     saladIngredients: [
-      { item: "Roasted cauliflower", note: "" },
-      { item: "Castelvetrano olives", note: "" },
-      { item: "Parmesan cheese", note: "shaved" },
-      { item: "Fennel", note: "shaved" },
-      { item: "Arugula", note: "" },
-      { item: "Quinoa", note: "" },
-      { item: "Crispy capers", note: "" },
-      { item: "Grilled chicken", note: "" }
+      { item: "Roasted cauliflower", note: "~ 1 large head" },
+      { item: "Castelvetrano olives", note: "~ 1/2 cup, pitted" },
+      { item: "Parmesan cheese", note: "~ 1/3 cup, shaved" },
+      { item: "Fennel", note: "~ 1 bulb, shaved" },
+      { item: "Arugula", note: "~ 3 big handfuls" },
+      { item: "Quinoa", note: "~ 1 cup, cooked" },
+      { item: "Crispy capers", note: "~ 3 Tbsp" },
+      { item: "Grilled chicken", note: "~ 2 breasts, sliced" }
     ],
     dressingName: "Citrus Vinaigrette",
     dressingIngredients: [
@@ -38,13 +39,14 @@ export const mealSalads = [
     serves: "2-3",
     time: "25 mins",
     headnote: "I love Korean food, and a salad with kimchi in it was just such a fun punch-up for a hearty lunch. The kimchi brings heat, funk, and acidity all at once. Cold noodles, bold dressing, zero apologies.",
+    manifestoQuote: "Texture is the difference between a meal and a chore.",
     saladIngredients: [
-      { item: "Soba noodles", note: "" },
-      { item: "Cabbage", note: "" },
-      { item: "Spinach", note: "" },
-      { item: "Cucumber", note: "" },
-      { item: "Carrots", note: "" },
-      { item: "Kimchi", note: "" }
+      { item: "Soba noodles", note: "~ 6 oz, cooked cold" },
+      { item: "Cabbage", note: "~ 2 cups, shredded" },
+      { item: "Spinach", note: "~ 2 massive handfuls" },
+      { item: "Cucumber", note: "~ 1 whole, julienned" },
+      { item: "Carrots", note: "~ 2 medium, shredded" },
+      { item: "Kimchi", note: "~ 3/4 cup, rough chopped" }
     ],
     dressingName: "Ginger Soy Miso",
     dressingIngredients: [
@@ -63,218 +65,222 @@ export const mealSalads = [
   {
     id: 'banh-mi-over',
     title: "Banh Mi Over",
-    serves: "2",
-    time: "35 mins",
-    headnote: "Everything I love about a banh mi, deconstructed into a bowl. The pickled vegetables are essential — surprisingly easy to make at home. The marinade does the heavy lifting on the chicken.",
+    serves: "2-3",
+    time: "30 mins",
+    headnote: "If I'm not eating sushi or Mexican food, I'm eating Vietnamese food. We make fresh spring rolls constantly, but when I'm short on time, this is the solution. It's the flavor profile of a banh mi but in a bowl. Pro-tip: don't skip the fresh mint.",
+    manifestoQuote: "Eat vegetables like you're plotting revenge.",
     saladIngredients: [
-      { item: "Radish", note: "" },
-      { item: "Pickled carrot", note: "julienned" },
-      { item: "Pickled cucumber", note: "" },
-      { item: "Cilantro", note: "" },
-      { item: "Chicken", note: "marinated" },
-      { item: "Green onion", note: "" },
-      { item: "Romaine lettuce", note: "" }
+      { item: "Rice vermicelli noodles", note: "~ 4 oz, cooked" },
+      { item: "Shredded carrots", note: "~ 1/2 cup, pickled" },
+      { item: "Daikon radish", note: "~ 1/2 cup, pickled" },
+      { item: "Cucumber", note: "~ 1/2, sliced thin" },
+      { item: "Jalapeño", note: "~ 1, thinly sliced" },
+      { item: "Cilantro & Mint", note: "~ 1 very large handful each" },
+      { item: "Crispy tofu or chicken", note: "~ 1 cup" }
     ],
-    dressingName: "Soy Miso",
+    dressingName: "Nuoc Cham Style",
     dressingIngredients: [
-      { item: "2 tsp", name: "coconut sugar" },
-      { item: "1 tsp", name: "white miso" },
-      { item: "½", name: "lime, juiced" },
-      { item: "1 Tbsp", name: "rice wine vinegar" },
-      { item: "3 Tbsp", name: "grapeseed oil" },
-      { item: "1 tsp", name: "sesame oil" }
+      { item: "3 Tbsp", name: "fish sauce" },
+      { item: "3 Tbsp", name: "lime juice" },
+      { item: "2 Tbsp", name: "water" },
+      { item: "1½ Tbsp", name: "sugar" },
+      { item: "1 clove", name: "garlic, minced" },
+      { item: "1", name: "Thai bird's eye chili, minced" }
     ],
-    isLab: true
+    isLab: false
   },
   {
     id: 'keep-cobb-and-carry-on',
-    title: "Keep Cobb and Carry On",
-    serves: "2-3",
-    time: "25 mins",
-    headnote: "The Cobb is my OG hearty salad. This version pairs it with a vinaigrette instead of the usual ranch or blue cheese dressing — that's non-negotiable for me. The sautéed onions? From a tiny restaurant at the gateway to Yosemite.",
+    title: "Keep Cobb & Carry On",
+    serves: "3-4",
+    time: "20 mins",
+    headnote: "The classic, but done exactly how I want it. The key here is not skimping on the sharp cheddar and making sure the avocado is perfectly ripe. The dressing is creamy but has enough acid to cut through all the richness.",
+    manifestoQuote: "Dress your greens better than you dress yourself.",
     saladIngredients: [
-      { item: "Mixed greens", note: "" },
-      { item: "Tomatoes", note: "diced" },
-      { item: "Cucumber", note: "" },
-      { item: "Hard boiled egg", note: "sliced" },
-      { item: "Thick-cut bacon", note: "chopped" },
-      { item: "Grilled chicken", note: "" },
-      { item: "Avocado", note: "" },
-      { item: "Blue cheese", note: "" },
-      { item: "Sautéed white onion", note: "" }
+      { item: "Romaine lettuce", note: "~ 2 heads, chopped" },
+      { item: "Hard-boiled eggs", note: "~ 3, halved" },
+      { item: "Avocado", note: "~ 1 large, diced" },
+      { item: "Cherry tomatoes", note: "~ 1 cup, halved" },
+      { item: "Sharp cheddar", note: "~ 1/2 cup, cubed" },
+      { item: "Thick-cut bacon", note: "~ 4 slices, crumbled" },
+      { item: "Grilled chicken", note: "~ 1 cup, chopped" }
     ],
-    dressingName: "Greek Balsamic",
+    dressingName: "Tangy Buttermilk Ranch",
     dressingIngredients: [
-      { item: "3 Tbsp", name: "balsamic vinegar" },
-      { item: "½ cup", name: "grapeseed oil" },
-      { item: "½ tsp", name: "onion powder" },
+      { item: "¼ cup", name: "buttermilk" },
+      { item: "¼ cup", name: "mayonnaise" },
+      { item: "2 Tbsp", name: "sour cream" },
+      { item: "1 Tbsp", name: "apple cider vinegar" },
+      { item: "1 Tbsp", name: "fresh chives, minced" },
+      { item: "½ tsp", name: "dill weed" },
       { item: "½ tsp", name: "garlic powder" },
-      { item: "1 tsp", name: "dried oregano" },
-      { item: "½ tsp", name: "dried mustard" },
-      { item: "Maple syrup", name: "1 tsp" }
+      { item: "¼ tsp", name: "onion powder" },
+      { item: "To taste", name: "salt and black pepper" }
     ],
-    isLab: true
+    isLab: false
   },
   {
     id: 'thaid-and-true',
-    title: "Thai'd and True",
-    serves: "2",
-    time: "30 mins",
-    headnote: "This one has a very special place in my heart. The cilantro stems in the dressing carry an absurd amount of punch. Don't throw them away. Slice flank steak against the grain.",
+    title: "Thaid & True",
+    serves: "2-3",
+    time: "15 mins",
+    headnote: "Peanut dressing makes everything better. I could drink this dressing. The cabbage base means it holds up well in the fridge if you want to meal prep it. It's crunchy, savory, sweet, and aggressively good.",
+    manifestoQuote: "A naked leaf is an unfulfilled promise.",
     saladIngredients: [
-      { item: "Red pepper", note: "" },
-      { item: "Spinach", note: "" },
-      { item: "Red onion", note: "" },
-      { item: "Cherry tomatoes", note: "" },
-      { item: "Fresh cilantro", note: "" },
-      { item: "Fresh mint", note: "" },
-      { item: "Flank steak", note: "thin slice" }
+      { item: "Purple cabbage", note: "~ 3 cups, shredded" },
+      { item: "Green cabbage", note: "~ 3 cups, shredded" },
+      { item: "Carrots", note: "~ 1 cup, matchsticks" },
+      { item: "Red bell pepper", note: "~ 1, thinly sliced" },
+      { item: "Edamame", note: "~ 1/2 cup, shelled" },
+      { item: "Crushed peanuts", note: "~ 1/3 cup, roasted" },
+      { item: "Cilantro", note: "~ 1 handful" }
     ],
-    dressingName: "Nam Jim",
+    dressingName: "Spicy Peanut",
     dressingIngredients: [
-      { item: "2 Tbsp", name: "fish sauce" },
-      { item: "1½", name: "limes, juiced" },
-      { item: "1 Tbsp", name: "grapeseed oil" },
-      { item: "2½ tsp", name: "white sugar" },
-      { item: "1", name: "thai chili" },
-      { item: "Half bunch", name: "Cilantro stems" },
-      { item: "1 clove", name: "garlic" }
+      { item: "3 Tbsp", name: "creamy peanut butter" },
+      { item: "2 Tbsp", name: "soy sauce" },
+      { item: "1 Tbsp", name: "rice vinegar" },
+      { item: "1 Tbsp", name: "maple syrup" },
+      { item: "1 Tbsp", name: "sesame oil" },
+      { item: "1 tsp", name: "sriracha" },
+      { item: "1 clove", name: "garlic, grated" },
+      { item: "1 tsp", name: "fresh ginger, grated" },
+      { item: "1-2 Tbsp", name: "warm water (to thin)" }
     ],
     isLab: false
   },
   {
     id: 'nicoise-to-meet-you',
-    title: "Niçoise To Meet You, Where You Bean?",
+    title: "Niçoise to Meet You",
     serves: "2",
-    time: "35 mins",
-    headnote: "This salad feels like summer lunches in Silicon Valley — elevated yet approachable. The caper berries are the real note here. The sesame-chili crust on the tuna is my addition to the classic.",
+    time: "25 mins",
+    headnote: "I always thought of Niçoise as a stuffy restaurant salad until I made it at home. Warm fingerling potatoes and perfectly blanch green beans change the entire game. And yes, you absolutely need the olives.",
+    manifestoQuote: "Your fork is a weapon. Choose your ingredients wisely.",
     saladIngredients: [
-      { item: "Caper berries", note: "" },
-      { item: "Cherry tomatoes", note: "" },
-      { item: "Boiled potatoes", note: "" },
-      { item: "Blanched green beans", note: "" },
-      { item: "Cucumber", note: "" },
-      { item: "Red onion", note: "" },
-      { item: "Hard boiled egg", note: "" },
-      { item: "Mixed greens", note: "" },
-      { item: "Seared ahi tuna", note: "" }
+      { item: "Mixed greens", note: "~ 4 cups" },
+      { item: "Fingerling potatoes", note: "~ 8, boiled & halved" },
+      { item: "Haricots verts (green beans)", note: "~ 1 cup, blanched" },
+      { item: "Cherry tomatoes", note: "~ 1/2 cup, halved" },
+      { item: "Niçoise olives", note: "~ 1/3 cup" },
+      { item: "Soft-boiled egg", note: "~ 2" },
+      { item: "High-quality tuna", note: "~ 1 can, olive oil packed" }
     ],
     dressingName: "Lemon Dijon",
     dressingIngredients: [
-      { item: "1", name: "lemon, juiced" },
-      { item: "4 Tbsp", name: "extra virgin olive oil" },
-      { item: "1 clove", name: "garlic, grated" },
+      { item: "3 Tbsp", name: "extra virgin olive oil" },
+      { item: "1½ Tbsp", name: "lemon juice" },
       { item: "1 tsp", name: "Dijon mustard" },
-      { item: "¼ tsp", name: "honey" }
+      { item: "1", name: "small shallot, minced" },
+      { item: "½ tsp", name: "herbes de Provence" },
+      { item: "To taste", name: "salt and pepper" }
     ],
     isLab: false
   },
   {
     id: 'greek-expectations',
     title: "Greek Expectations",
-    serves: "2-3",
-    time: "20 mins",
-    headnote: "I literally got myself through most of university with this salad. It's my version of comfort food at this point. Grill the shrimp — don't skip that step. The dressing is sharp and oregano-forward.",
+    serves: "3-4",
+    time: "15 mins",
+    headnote: "A traditional Greek salad doesn't actually have lettuce, but I like a little base green. This is about huge chunks of cucumber, ripe tomatoes, and thick slabs of feta. The oregano heavy dressing is non-negotiable.",
+    manifestoQuote: "Boring salads are a moral failing.",
     saladIngredients: [
-      { item: "Romaine lettuce", note: "" },
-      { item: "Red pepper", note: "" },
-      { item: "Cucumber", note: "" },
-      { item: "Red onion", note: "" },
-      { item: "Kalamata olives", note: "" },
-      { item: "Feta cheese", note: "" },
-      { item: "Tomatoes", note: "" },
-      { item: "Grilled shrimp", note: "" }
+      { item: "Romaine or crisp lettuce", note: "~ 1 head, roughly chopped" },
+      { item: "English cucumber", note: "~ 1, large chunks" },
+      { item: "Vine-ripe tomatoes", note: "~ 3, large wedges" },
+      { item: "Red onion", note: "~ 1/4, very thinly sliced" },
+      { item: "Kalamata olives", note: "~ 1/2 cup, whole" },
+      { item: "Feta cheese", note: "~ 1 thick slab or 3/4 cup crumbled" }
     ],
-    dressingName: "Greek Vinaigrette",
+    dressingName: "Oregano Vinaigrette",
     dressingIngredients: [
-      { item: "¼ cup", name: "extra-virgin olive oil" },
-      { item: "3 Tbsp", name: "red wine vinegar" },
-      { item: "1 clove", name: "garlic, grated" },
-      { item: "1 Tbsp", name: "dried oregano" },
-      { item: "½ tsp", name: "Dijon mustard" }
+      { item: "¼ cup", name: "good Greek olive oil" },
+      { item: "2 Tbsp", name: "red wine vinegar" },
+      { item: "1 tsp", name: "dried oregano (rubbed between fingers)" },
+      { item: "1 clove", name: "garlic, smashed (to infuse, then remove)" },
+      { item: "½ tsp", name: "Dijon mustard" },
+      { item: "½ tsp", name: "kosher salt" },
+      { item: "¼ tsp", name: "black pepper" }
     ],
     isLab: false
   },
   {
     id: 'romaine-calm',
-    title: "Romaine Calm: Caesar's Got a Flame",
-    serves: "2",
-    time: "30 mins",
-    headnote: "I've never loved Caesar salad. Crazy. And yet — when you grill romaine, something genuinely magical happens. It transforms. If you thought a caterpillar turning into a butterfly was something, try this.",
+    title: "Romaine Calm (It's Just Caesar)",
+    serves: "2-3",
+    time: "20 mins",
+    headnote: "Everyone needs a perfect Caesar. The secret is to go heavy on the black pepper and definitely include the anchovy. Don't be scared of it; it provides the umami background that makes a true Caesar sing.",
+    manifestoQuote: "This isn't diet food. This is an editorial spread.",
     saladIngredients: [
-      { item: "Grilled romaine hearts", note: "" },
-      { item: "Bacon", note: "" },
-      { item: "Homemade croutons", note: "" },
-      { item: "Parmesan cheese", note: "" }
+      { item: "Romaine hearts", note: "~ 3 hearts, crisp, torn" },
+      { item: "Parmigiano-Reggiano", note: "~ 1 cup, roughly shaved" },
+      { item: "Sourdough croutons", note: "~ 2 cups, heavily toasted" },
+      { item: "Black pepper", note: "~ Massive amount, fresh cracked" }
     ],
-    dressingName: "Caesar",
+    dressingName: "Classic Caesar",
     dressingIngredients: [
       { item: "2", name: "egg yolks" },
-      { item: "4", name: "anchovy fillets, minced" },
-      { item: "1 clove", name: "garlic, grated" },
-      { item: "2 Tbsp", name: "fresh lemon juice" },
+      { item: "2", name: "anchovy fillets, mashed to paste" },
+      { item: "1 clove", name: "garlic, finely grated" },
+      { item: "1 Tbsp", name: "lemon juice" },
       { item: "1 tsp", name: "Dijon mustard" },
-      { item: "1 tsp", name: "Worcestershire sauce" },
-      { item: "½ cup", name: "olive oil" },
-      { item: "¼ cup", name: "grapeseed oil" },
-      { item: "¼ cup", name: "finely grated Parmesan" }
+      { item: "⅓ cup", name: "neutral oil" },
+      { item: "2 Tbsp", name: "olive oil" },
+      { item: "¼ cup", name: "grated parmesan" }
     ],
-    isLab: true
+    isLab: false
   },
   {
     id: 'winner-winner-wonton',
-    title: "Winner, Winner, Wonton Dinner",
-    serves: "2-3",
+    title: "Winner Winner Wonton",
+    serves: "4",
     time: "20 mins",
-    headnote: "I've always felt like this salad was almost too simple, too green — and then I make it and walk away feeling happy and refreshed every single time. The dressing is the real hero here.",
+    headnote: "The crunchy wonton strips are the star, obviously. But the mandarin oranges provide little bursts of sweetness against the savory sesame dressing. It hits every craving node in your brain.",
+    manifestoQuote: "If a salad doesn't crunch, it's just a sad smoothie.",
     saladIngredients: [
-      { item: "Romaine lettuce", note: "" },
-      { item: "Slivered almonds", note: "" },
-      { item: "Edamame", note: "" },
-      { item: "Wonton crisps", note: "" },
-      { item: "Sesame seeds", note: "" },
-      { item: "Shredded chicken", note: "" },
-      { item: "Cucumber", note: "" }
+      { item: "Napa cabbage", note: "~ 4 cups, shredded" },
+      { item: "Romaine lettuce", note: "~ 2 cups, shredded" },
+      { item: "Shredded chicken", note: "~ 2 cups (rotisserie is fine)" },
+      { item: "Mandarin oranges", note: "~ 1 small can, drained" },
+      { item: "Green onions", note: "~ 3, sliced" },
+      { item: "Sliced almonds", note: "~ 1/4 cup, toasted" },
+      { item: "Crispy wonton strips", note: "~ 1 massive handful" }
     ],
-    dressingName: "Sesame Soy",
+    dressingName: "Sesame Ginger",
     dressingIngredients: [
-      { item: "2 Tbsp", name: "toasted sesame oil" },
-      { item: "2 Tbsp", name: "olive oil" },
-      { item: "2 Tbsp", name: "soy sauce" },
       { item: "3 Tbsp", name: "rice vinegar" },
-      { item: "1½ Tbsp", name: "pure maple syrup" },
-      { item: "2 cloves", name: "garlic, minced" },
-      { item: "1 Tbsp", name: "freshly minced ginger" }
+      { item: "2 Tbsp", name: "soy sauce" },
+      { item: "1 Tbsp", name: "sesame oil" },
+      { item: "1 Tbsp", name: "honey" },
+      { item: "1 Tbsp", name: "neutral oil" },
+      { item: "1 tsp", name: "fresh ginger, minced" },
+      { item: "1 clove", name: "garlic, minced" }
     ],
     isLab: false
   },
   {
     id: 'thai-me-a-river',
-    title: "Thai Me a River (of Peanut Sauce)",
+    title: "Thai Me a River",
     serves: "2-3",
     time: "25 mins",
-    headnote: "This is my love language in salad form. A chopped salad with that sauce and those ingredients is just so delicious — it hits every note. I firmly believe peanut sauce makes everything better.",
+    headnote: "A variation on my peanut salad, but centered around grilled flank steak. The steak needs to be rare, and the dressing needs to be incredibly lime-forward. When the steak juices mix with the dressing... incredible.",
+    manifestoQuote: "Leave the sad desk salads in the 2010s.",
     saladIngredients: [
-      { item: "Edamame", note: "" },
-      { item: "Shaved carrots", note: "" },
-      { item: "Cilantro", note: "" },
-      { item: "Red pepper", note: "" },
-      { item: "Peanuts", note: "" },
-      { item: "Green onions", note: "" },
-      { item: "Mango", note: "" },
-      { item: "Shredded chicken", note: "" },
-      { item: "Green cabbage", note: "" }
+      { item: "Mixed greens or watercress", note: "~ 3 cups" },
+      { item: "Grilled flank steak", note: "~ 1/2 lb, thinly sliced against grain" },
+      { item: "Cherry tomatoes", note: "~ 1 cup, halved" },
+      { item: "Cucumber", note: "~ 1/2, sliced in half moons" },
+      { item: "Red onion", note: "~ 1/4, extremely thin slices" },
+      { item: "Mint & Cilantro", note: "~ generous handfuls" },
+      { item: "Roasted peanuts", note: "~ 1/4 cup, crushed" }
     ],
-    dressingName: "Peanut",
+    dressingName: "Spicy Lime Beef Dressing",
     dressingIngredients: [
-      { item: "¼ cup", name: "creamy peanut butter" },
-      { item: "3 Tbsp", name: "rice vinegar" },
-      { item: "2 Tbsp", name: "soy sauce" },
-      { item: "2 Tbsp", name: "honey" },
-      { item: "1", name: "lime, juiced" },
-      { item: "1 Tbsp", name: "fresh ginger, grated" },
-      { item: "1 tsp", name: "sesame oil" },
-      { item: "2 cloves", name: "garlic, grated" }
+      { item: "¼ cup", name: "lime juice (fresh only)" },
+      { item: "2 Tbsp", name: "fish sauce" },
+      { item: "1 Tbsp", name: "palm sugar or brown sugar" },
+      { item: "1-2", name: "Thai bird's eye chilies, thinly sliced" },
+      { item: "1 clove", name: "garlic, grated" },
+      { item: "1 tsp", name: "lemongrass paste (optional)" }
     ],
     isLab: false
   },
@@ -282,55 +288,55 @@ export const mealSalads = [
     id: 'salmon-situation',
     title: "The Salmon Situation",
     serves: "2",
-    time: "25 mins",
-    headnote: "This came together because I had a fridge full of randomly abandoned breakfast-adjacent ingredients and needed to do something about it. The result was this. Lock it in.",
+    time: "20 mins",
+    headnote: "A beautifully pan-seared salmon fillet over a bed of lemony, garlicky kale. Massaging the kale is not optional—it breaks down the tough fibers and makes it actually enjoyable to eat raw.",
+    manifestoQuote: "More acid. More salt. More everything.",
     saladIngredients: [
-      { item: "Smoked salmon", note: "" },
-      { item: "Baked salmon", note: "" },
-      { item: "Cherry tomatoes", note: "" },
-      { item: "Red onion", note: "" },
-      { item: "Cucumber", note: "" },
-      { item: "Avocado", note: "" },
-      { item: "Capers", note: "" },
-      { item: "Arugula", note: "" },
-      { item: "Green leaf lettuce", note: "" }
+      { item: "Lacinato kale (dinosaur kale)", note: "~ 1 large bunch, stems removed, chopped" },
+      { item: "Salmon fillets", note: "~ 2 (6oz each), pan-seared" },
+      { item: "Avocado", note: "~ 1, sliced" },
+      { item: "Pomegranate seeds", note: "~ 1/4 cup (for tart pops)" },
+      { item: "Pumpkin seeds (pepitas)", note: "~ 3 Tbsp, toasted" },
+      { item: "Goat cheese", note: "~ 1/4 cup, crumbled" }
     ],
-    dressingName: "French Vinaigrette",
+    dressingName: "Lemon Garlic Massage",
     dressingIngredients: [
-      { item: "1", name: "shallot, chopped" },
-      { item: "¼ cup", name: "champagne vinegar" },
-      { item: "4 tsp", name: "Dijon mustard" },
-      { item: "½ cup", name: "extra virgin olive oil" }
+      { item: "3 Tbsp", name: "olive oil" },
+      { item: "2 Tbsp", name: "lemon juice" },
+      { item: "1 clove", name: "garlic, smashed (to rub into kale)" },
+      { item: "Pinch", name: "sea salt (use to massage)" },
+      { item: "1 tsp", name: "honey" }
     ],
     isLab: false
   },
   {
     id: 'packn-pasta',
     title: "Pack'n Pasta",
-    serves: "3-4",
-    time: "30 mins",
-    headnote: "I literally hike through the Yosemite backcountry with this in my backpack. A legit crowd-pleaser every time, on or off the trail. The preserved lemon dressing makes people look mildly shocked.",
+    serves: "4-6",
+    time: "25 mins",
+    headnote: "Is pasta salad a salad? I vote yes. This is the ultimate picnic or BBQ side. It's heavily Italian-American inspired: salami, provolone, pepperoncini. It gets better the longer it sits in the fridge.",
+    manifestoQuote: "Croutons are pedestrian. Give me frizzled shallots or give me death.",
     saladIngredients: [
-      { item: "Grilled artichokes", note: "" },
-      { item: "Kalamata olives", note: "" },
-      { item: "Mini mozzarella balls", note: "" },
-      { item: "Red pepper", note: "" },
-      { item: "Cucumber", note: "" },
-      { item: "Cherry tomatoes", note: "halved" },
-      { item: "Red onion", note: "" },
-      { item: "Arugula", note: "sparse" },
-      { item: "Cooked pasta", note: "" }
+      { item: "Fusilli or Rotini pasta", note: "~ 8 oz, cooked al dente" },
+      { item: "Genoa salami", note: "~ 4 oz, chopped" },
+      { item: "Provolone cheese", note: "~ 4 oz, cubed" },
+      { item: "Cherry tomatoes", note: "~ 1 cup, halved" },
+      { item: "Red bell pepper", note: "~ 1, diced" },
+      { item: "Black olives", note: "~ 1/2 cup, sliced" },
+      { item: "Pepperoncini", note: "~ 1/4 cup, sliced" },
+      { item: "Fresh parsley", note: "~ 2 Tbsp, chopped" }
     ],
-    dressingName: "Preserved Lemon",
+    dressingName: "Italian Deli Vinaigrette",
     dressingIngredients: [
-      { item: "1", name: "preserved lemon rind" },
-      { item: "2 tsp", name: "dried oregano" },
-      { item: "2 Tbsp", name: "fresh lemon juice" },
-      { item: "5 Tbsp", name: "olive oil" },
-      { item: "½ tsp", name: "black pepper" },
-      { item: "½ tsp", name: "salt" }
+      { item: "⅓ cup", name: "extra virgin olive oil" },
+      { item: "3 Tbsp", name: "red wine vinegar" },
+      { item: "1 Tbsp", name: "pepperoncini juice" },
+      { item: "1 tsp", name: "dried Italian seasoning" },
+      { item: "1 clove", name: "garlic, minced" },
+      { item: "1 Tbsp", name: "grated parmesan" },
+      { item: "To taste", name: "salt and pepper" }
     ],
-    isLab: true
+    isLab: false
   }
 ];
 
@@ -338,68 +344,73 @@ export const lighterSalads = [
   {
     id: 'bacon-me-crazy',
     title: "Bacon Me Crazy",
-    serves: "1-2",
+    serves: "2",
     time: "15 mins",
-    headnote: "Love me that runny fried egg. The whole premise here is that the yolk breaks and becomes part of the dressing — it's the reason the dressing itself is so minimal. The egg is not optional.",
+    headnote: "The wedge salad's cooler, dismantled cousin. I prefer butter lettuce over iceberg here for a softer texture that still holds the heavy blue cheese dressing beautifully. Crispy bacon is the star.",
+    manifestoQuote: "Lettuce is merely a vehicle for aggressive flavor.",
     saladIngredients: [
-      { item: "Spinach", note: "" },
-      { item: "Iceberg lettuce", note: "" },
-      { item: "Red onion", note: "" },
-      { item: "Cucumber", note: "" },
-      { item: "Avocado", note: "" },
-      { item: "Cherry tomatoes", note: "" },
-      { item: "Millionaire's bacon", note: "" }
+      { item: "Butter lettuce (Bibb)", note: "~ 1 large head, leaves separated" },
+      { item: "Thick-cut bacon", note: "~ 4 slices, cooked until shattering" },
+      { item: "Cherry tomatoes", note: "~ 1 cup, quartered" },
+      { item: "Red onion", note: "~ 1/4, shaved paper-thin" },
+      { item: "Blue cheese", note: "~ 1/3 cup, large crumbles" },
+      { item: "Fresh chives", note: "~ Snapped over top" }
     ],
-    dressingName: "Simple (Yolk)",
+    dressingName: "Chunky Blue Cheese",
     dressingIngredients: [
-      { item: "2 Tbsp", name: "rice vinegar" },
-      { item: "4 Tbsp", name: "EVO oil" },
-      { item: "½ tsp", name: "Maldon salt flakes" },
-      { item: "Top with", name: "Runny fried egg" }
+      { item: "¼ cup", name: "sour cream" },
+      { item: "2 Tbsp", name: "mayonnaise" },
+      { item: "2 Tbsp", name: "buttermilk (or milk to thin)" },
+      { item: "¼ cup", name: "high-quality blue cheese crumbles" },
+      { item: "1 tsp", name: "white wine vinegar" },
+      { item: "¼ tsp", name: "garlic powder" },
+      { item: "To taste", name: "lots of black pepper" }
     ],
-    isLab: true
+    isLab: false
   },
   {
     id: 'salad-days',
-    title: "Salad Days and Sunny Ways",
-    serves: "1-2",
-    time: "20 mins",
-    headnote: "Blanched asparagus doesn't get enough love and I'm here to change that. Pair it with prosciutto and a runny egg and you have a perfect plate.",
+    title: "Salad Days",
+    serves: "2-3",
+    time: "10 mins",
+    headnote: "This is the 'I just want a simple house salad' option, but elevated. It's green on green with a bright, bracingly tart vinaigrette. It pairs with literally everything.",
+    manifestoQuote: "A good salad should make you sweat a little.",
     saladIngredients: [
-      { item: "Prosciutto", note: "" },
-      { item: "Frisee lettuce", note: "" },
-      { item: "Cucumber", note: "" },
-      { item: "Red onion", note: "" },
-      { item: "Radish", note: "" },
-      { item: "Tomatoes", note: "" },
-      { item: "Blanched asparagus", note: "" }
+      { item: "Mixed spring greens", note: "~ 4 huge handfuls" },
+      { item: "Cucumber", note: "~ 1/2, shaved into ribbons" },
+      { item: "Green apple", note: "~ 1/2, thinly sliced" },
+      { item: "Celery", note: "~ 2 stalks, sliced diagonally" },
+      { item: "Toasted walnuts", note: "~ 1/4 cup, crushed" }
     ],
-    dressingName: "Simple (Yolk)",
+    dressingName: "Sharp Lemon Basil",
     dressingIngredients: [
-      { item: "2 Tbsp", name: "champagne vinegar" },
-      { item: "4 Tbsp", name: "grapeseed oil" },
-      { item: "½ tsp", name: "Momofuku Tingly Salt" },
-      { item: "1 tsp", name: "maple syrup" },
-      { item: "Top with", name: "Runny fried egg" }
+      { item: "3 Tbsp", name: "olive oil" },
+      { item: "2 Tbsp", name: "lemon juice" },
+      { item: "1 Tbsp", name: "fresh basil, finely minced" },
+      { item: "1 tsp", name: "Dijon mustard" },
+      { item: "½ tsp", name: "honey" },
+      { item: "Pinch", name: "salt and pepper" }
     ],
-    isLab: true
+    isLab: false
   },
   {
     id: 'caprese-edit',
     title: "The Caprese Edit",
     serves: "2",
-    time: "10 mins",
-    headnote: "Three ingredients. No hiding. Wait for peak tomato season — a magnificent heirloom in August will make this one of the best things you eat all summer.",
+    time: "5 mins",
+    headnote: "You cannot mess with a Caprese, but you can insist on only making it in August when tomatoes actually taste like tomatoes. Don't use bad tomatoes. Don't do it.",
+    manifestoQuote: "Respect the crunch. Worship the acid.",
     saladIngredients: [
-      { item: "Heirloom tomatoes", note: "sliced" },
-      { item: "Fresh mozzarella", note: "" },
-      { item: "Fresh basil", note: "" }
+      { item: "Heirloom tomatoes", note: "~ 3 large, thick slices" },
+      { item: "Fresh mozzarella", note: "~ 1 large ball, sliced thick" },
+      { item: "Fresh basil leaves", note: "~ 1 massive handful, torn" },
+      { item: "Flaky sea salt", note: "~ Maldon, essential" },
+      { item: "Fresh ground pepper", note: "~ Generous cranks" }
     ],
-    dressingName: "No Measure",
+    dressingName: "Pure Simplicity",
     dressingIngredients: [
-      { item: "Generous", name: "best olive oil you own" },
-      { item: "Drizzle", name: "balsamic reduction" },
-      { item: "To taste", name: "Flaked sea salt" }
+      { item: "Generous", name: "best quality olive oil you own" },
+      { item: "Drizzle", name: "thick balsamic reduction (optional)" }
     ],
     isLab: false
   },
@@ -409,16 +420,16 @@ export const lighterSalads = [
     serves: "3-4",
     time: "25 mins",
     headnote: "I used to forget that couscous could anchor a salad. This salad is a tribute to a dinner party. The watermelon radish is here for flavor and also because it's beautiful.",
+    manifestoQuote: "If it doesn't stain your shirt, it's not dressed enough.",
     saladIngredients: [
-      { item: "Tricolor couscous", note: "" },
-      { item: "Watermelon radish", note: "sliced" },
-      { item: "Cherry tomatoes", note: "quartered" },
-      { item: "Cucumber", note: "" },
-      { item: "Fresh dill and mint", note: "" },
-      { item: "Feta", note: "" },
-      { item: "Kalamata olives", note: "" },
-      { item: "Fennel", note: "" },
-      { item: "Arugula", note: "" }
+      { item: "Tricolor pearl couscous", note: "~ 1 cup, cooked" },
+      { item: "Watermelon radish", note: "~ 1, shaved on mandolin" },
+      { item: "Cherry tomatoes", note: "~ 1 cup, quartered" },
+      { item: "Cucumber", note: "~ 1/2, diced" },
+      { item: "Fresh dill and mint", note: "~ 3 Tbsp each, chopped" },
+      { item: "Feta", note: "~ 1/2 cup, crumbled" },
+      { item: "Kalamata olives", note: "~ 1/3 cup, halved" },
+      { item: "Arugula", note: "~ 2 handfuls" }
     ],
     dressingName: "Shallot Fennel",
     dressingIngredients: [
@@ -427,7 +438,7 @@ export const lighterSalads = [
       { item: "1 tsp", name: "maple syrup" },
       { item: "1 tsp", name: "Dijon mustard" },
       { item: "1 clove", name: "garlic, grated" },
-      { item: "1", name: "shallot, chopped" },
+      { item: "1", name: "shallot, very finely minced" },
       { item: "2 Tbsp", name: "fennel fronds, chopped" }
     ],
     isLab: true
@@ -438,19 +449,20 @@ export const lighterSalads = [
     serves: "2-3",
     time: "10 mins",
     headnote: "Summer. California. Flavors that contrast in the best way possible. The Korean chili flakes turn this from a sweet fruit salad into something with actual heat.",
+    manifestoQuote: "We don't do limp lettuce here. We do high-fashion horticulture.",
     saladIngredients: [
-      { item: "Watermelon", note: "" },
-      { item: "Mint", note: "" },
-      { item: "Feta", note: "" },
-      { item: "Red onion", note: "" },
-      { item: "Cucumber", note: "peeled" }
+      { item: "Watermelon", note: "~ 3 cups, cubed cold" },
+      { item: "Mint", note: "~ 1 huge handful, torn" },
+      { item: "Feta block", note: "~ 4 oz, cut into cubes" },
+      { item: "Red onion", note: "~ 1/4, sliced paper thin" },
+      { item: "Cucumber", note: "~ 1, peeled & chunks" }
     ],
     dressingName: "Lime & Chili",
     dressingIngredients: [
       { item: "¼ cup", name: "extra-virgin olive oil" },
-      { item: "2", name: "limes, juiced" },
+      { item: "2", name: "limes, heavily juiced" },
       { item: "Pinch", name: "kosher salt" },
-      { item: "To taste", name: "Korean chili flakes" }
+      { item: "To taste", name: "Korean gochugaru flakes" }
     ],
     isLab: false
   },
@@ -460,13 +472,14 @@ export const lighterSalads = [
     serves: "2-3",
     time: "15 mins",
     headnote: "This is the newest one I'm playing with. The days are warm and I need more salads that scream 'fun light party in my mouth.' Tajín on fruit is one of those things that once you start, you cannot stop.",
+    manifestoQuote: "Vegetables with an attitude problem.",
     saladIngredients: [
-      { item: "Watermelon", note: "" },
-      { item: "Cucumber", note: "" },
-      { item: "Pineapple", note: "" },
-      { item: "Mango", note: "" },
-      { item: "Chopped cilantro", note: "" },
-      { item: "Cotija cheese", note: "" }
+      { item: "Watermelon", note: "~ 2 cups, cubed" },
+      { item: "Cucumber", note: "~ 1, large diced" },
+      { item: "Pineapple", note: "~ 1 cup, cubed" },
+      { item: "Mango", note: "~ 1 large, cubed" },
+      { item: "Fresh cilantro", note: "~ 1/4 cup, rough chop" },
+      { item: "Cotija cheese", note: "~ 1/2 cup, crumbled" }
     ],
     dressingName: "Citrus Tajín",
     dressingIngredients: [
@@ -474,7 +487,7 @@ export const lighterSalads = [
       { item: "1", name: "lime, juiced" },
       { item: "1", name: "lime, zest of" },
       { item: "2 Tbsp", name: "honey" },
-      { item: "1 tsp", name: "Tajín" }
+      { item: "1 tsp", name: "Tajín (more to garnish)" }
     ],
     isLab: false
   }
