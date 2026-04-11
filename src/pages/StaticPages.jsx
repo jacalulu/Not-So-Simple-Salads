@@ -122,3 +122,40 @@ export const HowToUse = () => {
     </>
   )
 }
+
+export const AboutAuthor = () => {
+  return (
+    <article className="static-page-layout">
+      <nav className="recipe-nav">
+        <button className="btn-back" onClick={() => window.location.hash = ''}>
+          <LabelMd>← Back to Index</LabelMd>
+        </button>
+      </nav>
+      
+      <header className="static-header">
+        <DisplayLg className="static-title">About the Author</DisplayLg>
+      </header>
+
+      <div className="static-content">
+        <BodyLg>
+          Jaclyn Konzelmann has always had strong opinions about food. As a kid growing up in Canada, she would sit at the dinner table genuinely offended when adults tried to seat her at the kids' table — why would anyone voluntarily choose hot dogs when steak was being served?
+        </BodyLg>
+        <BodyLg>
+          That instinct never left her. What started as a stubborn refusal to eat boring food evolved into a full-blown love affair with flavor — the bigger, the bolder, the better. She loves heat and spice, unexpected ingredient combinations, and the particular joy of a dressing that makes you stop mid-bite and ask what's in this. (The answer is usually: more acid than you'd expect, and something you didn't see coming.) She makes all her own dressings. Store-bought has never once come close.
+        </BodyLg>
+        <BodyLg>
+          Jaclyn grew up eating Greek salads and has spent the years since expanding enthusiastically from there — fish sauce in vinaigrettes, blended cilantro stems for freshness, citrus combinations that have no business working as well as they do. She is endlessly fascinated by how different cultures approach a bowl of ingredients: what they reach for, what they layer, what they leave out. Every country has its own answer to the question of flavor, and she intends to try all of them.
+        </BodyLg>
+        <BodyLg>
+          Food has always been how she connects. She loves hosting, loves cooking for friends, and has a long-standing habit of making salads for family dinners and then fielding recipe requests for the rest of the evening. Her husband's parents visit often and have learned to expect something good on the table. Her three daughters — Ophelia, and three-year-old identical twins Daphne and Violet — frequently serve as sous chefs and official taste testers from their perch on the kitchen counter. She is working hard to make sure they grow up with the same appreciation for bold flavors and great food that she has.
+        </BodyLg>
+        <BodyLg>
+          She has been promising this cookbook to her mom and sister for years. It is, by any measure, long overdue.
+        </BodyLg>
+        <BodyLg>
+          Jaclyn lives in Northern California with her family, her chosen family of friends she loves to cook for, and a pantry full of spices.
+        </BodyLg>
+      </div>
+    </article>
+  )
+}
