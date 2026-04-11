@@ -98,6 +98,20 @@ export const mealSalads = [
       { item: "3 Tbsp", name: "grapeseed oil" },
       { item: "1 tsp", name: "sesame oil" }
     ],
+    componentRecipe: {
+      title: "Quick Pickled Carrots & Cucumber",
+      ingredients: [
+        { item: "1 cup", name: "carrots, julienned" },
+        { item: "1 cup", name: "cucumber, julienned or thinly sliced" },
+        { item: "½ cup", name: "rice vinegar" },
+        { item: "½ cup", name: "water" },
+        { item: "1½ tbsp", name: "sugar" },
+        { item: "1 tsp", name: "salt" },
+        { item: "1", name: "fresh jalapeño, thinly sliced (optional)" },
+        { item: "1 tsp", name: "whole Sichuan peppercorns, lightly toasted in a dry pan (Sichuan version)" }
+      ],
+      method: "Bring vinegar, water, sugar, and salt to a boil, stirring until dissolved. Remove from heat. Pack vegetables (and jalapeño or Sichuan peppercorns if using) tightly into a jar. Pour hot brine over the top. Cool to room temperature, then refrigerate at least 30 minutes before serving. Best after 2 hours. Keeps for 2 weeks. A note on Sichuan peppercorns: don't expect heat — expect a floral, citrusy tingle that builds slowly. They're one of the most interesting things in your spice pantry and wildly underused in Western cooking."
+    },
     isLab: true
   },
   {
@@ -261,6 +275,18 @@ export const mealSalads = [
       { item: "¼ cup", name: "grapeseed oil" },
       { item: "¼ cup", name: "finely grated Parmesan" }
     ],
+    componentRecipe: {
+      title: "Homemade Croutons",
+      ingredients: [
+        { item: "3 cups", name: "sourdough or crusty bread, torn into rough chunks" },
+        { item: "3 tbsp", name: "good olive oil" },
+        { item: "1 tbsp", name: "fresh oregano, roughly chopped" },
+        { item: "½ tsp", name: "fresh cracked black pepper" },
+        { item: "½ tsp", name: "celery salt (optional but recommended)" },
+        { item: "Pinch", name: "of flaked sea salt" }
+      ],
+      method: "Preheat oven to 375°F. Toss bread chunks with olive oil, oregano, pepper, and celery salt until evenly coated. Spread on a baking sheet in a single layer. Bake 12-15 minutes until deeply golden and crunchy, tossing once halfway through. Finish with flaked sea salt straight out of the oven. Make it your own — pick a personality: Bright — toss with lemon zest immediately out of the oven. Smoky — add ½ tsp smoked paprika before baking. Middle Eastern — swap oregano for za'atar. Extra — dust with finely grated Parmesan in the last 5 minutes and let it crisp up. They're your croutons. Commit to a personality."
+    },
     isLab: true
   },
   {
