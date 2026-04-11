@@ -149,6 +149,7 @@ export const mealSalads = [
     title: "Thai'd and True",
     serves: "2",
     time: "30 mins",
+    video: "thaid-and-true-video.mp4",
     headnote: "This one has a very special place in my heart. The cilantro stems in the dressing carry an absurd amount of punch. Don't throw them away. Slice flank steak against the grain.",
     manifestoQuote: "Croutons are pedestrian. Frizzled shallots are non-negotiable.",
     saladIngredients: [
