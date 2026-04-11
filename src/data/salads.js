@@ -386,6 +386,7 @@ export const lighterSalads = [
     title: "Bacon Me Crazy",
     serves: "1-2",
     time: "15 mins",
+    video: "bacon-me-crazy-video.mp4",
     headnote: "Love me that runny fried egg. The whole premise here is that the yolk breaks and becomes part of the dressing — it's the reason the dressing itself is so minimal. The egg is not optional.",
     manifestoQuote: "Lettuce is merely a vehicle for aggressive flavor.",
     saladIngredients: [

@@ -45,7 +45,19 @@ export const RecipeDetail = ({ salad, onBack }) => {
         </div>
         
         <div className="editorial-image-col">
-          <img src={imgSrc} alt={salad.title} className="editorial-main-image" />
+          {salad.video ? (
+            <video 
+              src={`/${salad.video}`}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="editorial-main-image"
+              style={{ objectFit: 'cover' }}
+            />
+          ) : (
+            <img src={imgSrc} alt={salad.title} className="editorial-main-image" />
+          )}
         </div>
       </header>
 
