@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Home } from './pages/Home';
 import { RecipeDetail } from './pages/RecipeDetail';
-import { Introduction, HowToUse, AboutAuthor } from './pages/StaticPages';
+import { Introduction, HowToUse, AboutAuthor, Pantry } from './pages/StaticPages';
 import { TitleLg } from './components/Typography';
 import { mealSalads, lighterSalads } from './data/salads';
 
@@ -21,6 +21,8 @@ function App() {
         setCurrentRoute({ type: 'how-to' });
       } else if (hash === 'about') {
         setCurrentRoute({ type: 'about' });
+      } else if (hash === 'pantry') {
+        setCurrentRoute({ type: 'pantry' });
       } else if (hash) {
         const found = allSalads.find(s => s.id === hash);
         setCurrentRoute(found ? { type: 'recipe', data: found } : { type: 'home' });
@@ -52,6 +54,7 @@ function App() {
           <a href="#" className={`nav-link ${['home', 'recipe'].includes(currentRoute.type) ? 'active' : ''}`}>Recipes</a>
           <a href="#intro" className={`nav-link ${currentRoute.type === 'intro' ? 'active' : ''}`}>Introduction</a>
           <a href="#how-to" className={`nav-link ${currentRoute.type === 'how-to' ? 'active' : ''}`}>How To Use</a>
+          <a href="#pantry" className={`nav-link ${currentRoute.type === 'pantry' ? 'active' : ''}`}>Pantry</a>
           <a href="#about" className={`nav-link ${currentRoute.type === 'about' ? 'active' : ''}`}>About</a>
         </nav>
       </header>
@@ -59,6 +62,7 @@ function App() {
       <main className="app-main">
         {currentRoute.type === 'intro' && <Introduction />}
         {currentRoute.type === 'how-to' && <HowToUse />}
+        {currentRoute.type === 'pantry' && <Pantry />}
         {currentRoute.type === 'about' && <AboutAuthor />}
         {currentRoute.type === 'recipe' && (
           <RecipeDetail salad={currentRoute.data} onBack={handleBack} />
@@ -79,6 +83,7 @@ function App() {
               <span className="footer-title">Explore</span>
               <a href="#">Recipes</a>
               <a href="#how-to">How To Use This Book</a>
+              <a href="#pantry">Pantry Essentials</a>
               <a href="#about">About the Author</a>
             </div>
             <div>

@@ -159,3 +159,82 @@ export const AboutAuthor = () => {
     </article>
   )
 }
+
+export const Pantry = () => {
+  return (
+    <article className="static-page-layout">
+      <nav className="recipe-nav">
+        <button className="btn-back" onClick={() => window.location.hash = ''}>
+          <LabelMd>← Back to Index</LabelMd>
+        </button>
+      </nav>
+      
+      <header className="static-header">
+        <DisplayLg className="static-title">Stock Your Pantry</DisplayLg>
+      </header>
+
+      <div className="static-content">
+        <BodyLg>
+          A great salad doesn't start at the cutting board. It starts at the pantry. These are the ingredients I reach for constantly — the ones that make the difference between a salad that's fine and a salad that makes someone put down their fork and ask for the recipe. Stock these, and you'll always be dangerous.
+        </BodyLg>
+
+        <section style={{marginTop: '3rem'}}>
+          <TitleLg style={{marginBottom: '1rem'}}>The Spice Shelf</TitleLg>
+          <BodyLg style={{marginBottom: '1.5rem'}}>These are non-negotiable. If you only take one thing from this book, let it be a commitment to building a real spice collection.</BodyLg>
+          
+          <BodyLg><strong>Korean Chili Flakes (Gochugaru)</strong> — Fruity, smoky heat that's more nuanced than regular red pepper flakes. Not a substitute for them — a complete upgrade. Used in the millionaire's bacon, the tuna rub, the watermelon feta salad, and more. Buy a bag and you will find excuses to put it on everything.</BodyLg>
+          <BodyLg><strong>Gochujang (Korean Chili Paste)</strong> — Where gochugaru is a flake, gochujang is a fermented paste — deeper, funkier, with a slow-building heat. Essential for the steak marinade in Thai'd and True. A small spoonful transforms a dressing.</BodyLg>
+          <BodyLg><strong>Za'atar</strong> — A Middle Eastern spice blend of dried herbs, sesame seeds, and sumac. Earthy, tangy, and wildly versatile. I use it on chicken, on croutons, and honestly on anything that needs a flavor upgrade with zero effort.</BodyLg>
+          <BodyLg><strong>Sichuan Peppercorns</strong> — Don't let the name mislead you — these aren't hot. They're floral, citrusy, and create a gentle numbing tingle on your tongue that is unlike anything else in your spice rack. Toast them lightly in a dry pan before using to wake them up. Add to quick pickles, dressings, or anywhere you want something unexpected.</BodyLg>
+          <BodyLg><strong>Nigella Seeds</strong> — Small, black, and slightly oniony with a subtle bitterness that adds crunch and complexity. Beautiful on salads that need textural contrast. Underused in Western kitchens and worth every bit of shelf space.</BodyLg>
+          <BodyLg><strong>Smoked Flaked Salt</strong> — Not just for finishing. The smoke adds a layer of depth that regular sea salt simply doesn't. I use Maldon as my everyday flaked salt, but a smoked version is worth having separately for moments when a dish needs that extra dimension.</BodyLg>
+          <BodyLg><strong>Tajín</strong> — A Mexican chili-lime salt that makes fruit taste more like itself, but better. Essential for the Zest Coast Salad. Once you start using it on watermelon and mango you will not be able to stop.</BodyLg>
+          <BodyLg><strong>Celery Salt</strong> — Quiet but powerful. Particularly great on croutons. One of those ingredients that doesn't announce itself but is immediately missed when it's absent.</BodyLg>
+          <BodyLg><strong>Smoked Paprika</strong> — Adds warmth and depth without heat. A reliable back-pocket spice for croutons, marinades, and dressings that need something earthy.</BodyLg>
+        </section>
+
+        <section style={{marginTop: '3rem'}}>
+          <TitleLg style={{marginBottom: '1rem'}}>The Acid Arsenal</TitleLg>
+          <BodyLg style={{marginBottom: '1.5rem'}}>I am a firm believer that most home cooks under-acid their food. If something tastes flat, the answer is almost always more acid. The type of acid matters enormously — each one has a different personality.</BodyLg>
+          
+          <BodyLg><strong>Rice Vinegar</strong> — Clean, mild, slightly sweet. My most-used vinegar. The backbone of Asian-leaning dressings and quick pickles.</BodyLg>
+          <BodyLg><strong>Champagne Vinegar</strong> — Delicate and bright. My choice for anything where I want acid without aggression — the French vinaigrette on the Salmon Situation, the dressing on Salad Days.</BodyLg>
+          <BodyLg><strong>Red Wine Vinegar</strong> — Bold and tannic. Classic for Greek and Mediterranean dressings.</BodyLg>
+          <BodyLg><strong>Sherry Vinegar</strong> — Nutty and complex. Aged, like balsamic but lighter. Worth having for dressings that need depth without sweetness.</BodyLg>
+          <BodyLg><strong>Apple Cider Vinegar</strong> — Fruity and sharp. Great for pickling and anywhere you want a slightly rustic edge.</BodyLg>
+          <BodyLg><strong>Balsamic Reduction</strong> — I buy this rather than make it. Thick, sweet, and syrupy — a drizzle is all you need. The Caprese would not be the same without it.</BodyLg>
+          <BodyLg><strong>Shaoxing Wine</strong> — Technically a rice wine, not a vinegar, but it belongs in the acid conversation. Adds depth and a subtle sweetness to marinades. Essential for the steak marinade in Thai'd and True. Find it at any Asian grocery store.</BodyLg>
+        </section>
+
+        <section style={{marginTop: '3rem'}}>
+          <TitleLg style={{marginBottom: '1rem'}}>The Umami Layer</TitleLg>
+          <BodyLg style={{marginBottom: '1.5rem'}}>These are your secret weapons. Depth, funk, and savoriness that you can't quite put your finger on but immediately notice when it's there.</BodyLg>
+          
+          <BodyLg><strong>Fish Sauce</strong> — Do not be afraid of fish sauce. It smells alarming in the bottle and transforms completely in a dressing. The Nam Jim dressing in Thai'd and True is built on it. A small amount adds a savory depth that anchors everything around it.</BodyLg>
+          <BodyLg><strong>White Miso Paste</strong> — Fermented, salty, and slightly sweet. Adds body to dressings and a quiet umami backbone. Used in both Noodle Me This and Banh Mi Over. Keep it in the fridge — it lasts forever.</BodyLg>
+          <BodyLg><strong>Anchovy Fillets</strong> — The secret to a great Caesar. Minced fine, they dissolve completely into the dressing and you will never taste "fish" — only a deep, savory richness. Don't skip them.</BodyLg>
+          <BodyLg><strong>Worcestershire Sauce</strong> — Another quiet umami amplifier. One teaspoon in the Caesar dressing does more work than its volume suggests.</BodyLg>
+          <BodyLg><strong>Dijon Mustard</strong> — An emulsifier and a flavor in equal measure. Essential for vinaigrettes that need to stay together and have backbone. I use it in more dressings than any other single ingredient.</BodyLg>
+        </section>
+
+        <section style={{marginTop: '3rem'}}>
+          <TitleLg style={{marginBottom: '1rem'}}>The Specialty Shelf</TitleLg>
+          <BodyLg style={{marginBottom: '1.5rem'}}>These are the ingredients that make people ask questions.</BodyLg>
+
+          <BodyLg><strong>Preserved Lemons</strong> — Fermented whole lemons in salt. The rind is what you use — rinse it, discard the pulp, and chop or blend it into dressings. The flavor is intensely citrusy and complex in a way that fresh lemon juice simply cannot replicate. Essential for Pack'n Pasta. Find them at Whole Foods, Middle Eastern grocery stores, or make your own.</BodyLg>
+          <BodyLg><strong>Castelvetrano Olives</strong> — The gateway olive. Bright green, buttery, and mild — nothing like the canned black olives of your childhood. If you think you don't like olives, try these first.</BodyLg>
+          <BodyLg><strong>Caper Berries vs. Capers</strong> — Both live in brine, both belong in your fridge, and they are not the same thing. Capers are tiny, punchy, and intense — great for crispy frying (Cauli-fornia Dreamin') or scattered through dressings. Caper berries are larger, milder, and more elegant — used whole in the Niçoise. Worth having both.</BodyLg>
+          <BodyLg><strong>Momofuku Tingly Salt</strong> — A blend of Sichuan peppercorns and salt from David Chang's brand. Convenient, consistent, and genuinely excellent. I use it as a finishing salt on Salad Days. Find it online or at specialty grocery stores.</BodyLg>
+          <BodyLg><strong>Sesame Seeds (White and Black)</strong> — Both for flavor and visual contrast. Toasted white sesame seeds add nuttiness. Black sesame seeds add drama. I use them together on the tuna rub and throughout several dressings. Toast them yourself in a dry pan — pre-toasted bags exist but the freshly toasted version is noticeably better.</BodyLg>
+          <BodyLg><strong>Nigella Seeds</strong> — Worth calling out again here for their visual impact alone. Black, angular, and beautiful scattered over a salad. The flavor is subtle — slightly bitter and oniony — but the texture they add is excellent.</BodyLg>
+        </section>
+
+        <section style={{marginTop: '3rem', marginBottom: '2rem'}}>
+          <TitleLg style={{marginBottom: '1rem'}}>The Dressing Philosophy</TitleLg>
+          <BodyLg>One final note. Every dressing in this book is made from scratch, and that is not an accident. Store-bought dressing has never once come close to something freshly made. Once you have the pantry stocked above, making your own dressing takes about three minutes and the difference is not subtle. The acid is brighter. The emulsion is better. The flavor is yours.</BodyLg>
+          <BodyLg>Make your own dressings. Always.</BodyLg>
+        </section>
+      </div>
+    </article>
+  )
+}
