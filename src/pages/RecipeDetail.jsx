@@ -49,12 +49,13 @@ export const RecipeDetail = ({ salad, onBack }) => {
           {salad.video ? (
             <video 
               src={`/${salad.video}`}
+              poster={`/${salad.video.replace('.mp4', '-poster.jpg')}`}
               autoPlay
               loop
               muted
               playsInline
               className="editorial-main-image"
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
             />
           ) : (
             <img src={imgSrc} alt={salad.title} className="editorial-main-image" />
