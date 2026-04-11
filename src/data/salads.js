@@ -31,6 +31,17 @@ export const mealSalads = [
       { item: "Pinch", name: "ground white pepper" },
       { item: "1 clove", name: "garlic, grated" }
     ],
+    componentRecipe: {
+      title: "Za'atar Chicken Marinade",
+      ingredients: [
+        { item: "1 tbsp", name: "za'atar" },
+        { item: "1 tsp", name: "kosher salt" },
+        { item: "2 tbsp", name: "olive oil" },
+        { item: "1 clove", name: "garlic, grated" },
+        { item: "Squeeze", name: "of lemon" }
+      ],
+      method: "Combine and coat chicken. Marinate at least 30 mins, up to overnight. Grill or pan-sear over medium-high heat."
+    },
     isLab: false
   },
   {
@@ -145,6 +156,19 @@ export const mealSalads = [
       { item: "Half bunch", name: "Cilantro stems" },
       { item: "1 clove", name: "garlic" }
     ],
+    componentRecipe: {
+      title: "Ginger Soy Steak Marinade",
+      ingredients: [
+        { item: "3 tbsp", name: "soy sauce" },
+        { item: "1 tbsp", name: "gochujang (Korean chili paste)" },
+        { item: "2 tbsp", name: "Shaoxing wine" },
+        { item: "1", name: "lime, juiced" },
+        { item: "1 tbsp", name: "fresh ginger, grated (be generous)" },
+        { item: "3 cloves", name: "garlic, grated" },
+        { item: "½ tsp", name: "white pepper" }
+      ],
+      method: "Whisk together and pour over flank steak. Marinate minimum 1 hour, ideally 4 or overnight. Grill or sear over high heat, then rest 5 minutes before slicing against the grain."
+    },
     isLab: false
   },
   {
@@ -173,6 +197,16 @@ export const mealSalads = [
       { item: "1 tsp", name: "Dijon mustard" },
       { item: "¼ tsp", name: "honey" }
     ],
+    componentRecipe: {
+      title: "Sesame & Gochugaru Tuna Rub",
+      ingredients: [
+        { item: "1 tbsp", name: "white sesame seeds" },
+        { item: "1 tbsp", name: "black sesame seeds" },
+        { item: "1 tsp", name: "Korean chili flakes (gochugaru)" },
+        { item: "½ tsp", name: "flaked sea salt" }
+      ],
+      method: "Pat the fish dry. Mix and press firmly onto both sides of ahi tuna. Sear in a very hot pan with a little oil — 60-90 seconds per side. Slice thin against the grain."
+    },
     isLab: false
   },
   {
@@ -370,6 +404,17 @@ export const lighterSalads = [
       { item: "½ tsp", name: "Maldon salt flakes" },
       { item: "Top with", name: "Runny fried egg" }
     ],
+    componentRecipe: {
+      title: "Millionaire's Bacon",
+      ingredients: [
+        { item: "6 strips", name: "thick-cut bacon" },
+        { item: "2 tbsp", name: "brown sugar" },
+        { item: "1 tbsp", name: "maple syrup" },
+        { item: "1 tsp", name: "Korean chili flakes (gochugaru)" },
+        { item: "Pinch", name: "of flaked sea salt" }
+      ],
+      method: "Preheat oven to 400°F. Line a baking sheet with foil and place a wire rack on top. Mix brown sugar, maple syrup, and gochugaru together into a paste. Lay bacon strips on the rack and coat the tops generously with the glaze. Bake 18-22 minutes until deeply caramelized and sticky. Finish with a pinch of flaked sea salt. Let cool on the rack — it crisps up as it sits. Do not eat it all before it makes it to the salad."
+    },
     isLab: true
   },
   {

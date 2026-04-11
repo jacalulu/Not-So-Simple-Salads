@@ -52,6 +52,11 @@ ${s.saladIngredients.map(ing => `- ${ing.note || ''} ${ing.item}`.trim()).join('
 
 **Dressing (${s.dressingName}):**
 ${s.dressingIngredients.map(ing => `- ${ing.item || ''} ${ing.name}`.trim()).join('\n')}
+
+${s.componentRecipe ? `**Sub-Recipe (${s.componentRecipe.title}):**
+${s.componentRecipe.ingredients.map(ing => `- ${ing.item || ''} ${ing.name}`.trim()).join('\n')}
+**Method:** ${s.componentRecipe.method}
+` : ''}
 `).join('\n---\n')}
 `;
 fs.writeFileSync('./public/llm.txt', llmText);
@@ -90,7 +95,8 @@ const jsonLd = allSalads.map(s => ({
   "description": s.headnote,
   "recipeIngredient": [
     ...s.saladIngredients.map(ing => `${ing.note || ''} ${ing.item}`.trim()),
-    ...s.dressingIngredients.map(ing => `${ing.item || ''} ${ing.name}`.trim())
+    ...s.dressingIngredients.map(ing => `${ing.item || ''} ${ing.name}`.trim()),
+    ...(s.componentRecipe ? s.componentRecipe.ingredients.map(ing => `${ing.item || ''} ${ing.name}`.trim()) : [])
   ],
   "recipeInstructions": [{
     "@type": "HowToStep",

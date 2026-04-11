@@ -74,6 +74,22 @@ export const RecipeDetail = ({ salad, onBack }) => {
               ))}
             </div>
           </section>
+
+          {salad.componentRecipe && (
+            <section className="editorial-section component-recipe-block" style={{marginTop: '2rem'}}>
+              <TitleLg className="editorial-section-title">
+                 {salad.componentRecipe.title}
+              </TitleLg>
+              <div className="ingredients-list" style={{marginBottom: '1rem'}}>
+                {salad.componentRecipe.ingredients.map((ing, i) => (
+                  <IngredientScrap key={i} item={ing.name} note={ing.item} />
+                ))}
+              </div>
+              <BodyLg style={{color: 'var(--on-surface-variant)', fontSize: '0.9rem', lineHeight: '1.6'}}>
+                <strong>Method:</strong> {salad.componentRecipe.method}
+              </BodyLg>
+            </section>
+          )}
         </div>
       </div>
       </article>
