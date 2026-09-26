@@ -2,76 +2,70 @@ import React, { useState, useEffect } from 'react';
 import { Home } from './pages/Home';
 import { RecipeDetail } from './pages/RecipeDetail';
 import { Introduction, HowToUse, AboutAuthor, Pantry } from './pages/StaticPages';
+import { NotFound } from './pages/NotFound';
 import { TitleLg } from './components/Typography';
-import { mealSalads, lighterSalads } from './data/salads';
+import { RouteContext, navigate, resolveRoute, legacyHashToPath, recipePath } from './router';
+import { Link } from './Link';
+import { pageMeta, applyMeta, SITE } from './seo';
+import './App.css';
 
-const allSalads = [...mealSalads, ...lighterSalads];
-
-function App() {
-  const [currentRoute, setCurrentRoute] = useState({ type: 'home' });
+// `url` is supplied when rendering at build time; in the browser the route
+// comes from the address bar.
+function App({ url }) {
+  const [route, setRoute] = useState(() =>
+    resolveRoute(url ?? (typeof window !== 'undefined' ? window.location.pathname : '/'))
+  );
 
   useEffect(() => {
-    const handleHashChange = () => {
+    const sync = () => {
+      setRoute(resolveRoute(window.location.pathname));
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      
-      const hash = window.location.hash.replace('#', '');
-      if (hash === 'intro') {
-        setCurrentRoute({ type: 'intro' });
-      } else if (hash === 'how-to') {
-        setCurrentRoute({ type: 'how-to' });
-      } else if (hash === 'about') {
-        setCurrentRoute({ type: 'about' });
-      } else if (hash === 'pantry') {
-        setCurrentRoute({ type: 'pantry' });
-      } else if (hash) {
-        const found = allSalads.find(s => s.id === hash);
-        setCurrentRoute(found ? { type: 'recipe', data: found } : { type: 'home' });
-      } else {
-        setCurrentRoute({ type: 'home' });
-      }
     };
-    
-    // Check on mount
-    handleHashChange();
-    
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', sync);
+
+    // Old links used hashes (#thaid-and-true, #pantry). Send them to the real URL.
+    const legacy = legacyHashToPath(window.location.hash);
+    if (legacy) navigate(legacy, { replace: true });
+
+    return () => window.removeEventListener('popstate', sync);
   }, []);
 
-  const handleSelectSalad = (salad) => {
-    window.location.hash = salad.id;
-  };
+  useEffect(() => {
+    applyMeta(pageMeta(route));
+  }, [route]);
 
-  const handleBack = () => {
-    window.location.hash = ''; // clear hash, triggers navigate back
-  };
+  const handleSelectSalad = (salad) => navigate(recipePath(salad.id));
+  const handleBack = () => navigate('/');
+  const active = (types) => (types.includes(route.type) ? 'active' : '');
 
   return (
+    <RouteContext.Provider value={route}>
     <div className="app-container">
       <header className="app-header">
-        <a href="#" style={{textDecoration: 'none'}}><TitleLg className="brand-logotype">Not So Simple Salads</TitleLg></a>
-        <nav className="main-nav">
-          <a href="#" className={`nav-link ${['home', 'recipe'].includes(currentRoute.type) ? 'active' : ''}`}>Recipes</a>
-          <a href="#intro" className={`nav-link ${currentRoute.type === 'intro' ? 'active' : ''}`}>Introduction</a>
-          <a href="#how-to" className={`nav-link ${currentRoute.type === 'how-to' ? 'active' : ''}`}>How To Use</a>
-          <a href="#pantry" className={`nav-link ${currentRoute.type === 'pantry' ? 'active' : ''}`}>Pantry</a>
-          <a href="#about" className={`nav-link ${currentRoute.type === 'about' ? 'active' : ''}`}>About</a>
+        <Link to="/" style={{textDecoration: 'none'}} aria-label="Not So Simple Salads home"><TitleLg className="brand-logotype">Not So Simple Salads</TitleLg></Link>
+        <nav className="main-nav" aria-label="Main">
+          <Link to="/" className={`nav-link ${active(['home', 'recipe'])}`}>Recipes</Link>
+          <Link to="/introduction" className={`nav-link ${active(['intro'])}`}>Introduction</Link>
+          <Link to="/how-to-use" className={`nav-link ${active(['how-to'])}`}>How To Use</Link>
+          <Link to="/pantry" className={`nav-link ${active(['pantry'])}`}>Pantry</Link>
+          <Link to="/about" className={`nav-link ${active(['about'])}`}>About</Link>
         </nav>
       </header>
 
       <main className="app-main">
-        {currentRoute.type === 'intro' && <Introduction />}
-        {currentRoute.type === 'how-to' && <HowToUse />}
-        {currentRoute.type === 'pantry' && <Pantry />}
-        {currentRoute.type === 'about' && <AboutAuthor />}
-        {currentRoute.type === 'recipe' && (
-          <RecipeDetail salad={currentRoute.data} onBack={handleBack} />
+        {route.type === 'intro' && <Introduction />}
+        {route.type === 'how-to' && <HowToUse />}
+        {route.type === 'pantry' && <Pantry />}
+        {route.type === 'about' && <AboutAuthor />}
+        {route.type === 'recipe' && (
+          <RecipeDetail salad={route.data} onBack={handleBack} />
         )}
-        {currentRoute.type === 'home' && (
+        {route.type === 'home' && (
           <Home onSelectSalad={handleSelectSalad} />
         )}
+        {route.type === 'not-found' && <NotFound />}
       </main>
-      
+
       <footer className="app-footer">
         <div className="footer-content">
           <div className="footer-brand">
@@ -81,19 +75,23 @@ function App() {
           <div className="footer-links">
             <div>
               <span className="footer-title">Explore</span>
-              <a href="#">Recipes</a>
-              <a href="#how-to">How To Use This Book</a>
-              <a href="#pantry">Pantry Essentials</a>
-              <a href="#about">About the Author</a>
+              <Link to="/">Recipes</Link>
+              <Link to="/introduction">Introduction</Link>
+              <Link to="/how-to-use">How To Use This Book</Link>
+              <Link to="/pantry">Pantry Essentials</Link>
+              <Link to="/about">About the Author</Link>
             </div>
             <div>
               <span className="footer-title">Follow</span>
-              <a href="#">Instagram</a>
+              <a href={SITE.instagram} target="_blank" rel="noopener">Instagram</a>
+              <a href={SITE.x} target="_blank" rel="noopener">X</a>
+              <a href={SITE.author.url} target="_blank" rel="noopener">Thursday Thoughts on AI</a>
             </div>
           </div>
         </div>
       </footer>
     </div>
+    </RouteContext.Provider>
   );
 }
 

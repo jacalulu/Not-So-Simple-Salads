@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigate } from '../router';
 import { TitleLg, DisplayLg, BodyLg, LabelMd } from '../components/Typography';
 import './StaticPages.css';
 
@@ -14,7 +15,7 @@ export const Introduction = () => {
   return (
     <article className="static-page-layout">
       <nav className="recipe-nav">
-        <button className="btn-back" onClick={() => window.location.hash = ''}>
+        <button className="btn-back" onClick={() => navigate('/')}>
           <LabelMd>← Back to Index</LabelMd>
         </button>
       </nav>
@@ -59,7 +60,7 @@ export const HowToUse = () => {
     <>
       <article className="static-page-layout">
         <nav className="recipe-nav">
-          <button className="btn-back" onClick={() => window.location.hash = ''}>
+          <button className="btn-back" onClick={() => navigate('/')}>
             <LabelMd>← Back to Index</LabelMd>
           </button>
         </nav>
@@ -127,7 +128,7 @@ export const AboutAuthor = () => {
   return (
     <article className="static-page-layout">
       <nav className="recipe-nav">
-        <button className="btn-back" onClick={() => window.location.hash = ''}>
+        <button className="btn-back" onClick={() => navigate('/')}>
           <LabelMd>← Back to Index</LabelMd>
         </button>
       </nav>
@@ -164,7 +165,7 @@ export const Pantry = () => {
   return (
     <article className="static-page-layout">
       <nav className="recipe-nav">
-        <button className="btn-back" onClick={() => window.location.hash = ''}>
+        <button className="btn-back" onClick={() => navigate('/')}>
           <LabelMd>← Back to Index</LabelMd>
         </button>
       </nav>
