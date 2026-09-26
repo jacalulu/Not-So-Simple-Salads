@@ -3,12 +3,12 @@ import { TitleLg, DisplayLg, BodyLg, LabelMd } from '../components/Typography';
 import { IngredientScrap } from '../components/IngredientScrap';
 import { ManifestoBanner } from '../components/ManifestoBanner';
 import { mealSalads, lighterSalads } from '../data/salads';
+import { imageSrcSet } from '../images';
 import './RecipeDetail.css';
 
 const allSalads = [...mealSalads, ...lighterSalads];
 
 export const RecipeDetail = ({ salad, onBack }) => {
-  const imgSrc = `/${salad.id}.jpg`;
 
   const saladIndex = allSalads.findIndex(s => s.id === salad.id);
   const saladNumber = String(saladIndex + 1).padStart(2, '0');
@@ -58,7 +58,16 @@ export const RecipeDetail = ({ salad, onBack }) => {
               style={{ objectFit: 'cover', width: '100%', height: '100%' }}
             />
           ) : (
-            <img src={imgSrc} alt={`${salad.title} salad`} width="1024" height="1024" fetchPriority="high" className="editorial-main-image" />
+            <img
+              src={`/img/${salad.id}-1024.webp`}
+              srcSet={imageSrcSet(salad.id)}
+              sizes="(max-width: 900px) 100vw, 50vw"
+              alt={`${salad.title} salad`}
+              width="1024"
+              height="1024"
+              fetchPriority="high"
+              className="editorial-main-image"
+            />
           )}
         </div>
       </header>
