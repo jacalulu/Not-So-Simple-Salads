@@ -1,18 +1,29 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { TitleLg, DisplayLg, BodyLg, LabelMd } from '../components/Typography';
 import { ManifestoBanner } from '../components/ManifestoBanner';
 import { mealSalads, lighterSalads } from '../data/salads';
 import { recipePath } from '../router';
 import { Link } from '../Link';
+import { imageSrcSet } from '../images';
 import './Home.css';
 
-const ProgressiveImage = ({ src, placeholder, alt, className, eager = false }) => {
+const ProgressiveImage = ({ name, alt, className, sizes, eager = false }) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const imgRef = useRef(null);
+
+  // Pages are pre-rendered, so the browser may finish downloading the image
+  // before React attaches onLoad. Check on mount so those never stay blurry.
+  useEffect(() => {
+    const img = imgRef.current;
+    if (!(img && img.complete && img.naturalWidth > 0)) return undefined;
+    const frame = requestAnimationFrame(() => setIsLoaded(true));
+    return () => cancelAnimationFrame(frame);
+  }, []);
 
   return (
     <div className="progressive-wrap">
       <img 
-        src={placeholder} 
+        src={`/${name}_thumb.jpg`} 
         alt="" 
         aria-hidden="true"
         width="40"
@@ -20,7 +31,10 @@ const ProgressiveImage = ({ src, placeholder, alt, className, eager = false }) =
         className={`${className} progressive-placeholder ${isLoaded ? 'loaded' : ''}`}
       />
       <img
-        src={src}
+        ref={imgRef}
+        src={`/img/${name}-800.webp`}
+        srcSet={imageSrcSet(name)}
+        sizes={sizes}
         alt={alt}
         width="1024"
         height="1024"
@@ -131,8 +145,6 @@ export const Home = ({ onSelectSalad }) => {
         )}
 
         {filteredSalads.map((salad, index) => {
-          const imgSrc = `/${salad.id}.jpg`;
-
           const heights = ['tall', 'medium', 'short', 'xtall'];
           const tileHeight = heights[index % heights.length];
 
@@ -146,10 +158,10 @@ export const Home = ({ onSelectSalad }) => {
             >
               <div className="tile-image-wrapper">
                 <ProgressiveImage 
-                  src={imgSrc} 
-                  placeholder={`/${salad.id}_thumb.jpg`} 
+                  name={salad.id}
                   alt={`${salad.title} salad`} 
                   className="tile-image" 
+                  sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
                   eager={index < 2}
                 />
                 <div className="tile-overlay">
