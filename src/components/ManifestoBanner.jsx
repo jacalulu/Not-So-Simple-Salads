@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigate } from '../router';
 import { DisplayLg } from './Typography';
 import './ManifestoBanner.css';
 
@@ -7,7 +8,7 @@ export const ManifestoBanner = ({
   author = "NOT SO SIMPLE SALADS",
   colorScheme = "green", // green, pink, amber
   buttonText = "READ HOW TO USE THIS BOOK",
-  onClick = () => window.location.hash = 'how-to',
+  onClick = () => navigate('/how-to-use'),
   style = {}
 }) => {
   return (

@@ -58,7 +58,7 @@ export const RecipeDetail = ({ salad, onBack }) => {
               style={{ objectFit: 'cover', width: '100%', height: '100%' }}
             />
           ) : (
-            <img src={imgSrc} alt={salad.title} className="editorial-main-image" />
+            <img src={imgSrc} alt={`${salad.title} salad`} width="1024" height="1024" fetchPriority="high" className="editorial-main-image" />
           )}
         </div>
       </header>

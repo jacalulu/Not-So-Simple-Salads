@@ -2,24 +2,31 @@ import React, { useState, useMemo } from 'react';
 import { TitleLg, DisplayLg, BodyLg, LabelMd } from '../components/Typography';
 import { ManifestoBanner } from '../components/ManifestoBanner';
 import { mealSalads, lighterSalads } from '../data/salads';
+import { recipePath } from '../router';
+import { Link } from '../Link';
 import './Home.css';
 
-const ProgressiveImage = ({ src, placeholder, alt, className }) => {
+const ProgressiveImage = ({ src, placeholder, alt, className, eager = false }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <div className="progressive-wrap">
       <img 
         src={placeholder} 
-        alt={alt} 
+        alt="" 
+        aria-hidden="true"
+        width="40"
+        height="40"
         className={`${className} progressive-placeholder ${isLoaded ? 'loaded' : ''}`}
       />
       <img
         src={src}
         alt={alt}
+        width="1024"
+        height="1024"
         className={`${className} progressive-main ${isLoaded ? 'loaded' : ''}`}
         onLoad={() => setIsLoaded(true)}
-        loading="lazy"
+        loading={eager ? 'eager' : 'lazy'}
         decoding="async"
       />
     </div>
@@ -66,10 +73,13 @@ export const Home = ({ onSelectSalad }) => {
         <div className="epic-hero-bg">
           <video 
             src="/Hero-background-video.mp4" 
+            poster="/hero-poster.jpg"
+            preload="metadata"
             autoPlay 
             loop 
             muted 
             playsInline 
+            aria-hidden="true"
             className="epic-hero-video"
           />
         </div>
@@ -127,24 +137,27 @@ export const Home = ({ onSelectSalad }) => {
           const tileHeight = heights[index % heights.length];
 
           return (
-            <div 
+            <Link 
               key={salad.id} 
+              to={recipePath(salad.id)}
               className={`masonry-tile ${tileHeight}`}
-              onClick={() => onSelectSalad(salad)}
+              onClick={(e) => { e.preventDefault(); onSelectSalad(salad); }}
+              aria-label={`${salad.title} recipe`}
             >
               <div className="tile-image-wrapper">
                 <ProgressiveImage 
                   src={imgSrc} 
                   placeholder={`/${salad.id}_thumb.jpg`} 
-                  alt={salad.title} 
+                  alt={`${salad.title} salad`} 
                   className="tile-image" 
+                  eager={index < 2}
                 />
                 <div className="tile-overlay">
                   <TitleLg className="tile-title">{salad.title}</TitleLg>
                   <LabelMd className="tile-meta">{salad.time} · {salad.vibe || salad.category}</LabelMd>
                 </div>
               </div>
-            </div>
+            </Link>
           )
         })}
       </section>
