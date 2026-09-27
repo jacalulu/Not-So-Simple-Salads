@@ -1,5 +1,6 @@
 import { createContext, useContext } from 'react';
 import { mealSalads, lighterSalads } from './data/salads';
+import { dressings, dressingBySlug, dressingPath } from './data/dressings';
 
 const allSalads = [...mealSalads, ...lighterSalads];
 
@@ -11,6 +12,7 @@ export const STATIC_ROUTES = {
   '/how-to-use': { type: 'how-to' },
   '/pantry': { type: 'pantry' },
   '/about': { type: 'about' },
+  '/dressings': { type: 'dressings' },
 };
 
 // Old hash routes (#intro, #how-to, #thaid-and-true, …) map onto the new paths
@@ -39,6 +41,11 @@ export function resolveRoute(pathname) {
     const salad = allSalads.find((s) => s.id === m[1]);
     if (salad) return { type: 'recipe', data: salad, path };
   }
+  const dm = path.match(/^\/dressing\/([a-z0-9-]+)$/);
+  if (dm) {
+    const dressing = dressingBySlug(dm[1]);
+    if (dressing) return { type: 'dressing', data: dressing, path };
+  }
   return { type: 'not-found', path };
 }
 
@@ -51,7 +58,11 @@ export function legacyHashToPath(hash) {
 }
 
 export function allPaths() {
-  return [...Object.keys(STATIC_ROUTES), ...allSalads.map((s) => recipePath(s.id))];
+  return [
+    ...Object.keys(STATIC_ROUTES),
+    ...allSalads.map((s) => recipePath(s.id)),
+    ...dressings.map((d) => dressingPath(d.slug)),
+  ];
 }
 
 export const RouteContext = createContext({ type: 'home', path: '/' });

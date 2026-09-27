@@ -4,6 +4,7 @@ export const mealSalads = [
   {
     id: 'cauli-fornia-dreamin',
     title: "Cauli-fornia Dreamin'",
+    seoName: "Roasted Cauliflower & Quinoa Salad with Citrus Vinaigrette",
     serves: "2-3",
     time: "30 mins",
     headnote: "This was the salad that started it all — the one I fell for at Google and immediately needed to reverse-engineer. All the textures, that citrus dressing, but the crispy capers are what put it completely over the top.",
@@ -19,6 +20,9 @@ export const mealSalads = [
       { item: "Grilled chicken", note: "~ 1 serving" }
     ],
     dressingName: "Citrus Vinaigrette",
+    dressingSlug: 'citrus-vinaigrette',
+    dressingSeoName: "Citrus Vinaigrette (Orange, Lemon & Lime)",
+    dressingMethod: "Whisk all dressing ingredients together. Taste and adjust acid.",
     dressingIngredients: [
       { item: "¾ cup", name: "orange juice" },
       { item: "3 Tbsp", name: "olive oil" },
@@ -47,6 +51,7 @@ export const mealSalads = [
   {
     id: 'noodle-me-this',
     title: "Noodle Me This",
+    seoName: "Cold Soba Noodle Salad with Kimchi & Ginger Miso Dressing",
     serves: "2-3",
     time: "25 mins",
     headnote: "I love Korean food, and a salad with kimchi in it was just such a fun punch-up for a hearty lunch. The kimchi brings heat, funk, and acidity all at once. Cold noodles, bold dressing, zero apologies.",
@@ -60,6 +65,9 @@ export const mealSalads = [
       { item: "Kimchi", note: "~ generous amount" }
     ],
     dressingName: "Ginger Soy Miso",
+    dressingSlug: 'ginger-miso-dressing',
+    dressingSeoName: "Ginger Miso Sesame Dressing",
+    dressingMethod: "Whisk all dressing ingredients together until the miso is fully dissolved.",
     dressingIngredients: [
       { item: "1½ Tbsp", name: "miso paste" },
       { item: "2 Tbsp", name: "rice vinegar" },
@@ -76,6 +84,7 @@ export const mealSalads = [
   {
     id: 'banh-mi-over',
     title: "Banh Mi Over",
+    seoName: "Banh Mi Chicken Salad with Quick Pickled Vegetables",
     serves: "2",
     time: "35 mins",
     headnote: "Everything I love about a banh mi, deconstructed into a bowl. The pickled vegetables are essential — surprisingly easy to make at home. The marinade does the heavy lifting on the chicken.",
@@ -90,6 +99,9 @@ export const mealSalads = [
       { item: "Romaine lettuce", note: "~ 2 big handfuls" }
     ],
     dressingName: "Soy Miso",
+    dressingSlug: 'miso-lime-dressing',
+    dressingSeoName: "Miso Lime Vinaigrette",
+    dressingMethod: "Whisk the dressing ingredients together. In the Banh Mi Over salad this also does the work of the chicken marinade: marinate the chicken in it for at least 30 minutes before grilling.",
     dressingIngredients: [
       { item: "2 tsp", name: "coconut sugar" },
       { item: "1 tsp", name: "white miso" },
@@ -117,6 +129,7 @@ export const mealSalads = [
   {
     id: 'keep-cobb-and-carry-on',
     title: "Keep Cobb and Carry On",
+    seoName: "Cobb Salad with Greek Balsamic Vinaigrette",
     serves: "2-3",
     time: "25 mins",
     headnote: "The Cobb is my OG hearty salad. This version pairs it with a vinaigrette instead of the usual ranch or blue cheese dressing — that's non-negotiable for me. The sautéed onions? From a tiny restaurant at the gateway to Yosemite.",
@@ -133,6 +146,9 @@ export const mealSalads = [
       { item: "Sautéed white onion", note: "~ 1/4 cup" }
     ],
     dressingName: "Greek Balsamic",
+    dressingSlug: 'greek-balsamic-vinaigrette',
+    dressingSeoName: "Greek Balsamic Vinaigrette",
+    dressingMethod: "Whisk all dressing ingredients together.",
     dressingIngredients: [
       { item: "3 Tbsp", name: "balsamic vinegar" },
       { item: "½ cup", name: "grapeseed oil" },
@@ -147,6 +163,7 @@ export const mealSalads = [
   {
     id: 'thaid-and-true',
     title: "Thai'd and True",
+    seoName: "Thai Steak Salad with Nam Jim Dressing",
     serves: "2",
     time: "30 mins",
     video: "thaid-and-true-video.mp4",
@@ -162,6 +179,9 @@ export const mealSalads = [
       { item: "Flank steak", note: "thin slice" }
     ],
     dressingName: "Nam Jim",
+    dressingSlug: 'nam-jim-dressing',
+    dressingSeoName: "Nam Jim (Thai Chili Lime Dressing)",
+    dressingMethod: "Blitz everything in a blender or Magic Bullet until smooth. Taste — it should be salty, sour, spicy, and a little sweet all at once. The cilantro stems are essential; this is not the time to use only the leaves.",
     dressingIngredients: [
       { item: "2 Tbsp", name: "fish sauce" },
       { item: "1½", name: "limes, juiced" },
@@ -189,6 +209,7 @@ export const mealSalads = [
   {
     id: 'nicoise-to-meet-you',
     title: "Niçoise To Meet You, Where You Bean?",
+    seoName: "Seared Ahi Tuna Niçoise Salad with Lemon Dijon Vinaigrette",
     serves: "2",
     time: "35 mins",
     headnote: "This salad feels like summer lunches in Silicon Valley — elevated yet approachable. The caper berries are the real note here. The sesame-chili crust on the tuna is my addition to the classic.",
@@ -205,6 +226,9 @@ export const mealSalads = [
       { item: "Seared ahi tuna", note: "~ 1 serving" }
     ],
     dressingName: "Lemon Dijon",
+    dressingSlug: 'lemon-dijon-vinaigrette',
+    dressingSeoName: "Lemon Dijon Vinaigrette",
+    dressingMethod: "Whisk dressing ingredients together.",
     dressingIngredients: [
       { item: "1", name: "lemon, juiced" },
       { item: "4 Tbsp", name: "extra virgin olive oil" },
@@ -227,6 +251,7 @@ export const mealSalads = [
   {
     id: 'greek-expectations',
     title: "Greek Expectations",
+    seoName: "Greek Salad with Grilled Shrimp",
     serves: "2-3",
     time: "20 mins",
     headnote: "I literally got myself through most of university with this salad. It's my version of comfort food at this point. Grill the shrimp — don't skip that step. The dressing is sharp and oregano-forward.",
@@ -242,6 +267,9 @@ export const mealSalads = [
       { item: "Grilled shrimp", note: "~ generous amount" }
     ],
     dressingName: "Greek Vinaigrette",
+    dressingSlug: 'greek-vinaigrette',
+    dressingSeoName: "Greek Oregano Vinaigrette",
+    dressingMethod: "Whisk dressing ingredients together. Taste — it should be sharp and oregano-forward.",
     dressingIngredients: [
       { item: "¼ cup", name: "extra-virgin olive oil" },
       { item: "3 Tbsp", name: "red wine vinegar" },
@@ -254,6 +282,7 @@ export const mealSalads = [
   {
     id: 'romaine-calm',
     title: "Romaine Calm: Caesar's Got a Flame",
+    seoName: "Grilled Romaine Caesar Salad with Bacon",
     serves: "2",
     time: "30 mins",
     headnote: "I've never loved Caesar salad. Crazy. And yet — when you grill romaine, something genuinely magical happens. It transforms. If you thought a caterpillar turning into a butterfly was something, try this.",
@@ -265,6 +294,9 @@ export const mealSalads = [
       { item: "Parmesan cheese", note: "~ 1/2 cup" }
     ],
     dressingName: "Caesar",
+    dressingSlug: 'caesar-dressing',
+    dressingSeoName: "Classic Caesar Dressing (with Anchovies)",
+    dressingMethod: "Whisk egg yolks, anchovies, garlic, lemon juice, Dijon, and Worcestershire together. Slowly drizzle in the olive oil and grapeseed oil while whisking constantly until emulsified. Stir in the Parmesan.",
     dressingIngredients: [
       { item: "2", name: "egg yolks" },
       { item: "4", name: "anchovy fillets, minced" },
@@ -293,6 +325,7 @@ export const mealSalads = [
   {
     id: 'winner-winner-wonton',
     title: "Winner, Winner, Wonton Dinner",
+    seoName: "Chinese Chicken Salad with Wonton Crisps & Sesame Soy Dressing",
     serves: "2-3",
     time: "20 mins",
     headnote: "I've always felt like this salad was almost too simple, too green — and then I make it and walk away feeling happy and refreshed every single time. The dressing is the real hero here.",
@@ -307,6 +340,9 @@ export const mealSalads = [
       { item: "Cucumber", note: "~ 1 cup" }
     ],
     dressingName: "Sesame Soy",
+    dressingSlug: 'sesame-soy-dressing',
+    dressingSeoName: "Sesame Soy Ginger Dressing",
+    dressingMethod: "Whisk all dressing ingredients together. Make extra — you'll want it all week.",
     dressingIngredients: [
       { item: "2 Tbsp", name: "toasted sesame oil" },
       { item: "2 Tbsp", name: "olive oil" },
@@ -321,6 +357,7 @@ export const mealSalads = [
   {
     id: 'thai-me-a-river',
     title: "Thai Me a River (of Peanut Sauce)",
+    seoName: "Thai Chicken Salad with Peanut Dressing & Mango",
     serves: "2-3",
     time: "25 mins",
     headnote: "This is my love language in salad form. A chopped salad with that sauce and those ingredients is just so delicious — it hits every note. I firmly believe peanut sauce makes everything better.",
@@ -337,6 +374,9 @@ export const mealSalads = [
       { item: "Green cabbage", note: "~ 2 big handfuls" }
     ],
     dressingName: "Peanut",
+    dressingSlug: 'peanut-dressing',
+    dressingSeoName: "Thai Peanut Dressing",
+    dressingMethod: "Whisk all peanut dressing ingredients together until smooth. If too thick, add a splash of warm water to loosen.",
     dressingIngredients: [
       { item: "¼ cup", name: "creamy peanut butter" },
       { item: "3 Tbsp", name: "rice vinegar" },
@@ -352,6 +392,7 @@ export const mealSalads = [
   {
     id: 'salmon-situation',
     title: "The Salmon Situation",
+    seoName: "Salmon & Avocado Salad with Shallot Vinaigrette",
     serves: "2",
     time: "25 mins",
     headnote: "This came together because I had a fridge full of randomly abandoned breakfast-adjacent ingredients and needed to do something about it. The result was this. Lock it in.",
@@ -368,6 +409,9 @@ export const mealSalads = [
       { item: "Green leaf lettuce", note: "~ 2 big handfuls" }
     ],
     dressingName: "French Vinaigrette",
+    dressingSlug: 'french-vinaigrette',
+    dressingSeoName: "Shallot Champagne Vinaigrette",
+    dressingMethod: "Whisk dressing ingredients together. Taste for balance.",
     dressingIngredients: [
       { item: "1", name: "shallot, chopped" },
       { item: "¼ cup", name: "champagne vinegar" },
@@ -379,6 +423,7 @@ export const mealSalads = [
   {
     id: 'packn-pasta',
     title: "Pack'n Pasta",
+    seoName: "Mediterranean Pasta Salad with Preserved Lemon Dressing",
     serves: "3-4",
     time: "30 mins",
     headnote: "I literally hike through the Yosemite backcountry with this in my backpack. A legit crowd-pleaser every time, on or off the trail. The preserved lemon dressing makes people look mildly shocked.",
@@ -395,6 +440,9 @@ export const mealSalads = [
       { item: "Cooked pasta", note: "~ 1 cup cooked" }
     ],
     dressingName: "Preserved Lemon",
+    dressingSlug: 'preserved-lemon-dressing',
+    dressingSeoName: "Preserved Lemon Dressing",
+    dressingMethod: "Blend the preserved lemon rind (rinsed, pulp discarded) with oregano, lemon juice, olive oil, salt, and pepper until smooth. Toss with pasta while it's still slightly warm so it absorbs.",
     dressingIngredients: [
       { item: "1", name: "preserved lemon rind" },
       { item: "2 tsp", name: "dried oregano" },
@@ -411,6 +459,7 @@ export const lighterSalads = [
   {
     id: 'bacon-me-crazy',
     title: "Bacon Me Crazy",
+    seoName: "Spinach Salad with Millionaire's Bacon & a Runny Egg",
     serves: "1-2",
     time: "15 mins",
     video: "bacon-me-crazy-video.mp4",
@@ -426,6 +475,9 @@ export const lighterSalads = [
       { item: "Millionaire's bacon", note: "~ 1 serving" }
     ],
     dressingName: "Simple (Yolk)",
+    dressingSlug: 'simple-rice-vinegar-dressing',
+    dressingSeoName: "Simple Rice Vinegar Dressing (with a Runny Egg)",
+    dressingMethod: "Whisk rice vinegar and olive oil together with Maldon salt. Finish the salad with a fried egg whose yolk is completely runny — the yolk breaks and becomes part of the dressing. That's the whole point.",
     dressingIngredients: [
       { item: "2 Tbsp", name: "rice vinegar" },
       { item: "4 Tbsp", name: "EVO oil" },
@@ -448,6 +500,7 @@ export const lighterSalads = [
   {
     id: 'salad-days',
     title: "Salad Days and Sunny Ways",
+    seoName: "Prosciutto & Asparagus Salad with Frisée and a Runny Egg",
     serves: "1-2",
     time: "20 mins",
     headnote: "Blanched asparagus doesn't get enough love and I'm here to change that. Pair it with prosciutto and a runny egg and you have a perfect plate.",
@@ -462,6 +515,9 @@ export const lighterSalads = [
       { item: "Blanched asparagus", note: "~ generous amount" }
     ],
     dressingName: "Simple (Yolk)",
+    dressingSlug: 'simple-champagne-vinaigrette',
+    dressingSeoName: "Simple Champagne Vinaigrette (with a Runny Egg)",
+    dressingMethod: "Whisk dressing ingredients together. Dress lightly, then top with a fried egg whose yolk is completely runny and eat immediately.",
     dressingIngredients: [
       { item: "2 Tbsp", name: "champagne vinegar" },
       { item: "4 Tbsp", name: "grapeseed oil" },
@@ -474,6 +530,7 @@ export const lighterSalads = [
   {
     id: 'caprese-edit',
     title: "The Caprese Edit",
+    seoName: "Heirloom Tomato Caprese Salad",
     serves: "2",
     time: "10 mins",
     headnote: "Three ingredients. No hiding. Wait for peak tomato season — a magnificent heirloom in August will make this one of the best things you eat all summer.",
@@ -484,6 +541,9 @@ export const lighterSalads = [
       { item: "Fresh basil", note: "~ 1 handful" }
     ],
     dressingName: "No Measure",
+    dressingSlug: 'olive-oil-balsamic-drizzle',
+    dressingSeoName: "Olive Oil & Balsamic Reduction Drizzle",
+    dressingMethod: "Drizzle with the best olive oil you own, then drizzle balsamic reduction over the top. Finish with flaked sea salt. No measuring.",
     dressingIngredients: [
       { item: "Generous", name: "best olive oil you own" },
       { item: "Drizzle", name: "balsamic reduction" },
@@ -494,6 +554,7 @@ export const lighterSalads = [
   {
     id: 'couscous',
     title: "For the Love of Couscous",
+    seoName: "Couscous Salad with Feta, Herbs & Shallot Fennel Vinaigrette",
     serves: "3-4",
     time: "25 mins",
     headnote: "I used to forget that couscous could anchor a salad. This salad is a tribute to a dinner party. The watermelon radish is here for flavor and also because it's beautiful.",
@@ -510,6 +571,9 @@ export const lighterSalads = [
       { item: "Arugula", note: "~ 2 big handfuls" }
     ],
     dressingName: "Shallot Fennel",
+    dressingSlug: 'shallot-fennel-vinaigrette',
+    dressingSeoName: "Shallot Fennel Vinaigrette",
+    dressingMethod: "Whisk dressing ingredients together. Toss with the couscous while it's still slightly warm.",
     dressingIngredients: [
       { item: "4 Tbsp", name: "olive oil" },
       { item: "2 Tbsp", name: "fresh lemon juice" },
@@ -524,6 +588,7 @@ export const lighterSalads = [
   {
     id: 'water-fire-feta',
     title: "Water, Fire...and Feta!",
+    seoName: "Watermelon Feta Salad with Mint & Chili Lime Dressing",
     serves: "2-3",
     time: "10 mins",
     headnote: "Summer. California. Flavors that contrast in the best way possible. The Korean chili flakes turn this from a sweet fruit salad into something with actual heat.",
@@ -536,6 +601,9 @@ export const lighterSalads = [
       { item: "Cucumber", note: "peeled" }
     ],
     dressingName: "Lime & Chili",
+    dressingSlug: 'lime-chili-dressing',
+    dressingSeoName: "Lime & Chili Dressing",
+    dressingMethod: "Whisk olive oil, lime juice, and salt together. Finish with Korean chili flakes to taste.",
     dressingIngredients: [
       { item: "¼ cup", name: "extra-virgin olive oil" },
       { item: "2", name: "limes, juiced" },
@@ -547,6 +615,7 @@ export const lighterSalads = [
   {
     id: 'zest-coast',
     title: "Zest Coast Salad",
+    seoName: "Watermelon, Mango & Pineapple Salad with Cotija and Tajín",
     serves: "2-3",
     time: "15 mins",
     headnote: "This is the newest one I'm playing with. The days are warm and I need more salads that scream 'fun light party in my mouth.' Tajín on fruit is one of those things that once you start, you cannot stop.",
@@ -560,6 +629,9 @@ export const lighterSalads = [
       { item: "Cotija cheese", note: "~ 1/2 cup" }
     ],
     dressingName: "Citrus Tajín",
+    dressingSlug: 'citrus-tajin-dressing',
+    dressingSeoName: "Citrus Tajín Dressing",
+    dressingMethod: "Whisk lemon juice, lime juice, lime zest, honey, and Tajín together.",
     dressingIngredients: [
       { item: "1", name: "lemon, juiced" },
       { item: "1", name: "lime, juiced" },

@@ -1,5 +1,6 @@
 import { mealSalads, lighterSalads } from './data/salads';
 import { recipePath } from './router';
+import { dressings, dressingPath } from './data/dressings';
 
 export const SITE = {
   name: 'Not So Simple Salads',
@@ -67,7 +68,8 @@ export function recipeJsonLd(salad) {
     '@context': 'https://schema.org',
     '@type': 'Recipe',
     '@id': `${url}#recipe`,
-    name: salad.title,
+    name: salad.seoName || salad.title,
+    alternateName: salad.seoName ? salad.title : undefined,
     url,
     mainEntityOfPage: url,
     image: [abs(`/${salad.id}.jpg`)],
@@ -75,7 +77,7 @@ export function recipeJsonLd(salad) {
     author: { '@type': 'Person', name: SITE.author.name, url: SITE.author.url },
     datePublished: SITE.contentDate,
     recipeCategory: salad.category === 'Meal' ? 'Meal salad' : 'Lighter salad',
-    keywords: [salad.title, salad.dressingName, 'salad', `${salad.category.toLowerCase()} salad`]
+    keywords: [salad.seoName, salad.title, salad.dressingName, 'salad', `${salad.category.toLowerCase()} salad`]
       .concat(salad.saladIngredients.slice(0, 4).map((i) => i.item))
       .join(', '),
     recipeYield: `${salad.serves} servings`,
@@ -99,6 +101,29 @@ export function recipeJsonLd(salad) {
     };
   }
   return data;
+}
+
+export function dressingJsonLd(d) {
+  const url = abs(dressingPath(d.slug));
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Recipe',
+    '@id': `${url}#recipe`,
+    name: d.seoName,
+    alternateName: d.name,
+    url,
+    mainEntityOfPage: url,
+    image: [abs(`/${d.salad.id}.jpg`)],
+    description: `The homemade dressing from the ${d.salad.seoName} in the Not So Simple Salads cookbook.`,
+    author: { '@type': 'Person', name: SITE.author.name, url: SITE.author.url },
+    datePublished: SITE.contentDate,
+    recipeCategory: 'Salad dressing',
+    keywords: [d.seoName, d.name, 'salad dressing', 'homemade dressing', 'vinaigrette'].join(', '),
+    totalTime: 'PT3M',
+    recipeIngredient: d.ingredients.map(ingredientLine),
+    recipeInstructions: [{ '@type': 'HowToStep', text: d.method }],
+    isPartOf: { '@type': 'WebSite', '@id': `${SITE.url}/#website` },
+  };
 }
 
 const websiteJsonLd = () => ({
@@ -149,6 +174,11 @@ const STATIC_META = {
     description:
       'Jaclyn Konzelmann is a self-taught home cook with strong opinions about flavor, acid, and texture. She makes every dressing from scratch and wrote the Not So Simple Salads cookbook.',
   },
+  dressings: {
+    title: 'Homemade Salad Dressing Recipes | Not So Simple Salads',
+    description:
+      'Eighteen from-scratch salad dressings: nam jim, ginger miso, Caesar, preserved lemon, Thai peanut, citrus vinaigrette and more. Each one takes about three minutes and comes with the salad it was built for.',
+  },
   'not-found': {
     title: 'Page not found | Not So Simple Salads',
     description: 'That page does not exist. Browse all the salad recipes instead.',
@@ -161,8 +191,9 @@ export function pageMeta(route) {
     const s = allSalads.find((x) => x.id === route.data.id) || route.data;
     const path = recipePath(s.id);
     return {
-      title: `${s.title} — ${s.dressingName} salad recipe | Not So Simple Salads`,
-      description: clip(s.headnote),
+      title: `${s.seoName} | Not So Simple Salads`,
+      ogTitle: `${s.title} — ${s.seoName}`,
+      description: clip(`${s.seoName}. ${s.headnote}`),
       canonical: abs(path),
       image: abs(`/${s.id}.jpg`),
       type: 'article',
@@ -173,6 +204,19 @@ export function pageMeta(route) {
           { name: s.title, path },
         ]),
       ],
+    };
+  }
+  if (route.type === 'dressing') {
+    const d = route.data;
+    const path = dressingPath(d.slug);
+    return {
+      title: `${d.seoName} recipe | Not So Simple Salads`,
+      ogTitle: `${d.name} — ${d.seoName}`,
+      description: clip(`${d.seoName}: the homemade dressing from our ${d.salad.seoName}. ${d.ingredients.length} ingredients, about three minutes. ${d.method}`),
+      canonical: abs(path),
+      image: abs(`/${d.salad.id}.jpg`),
+      type: 'article',
+      jsonLd: [dressingJsonLd(d), breadcrumbJsonLd([{ name: 'Dressings', path: '/dressings' }, { name: d.name, path }])],
     };
   }
   const base = STATIC_META[route.type] || STATIC_META['not-found'];
@@ -216,14 +260,14 @@ export function headHtml(meta) {
     meta.canonical ? `<link rel="canonical" href="${esc(meta.canonical)}" />` : '',
     `<meta property="og:site_name" content="${esc(SITE.name)}" />`,
     `<meta property="og:type" content="${meta.type}" />`,
-    `<meta property="og:title" content="${esc(meta.title)}" />`,
+    `<meta property="og:title" content="${esc(meta.ogTitle || meta.title)}" />`,
     `<meta property="og:description" content="${esc(meta.description)}" />`,
     meta.canonical ? `<meta property="og:url" content="${esc(meta.canonical)}" />` : '',
     `<meta property="og:image" content="${esc(meta.image)}" />`,
     `<meta property="og:locale" content="en_US" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:site" content="${SITE.xHandle}" />`,
-    `<meta name="twitter:title" content="${esc(meta.title)}" />`,
+    `<meta name="twitter:title" content="${esc(meta.ogTitle || meta.title)}" />`,
     `<meta name="twitter:description" content="${esc(meta.description)}" />`,
     `<meta name="twitter:image" content="${esc(meta.image)}" />`,
     ...meta.jsonLd.map(
@@ -251,10 +295,10 @@ export function applyMeta(meta) {
     m.name = 'description';
     return m;
   });
-  set('meta[property="og:title"]', 'content', meta.title);
+  set('meta[property="og:title"]', 'content', meta.ogTitle || meta.title);
   set('meta[property="og:description"]', 'content', meta.description);
   set('meta[property="og:image"]', 'content', meta.image);
-  set('meta[name="twitter:title"]', 'content', meta.title);
+  set('meta[name="twitter:title"]', 'content', meta.ogTitle || meta.title);
   set('meta[name="twitter:description"]', 'content', meta.description);
   set('meta[name="twitter:image"]', 'content', meta.image);
   if (meta.canonical) {
@@ -272,7 +316,7 @@ export function applyMeta(meta) {
 export function sitemapXml(paths) {
   const rows = paths
     .map((p) => {
-      const priority = p === '/' ? '1.0' : p.startsWith('/recipe/') ? '0.9' : '0.6';
+      const priority = p === '/' ? '1.0' : p.startsWith('/recipe/') ? '0.9' : p.startsWith('/dressing') ? '0.8' : '0.6';
       return `  <url>\n    <loc>${abs(p)}</loc>\n    <lastmod>${SITE.contentDate}</lastmod>\n    <priority>${priority}</priority>\n  </url>`;
     })
     .join('\n');
@@ -299,7 +343,8 @@ Sitemap: ${SITE.url}/sitemap.xml
 }
 
 export function llmsTxt() {
-  const recipeLine = (s) => `- [${s.title}](${abs(recipePath(s.id))}): ${clip(s.headnote, 120)} Dressing: ${s.dressingName}. Serves ${s.serves}, ${s.time}.`;
+  const recipeLine = (s) => `- [${s.title} — ${s.seoName}](${abs(recipePath(s.id))}): ${clip(s.headnote, 120)} Dressing: ${s.dressingName}. Serves ${s.serves}, ${s.time}.`;
+  const dressingLine = (d) => `- [${d.name} — ${d.seoName}](${abs(dressingPath(d.slug))}): ${d.ingredients.length} ingredients, about 3 minutes. Made for ${d.salad.title}.`;
   return `# ${SITE.name}
 
 > ${SITE.description}
@@ -313,6 +358,12 @@ ${allSalads.filter((s) => s.category === 'Meal').map(recipeLine).join('\n')}
 ## Lighter Salads
 
 ${allSalads.filter((s) => s.category === 'Lighter').map(recipeLine).join('\n')}
+
+## Dressings
+
+All homemade, all about three minutes. Index: ${abs('/dressings')}
+
+${dressings.map(dressingLine).join('\n')}
 
 ## About the book
 
@@ -330,7 +381,7 @@ ${allSalads.filter((s) => s.category === 'Lighter').map(recipeLine).join('\n')}
 }
 
 export function llmsFullTxt() {
-  const block = (s) => `## ${s.title}
+  const block = (s) => `## ${s.title} — ${s.seoName}
 URL: ${abs(recipePath(s.id))}
 Category: ${s.category} salad · Serves ${s.serves} · ${s.time}
 Headnote: ${s.headnote}
@@ -339,8 +390,9 @@ Manifesto: "${s.manifestoQuote}"
 Salad ingredients:
 ${s.saladIngredients.map((i) => `- ${ingredientLine(i)}`).join('\n')}
 
-Dressing (${s.dressingName}):
+Dressing (${s.dressingName} — ${s.dressingSeoName}), page: ${abs(dressingPath(s.dressingSlug))}
 ${s.dressingIngredients.map((i) => `- ${ingredientLine(i)}`).join('\n')}
+Dressing method: ${s.dressingMethod}
 ${
   s.componentRecipe
     ? `

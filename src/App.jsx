@@ -3,6 +3,7 @@ import { Home } from './pages/Home';
 import { RecipeDetail } from './pages/RecipeDetail';
 import { Introduction, HowToUse, AboutAuthor, Pantry } from './pages/StaticPages';
 import { NotFound } from './pages/NotFound';
+import { DressingsIndex, DressingDetail } from './pages/Dressings';
 import { TitleLg } from './components/Typography';
 import { RouteContext, navigate, resolveRoute, legacyHashToPath, recipePath } from './router';
 import { Link } from './Link';
@@ -46,6 +47,7 @@ function App({ url }) {
         <nav className="main-nav" aria-label="Main">
           <Link to="/" className={`nav-link ${active(['home', 'recipe'])}`}>Recipes</Link>
           <Link to="/introduction" className={`nav-link ${active(['intro'])}`}>Introduction</Link>
+          <Link to="/dressings" className={`nav-link ${active(['dressings', 'dressing'])}`}>Dressings</Link>
           <Link to="/how-to-use" className={`nav-link ${active(['how-to'])}`}>How To Use</Link>
           <Link to="/pantry" className={`nav-link ${active(['pantry'])}`}>Pantry</Link>
           <Link to="/about" className={`nav-link ${active(['about'])}`}>About</Link>
@@ -63,6 +65,8 @@ function App({ url }) {
         {route.type === 'home' && (
           <Home onSelectSalad={handleSelectSalad} />
         )}
+        {route.type === 'dressings' && <DressingsIndex />}
+        {route.type === 'dressing' && <DressingDetail dressing={route.data} />}
         {route.type === 'not-found' && <NotFound />}
       </main>
 
@@ -76,6 +80,7 @@ function App({ url }) {
             <div>
               <span className="footer-title">Explore</span>
               <Link to="/">Recipes</Link>
+              <Link to="/dressings">Dressings</Link>
               <Link to="/introduction">Introduction</Link>
               <Link to="/how-to-use">How To Use This Book</Link>
               <Link to="/pantry">Pantry Essentials</Link>
