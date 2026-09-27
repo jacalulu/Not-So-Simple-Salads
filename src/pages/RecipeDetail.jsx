@@ -4,6 +4,9 @@ import { IngredientScrap } from '../components/IngredientScrap';
 import { ManifestoBanner } from '../components/ManifestoBanner';
 import { mealSalads, lighterSalads } from '../data/salads';
 import { imageSrcSet } from '../images';
+import { Link } from '../Link';
+import { dressingPath } from '../data/dressings';
+import './Dressings.css';
 import './RecipeDetail.css';
 
 const allSalads = [...mealSalads, ...lighterSalads];
@@ -37,6 +40,7 @@ export const RecipeDetail = ({ salad, onBack }) => {
           </LabelMd>
           
           <DisplayLg className="editorial-title">{salad.title}</DisplayLg>
+          {salad.seoName && <BodyLg className="editorial-subtitle">{salad.seoName}</BodyLg>}
           
           <div className="editorial-pills">
             <span className="editorial-pill">{salad.time}</span>
@@ -89,7 +93,7 @@ export const RecipeDetail = ({ salad, onBack }) => {
 
           <section className="editorial-section">
             <TitleLg className="editorial-section-title">
-               The Elixir: {salad.dressingName}
+               The Elixir: {salad.dressingSlug ? <Link to={dressingPath(salad.dressingSlug)}>{salad.dressingName}</Link> : salad.dressingName}
             </TitleLg>
             <div className="ingredients-list">
               {salad.dressingIngredients.map((ing, i) => (

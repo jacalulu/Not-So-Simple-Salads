@@ -17,6 +17,7 @@
   color: var(--primary);
   font-size: 1.5rem;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .main-nav {
@@ -115,11 +116,17 @@
     overflow-x: visible;
     padding-bottom: 0;
     justify-content: flex-end;
-    gap: var(--spacing-8);
+    gap: var(--spacing-6);
   }
 
   .footer-content {
     flex-direction: row;
     justify-content: space-between;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main-nav {
+    gap: var(--spacing-8);
   }
 }
