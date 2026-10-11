@@ -45,23 +45,30 @@ const ingredientLine = (ing) => {
 
 export function recipeJsonLd(salad) {
   const url = abs(recipePath(salad.id));
+  const image = abs(`/${salad.id}.jpg`);
   const steps = [];
   if (salad.componentRecipe) {
     steps.push({
       '@type': 'HowToStep',
       name: salad.componentRecipe.title,
       text: salad.componentRecipe.method,
+      url: `${url}#sub-recipe`,
+      image,
     });
   }
   steps.push({
     '@type': 'HowToStep',
     name: `Make the ${salad.dressingName}`,
-    text: `Combine ${salad.dressingIngredients.map(ingredientLine).join(', ')}.`,
+    text: salad.dressingMethod || `Combine ${salad.dressingIngredients.map(ingredientLine).join(', ')}.`,
+    url: `${url}#dressing`,
+    image,
   });
   steps.push({
     '@type': 'HowToStep',
     name: 'Assemble',
     text: `Toss ${salad.saladIngredients.map((i) => i.item.toLowerCase()).join(', ')} with the ${salad.dressingName} and serve.`,
+    url: `${url}#foundation`,
+    image,
   });
 
   const data = {
@@ -72,11 +79,12 @@ export function recipeJsonLd(salad) {
     alternateName: salad.seoName ? salad.title : undefined,
     url,
     mainEntityOfPage: url,
-    image: [abs(`/${salad.id}.jpg`)],
+    image: [image],
     description: salad.headnote,
     author: { '@type': 'Person', name: SITE.author.name, url: SITE.author.url },
     datePublished: SITE.contentDate,
     recipeCategory: salad.category === 'Meal' ? 'Meal salad' : 'Lighter salad',
+    recipeCuisine: salad.cuisine,
     keywords: [salad.seoName, salad.title, salad.dressingName, 'salad', `${salad.category.toLowerCase()} salad`]
       .concat(salad.saladIngredients.slice(0, 4).map((i) => i.item))
       .join(', '),
@@ -97,7 +105,7 @@ export function recipeJsonLd(salad) {
       description: salad.headnote,
       contentUrl: abs(`/${salad.video}`),
       thumbnailUrl: [abs(`/${salad.video.replace('.mp4', '-poster.jpg')}`)],
-      uploadDate: SITE.contentDate,
+      uploadDate: `${SITE.contentDate}T12:00:00-07:00`,
     };
   }
   return data;
@@ -118,10 +126,11 @@ export function dressingJsonLd(d) {
     author: { '@type': 'Person', name: SITE.author.name, url: SITE.author.url },
     datePublished: SITE.contentDate,
     recipeCategory: 'Salad dressing',
+    recipeCuisine: d.cuisine,
     keywords: [d.seoName, d.name, 'salad dressing', 'homemade dressing', 'vinaigrette'].join(', '),
     totalTime: 'PT3M',
     recipeIngredient: d.ingredients.map(ingredientLine),
-    recipeInstructions: [{ '@type': 'HowToStep', text: d.method }],
+    recipeInstructions: [{ '@type': 'HowToStep', name: `Make the ${d.name}`, text: d.method, url: `${url}#method`, image: abs(`/${d.salad.id}.jpg`) }],
     isPartOf: { '@type': 'WebSite', '@id': `${SITE.url}/#website` },
   };
 }

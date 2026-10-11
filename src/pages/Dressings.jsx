@@ -106,7 +106,7 @@ export const DressingDetail = ({ dressing }) => {
                 ))}
               </div>
             </section>
-            <section className="editorial-section">
+            <section className="editorial-section" id="method">
               <TitleLg className="editorial-section-title">Method</TitleLg>
               <BodyLg className="dressing-method">{d.method}</BodyLg>
             </section>

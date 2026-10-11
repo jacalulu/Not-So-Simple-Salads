@@ -82,7 +82,7 @@ export const RecipeDetail = ({ salad, onBack }) => {
         </div>
 
         <div className="editorial-components">
-          <section className="editorial-section">
+          <section className="editorial-section" id="foundation">
             <TitleLg className="editorial-section-title">The Foundation</TitleLg>
             <div className="ingredients-list">
               {salad.saladIngredients.map((ing, i) => (
@@ -91,7 +91,7 @@ export const RecipeDetail = ({ salad, onBack }) => {
             </div>
           </section>
 
-          <section className="editorial-section">
+          <section className="editorial-section" id="dressing">
             <TitleLg className="editorial-section-title">
                The Elixir: {salad.dressingSlug ? <Link to={dressingPath(salad.dressingSlug)}>{salad.dressingName}</Link> : salad.dressingName}
             </TitleLg>
@@ -103,7 +103,7 @@ export const RecipeDetail = ({ salad, onBack }) => {
           </section>
 
           {salad.componentRecipe && (
-            <section className="editorial-section component-recipe-block" style={{marginTop: '2rem'}}>
+            <section className="editorial-section component-recipe-block" id="sub-recipe" style={{marginTop: '2rem'}}>
               <TitleLg className="editorial-section-title">
                  {salad.componentRecipe.title}
               </TitleLg>
