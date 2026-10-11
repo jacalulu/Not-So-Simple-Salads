@@ -10,6 +10,7 @@ export const dressings = allSalads.map((s) => ({
   seoName: s.dressingSeoName,
   ingredients: s.dressingIngredients,
   method: s.dressingMethod,
+  cuisine: s.cuisine,
   salad: { id: s.id, title: s.title, seoName: s.seoName, headnote: s.headnote },
 }));
 
