@@ -36,11 +36,6 @@ export const BookPage = () => (
           Salads that go hard,<br />
           <span className="book-hero-accent">now in print.</span>
         </DisplayLg>
-        <BodyLg className="book-hero-sub">
-          Nineteen recipes with strong opinions &mdash; fourteen that are fully dinner,
-          five that keep it lighter &mdash; and every dressing made from scratch, across
-          one hundred pages of premium color. No limp lettuce. Zero apologies.
-        </BodyLg>
         <div className="book-cta-row">
           <a className="btn btn-primary book-btn" href={BUY.hardcover} target="_blank" rel="noopener">
             Get the hardcover &mdash; $36.99
@@ -50,6 +45,11 @@ export const BookPage = () => (
           </a>
         </div>
         <LabelMd className="book-cta-note">Printed in premium color &middot; Sold on Amazon</LabelMd>
+        <BodyLg className="book-hero-sub">
+          Nineteen recipes with strong opinions &mdash; fourteen that are fully dinner,
+          five that keep it lighter &mdash; and every dressing made from scratch, across
+          one hundred pages of premium color. No limp lettuce. Zero apologies.
+        </BodyLg>
       </div>
       <div className="book-hero-art">
         <BookImage

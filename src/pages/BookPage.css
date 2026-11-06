@@ -41,7 +41,8 @@
 .book-hero-sub {
   max-width: 34rem;
   color: var(--on-surface-variant);
-  margin-bottom: var(--spacing-8);
+  margin-top: var(--spacing-8);
+  margin-bottom: 0;
 }
 
 .book-cta-row {
@@ -257,7 +258,7 @@
 
   .book-hero-art {
     order: -1;
-    max-width: 320px;
+    max-width: 230px;
   }
 
   .book-stats {
