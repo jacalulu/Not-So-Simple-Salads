@@ -163,6 +163,12 @@ const STATIC_META = {
     description: SITE.description,
     image: SITE.defaultImage,
   },
+  book: {
+    title: 'Get the Cookbook — Out Now | Not So Simple Salads',
+    description:
+      'The Not So Simple Salads cookbook by Jaclyn Konzelmann: 19 bold salad recipes, 18 from-scratch dressings, 100 pages of premium color. Hardcover and paperback, available on Amazon.',
+    image: '/book-standing-slate.jpg',
+  },
   intro: {
     title: 'Introduction | Not So Simple Salads',
     description:
@@ -244,6 +250,38 @@ export function pageMeta(route) {
         url: abs(recipePath(s.id)),
       })),
     });
+  } else if (route.type === 'book') {
+    jsonLd.push({
+      '@context': 'https://schema.org',
+      '@type': 'Book',
+      '@id': `${SITE.url}/book#book`,
+      name: 'Not So Simple Salads',
+      alternateName: 'Not So Simple Salads: Bold flavors, strong opinions, zero apologies',
+      url: abs('/book'),
+      image: abs('/book-standing-slate.jpg'),
+      description: STATIC_META.book.description,
+      author: { '@type': 'Person', name: SITE.author.name, url: SITE.author.url },
+      inLanguage: 'en',
+      numberOfPages: 100,
+      genre: 'Cookbook',
+      workExample: [
+        {
+          '@type': 'Book',
+          bookFormat: 'https://schema.org/Hardcover',
+          name: 'Not So Simple Salads (Hardcover)',
+          numberOfPages: 100,
+        },
+        {
+          '@type': 'Book',
+          bookFormat: 'https://schema.org/Paperback',
+          name: 'Not So Simple Salads (Paperback)',
+          isbn: '9798140302467',
+          numberOfPages: 100,
+        },
+      ],
+      isPartOf: { '@type': 'WebSite', '@id': `${SITE.url}/#website` },
+    });
+    jsonLd.push(breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: 'The Book', path: '/book' }]));
   } else if (path) {
     jsonLd.push(breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: base.title.split(' | ')[0], path }]));
   }
@@ -376,6 +414,7 @@ ${dressings.map(dressingLine).join('\n')}
 
 ## About the book
 
+- [Get the Cookbook](${abs('/book')}): the print edition — 100 pages, 19 recipes, hardcover and paperback, out now on Amazon.
 - [Introduction](${abs('/introduction')}): why these salads exist and the philosophy behind them.
 - [How To Use This Book](${abs('/how-to-use')}): how the recipes are organized, plus notes on technique.
 - [Stock Your Pantry](${abs('/pantry')}): the spices, acids, umami and specialty ingredients the recipes lean on.

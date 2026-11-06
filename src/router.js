@@ -8,6 +8,7 @@ const allSalads = [...mealSalads, ...lighterSalads];
 // previews, and AI agents can reach it directly.
 export const STATIC_ROUTES = {
   '/': { type: 'home' },
+  '/book': { type: 'book' },
   '/introduction': { type: 'intro' },
   '/how-to-use': { type: 'how-to' },
   '/pantry': { type: 'pantry' },

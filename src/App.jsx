@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Home } from './pages/Home';
 import { RecipeDetail } from './pages/RecipeDetail';
 import { Introduction, HowToUse, AboutAuthor, Pantry } from './pages/StaticPages';
+import { BookPage } from './pages/BookPage';
 import { NotFound } from './pages/NotFound';
 import { DressingsIndex, DressingDetail } from './pages/Dressings';
 import { TitleLg } from './components/Typography';
@@ -46,6 +47,7 @@ function App({ url }) {
         <Link to="/" style={{textDecoration: 'none'}} aria-label="Not So Simple Salads home"><TitleLg className="brand-logotype">Not So Simple Salads</TitleLg></Link>
         <nav className="main-nav" aria-label="Main">
           <Link to="/" className={`nav-link ${active(['home', 'recipe'])}`}>Recipes</Link>
+          <Link to="/book" className={`nav-link nav-link-book ${active(['book'])}`}>The Book</Link>
           <Link to="/introduction" className={`nav-link ${active(['intro'])}`}>Introduction</Link>
           <Link to="/dressings" className={`nav-link ${active(['dressings', 'dressing'])}`}>Dressings</Link>
           <Link to="/how-to-use" className={`nav-link ${active(['how-to'])}`}>How To Use</Link>
@@ -55,6 +57,7 @@ function App({ url }) {
       </header>
 
       <main className="app-main">
+        {route.type === 'book' && <BookPage />}
         {route.type === 'intro' && <Introduction />}
         {route.type === 'how-to' && <HowToUse />}
         {route.type === 'pantry' && <Pantry />}
@@ -80,6 +83,7 @@ function App({ url }) {
             <div>
               <span className="footer-title">Explore</span>
               <Link to="/">Recipes</Link>
+              <Link to="/book">Get the Cookbook</Link>
               <Link to="/dressings">Dressings</Link>
               <Link to="/introduction">Introduction</Link>
               <Link to="/how-to-use">How To Use This Book</Link>
