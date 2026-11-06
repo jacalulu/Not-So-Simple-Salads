@@ -13,14 +13,14 @@ const BUY = {
   paperback: 'https://www.amazon.com/s?k=%22not+so+simple+salads%22+jaclyn+konzelmann',
 };
 
-const BookImage = ({ name, alt, sizes = '(max-width: 900px) 92vw, 44vw', eager = false }) => (
+const BookImage = ({ name, alt, sizes = '(max-width: 900px) 92vw, 44vw', eager = false, w = 1536, h = 2752 }) => (
   <img
     src={`/img/${name}-800.webp`}
     srcSet={imageSrcSet(name)}
     sizes={sizes}
     alt={alt}
-    width="1536"
-    height="2752"
+    width={w}
+    height={h}
     loading={eager ? 'eager' : 'lazy'}
     decoding="async"
   />
@@ -109,18 +109,24 @@ export const BookPage = () => (
       </div>
     </section>
 
-    {/* The object itself */}
+    {/* What the pages actually look like: the food, not the cover again */}
     <section className="book-gallery">
       <figure className="book-gallery-item tilt-left">
-        <BookImage name="book-open-spread" alt="The cookbook lying open to its full-bleed title spread" />
+        <BookImage name="book-food-fennel" alt="Shaved fennel, watermelon radish and blood orange from Fennel Countdown" w={1024} h={1365} sizes="(max-width: 900px) 92vw, 30vw" />
         <figcaption>
-          <LabelMd>The title spread</LabelMd>
+          <LabelMd>Fennel Countdown &middot; Lighter Salads</LabelMd>
         </figcaption>
       </figure>
       <figure className="book-gallery-item tilt-right">
-        <BookImage name="book-cream-linen" alt="The hardcover lying on cream linen in soft morning light" />
+        <BookImage name="book-food-banhmi" alt="Pickled carrots, cucumber and herbs from Banh Mi Over" w={1024} h={1365} sizes="(max-width: 900px) 92vw, 30vw" />
         <figcaption>
-          <LabelMd>Case-laminate hardcover, 8.25 &times; 11</LabelMd>
+          <LabelMd>Banh Mi Over &middot; Meal Salads</LabelMd>
+        </figcaption>
+      </figure>
+      <figure className="book-gallery-item tilt-left">
+        <BookImage name="book-food-watermelon" alt="Chili-dusted watermelon and feta from Water, Fire...and Feta!" w={1024} h={1365} sizes="(max-width: 900px) 92vw, 30vw" />
+        <figcaption>
+          <LabelMd>Water, Fire...and Feta! &middot; Lighter Salads</LabelMd>
         </figcaption>
       </figure>
     </section>
