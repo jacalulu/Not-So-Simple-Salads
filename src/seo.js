@@ -14,7 +14,7 @@ export const SITE = {
   xHandle: '@BoldSalads',
   defaultImage: '/header_generic.jpg',
   // Bump when recipe content changes; used for sitemap lastmod and datePublished.
-  contentDate: '2026-04-11',
+  contentDate: '2026-11-06',
 };
 
 const allSalads = [
@@ -166,7 +166,7 @@ const STATIC_META = {
   book: {
     title: 'Get the Cookbook — Out Now | Not So Simple Salads',
     description:
-      'The Not So Simple Salads cookbook by Jaclyn Konzelmann: 19 bold salad recipes, 18 from-scratch dressings, 100 pages of premium color. Hardcover and paperback, available on Amazon.',
+      'The Not So Simple Salads cookbook by Jaclyn Konzelmann: 19 bold salad recipes, 19 from-scratch dressings, 100 pages of premium color. Hardcover and paperback, available on Amazon.',
     image: '/book-standing-slate.jpg',
   },
   intro: {
@@ -177,7 +177,7 @@ const STATIC_META = {
   'how-to': {
     title: 'How To Use This Book | Not So Simple Salads',
     description:
-      'How the cookbook is organized (meal salads and lighter salads), what the lab marker means, and notes on technique: julienning, salt, pepper, and fresh everything.',
+      'How the cookbook works: the Easy / Medium / Involved difficulty ratings, the Make It Your Own variations, why amounts say "generous", and the pantry to stock first.',
   },
   pantry: {
     title: 'Stock Your Pantry | Not So Simple Salads',
@@ -192,7 +192,7 @@ const STATIC_META = {
   dressings: {
     title: 'Homemade Salad Dressing Recipes | Not So Simple Salads',
     description:
-      'Eighteen from-scratch salad dressings: nam jim, ginger miso, Caesar, preserved lemon, Thai peanut, citrus vinaigrette and more. Each one takes about three minutes and comes with the salad it was built for.',
+      'Nineteen from-scratch salad dressings: nam jim, ginger miso, Caesar, sumac vinaigrette, preserved lemon, Thai peanut and more. Each one takes about three minutes and comes with the salad it was built for.',
   },
   'not-found': {
     title: 'Page not found | Not So Simple Salads',

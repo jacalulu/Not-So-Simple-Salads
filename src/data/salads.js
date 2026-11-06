@@ -1,4 +1,5 @@
 // Complete Salad Data Store
+// Synced to the printed v7 cookbook (lineup, headnotes, manifestos, difficulty).
 
 export const mealSalads = [
   {
@@ -6,8 +7,9 @@ export const mealSalads = [
     title: "Cauli-fornia Dreamin'",
     seoName: "Roasted Cauliflower & Quinoa Salad with Citrus Vinaigrette",
     cuisine: 'Mediterranean',
-    serves: "2-3",
+    serves: "2–3",
     time: "30 mins",
+    difficulty: "Involved",
     headnote: "This was the salad that started it all — the one I fell for at Google and immediately needed to reverse-engineer. All the textures, that citrus dressing, but the crispy capers are what put it completely over the top.",
     manifestoQuote: "Texture is the difference between a meal and a chore.",
     saladIngredients: [
@@ -54,8 +56,9 @@ export const mealSalads = [
     title: "Noodle Me This",
     seoName: "Cold Soba Noodle Salad with Kimchi & Ginger Miso Dressing",
     cuisine: 'Korean',
-    serves: "2-3",
-    time: "25 mins",
+    serves: "2–3",
+    time: "45 mins",
+    difficulty: "Involved",
     headnote: "I love Korean food, and a salad with kimchi in it was just such a fun punch-up for a hearty lunch. The kimchi brings heat, funk, and acidity all at once. Cold noodles, bold dressing, zero apologies.",
     manifestoQuote: "Eat vegetables like you're plotting revenge.",
     saladIngredients: [
@@ -90,6 +93,7 @@ export const mealSalads = [
     cuisine: 'Vietnamese',
     serves: "2",
     time: "35 mins",
+    difficulty: "Medium",
     headnote: "Everything I love about a banh mi, deconstructed into a bowl. The pickled vegetables are essential — surprisingly easy to make at home. The marinade does the heavy lifting on the chicken.",
     manifestoQuote: "We don't do limp lettuce here. We do high-fashion horticulture.",
     saladIngredients: [
@@ -134,8 +138,9 @@ export const mealSalads = [
     title: "Keep Cobb and Carry On",
     seoName: "Cobb Salad with Greek Balsamic Vinaigrette",
     cuisine: 'American',
-    serves: "2-3",
+    serves: "2–3",
     time: "25 mins",
+    difficulty: "Medium",
     headnote: "The Cobb is my OG hearty salad. This version pairs it with a vinaigrette instead of the usual ranch or blue cheese dressing — that's non-negotiable for me. The sautéed onions? From a tiny restaurant at the gateway to Yosemite.",
     manifestoQuote: "If a salad doesn't crunch, it's just a sad smoothie.",
     saladIngredients: [
@@ -171,9 +176,10 @@ export const mealSalads = [
     cuisine: 'Thai',
     serves: "2",
     time: "30 mins",
+    difficulty: "Involved",
     video: "thaid-and-true-video.mp4",
     headnote: "This one has a very special place in my heart. The cilantro stems in the dressing carry an absurd amount of punch. Don't throw them away. Slice flank steak against the grain.",
-    manifestoQuote: "Croutons are pedestrian. Frizzled shallots are non-negotiable.",
+    manifestoQuote: "Croutons are pedestrian. Give me frizzled shallots or give me death.",
     saladIngredients: [
       { item: "Red pepper", note: "~ 1 cup" },
       { item: "Spinach", note: "~ 2 big handfuls" },
@@ -218,6 +224,7 @@ export const mealSalads = [
     cuisine: 'French',
     serves: "2",
     time: "35 mins",
+    difficulty: "Involved",
     headnote: "This salad feels like summer lunches in Silicon Valley — elevated yet approachable. The caper berries are the real note here. The sesame-chili crust on the tuna is my addition to the classic.",
     manifestoQuote: "Dress your greens better than you dress yourself.",
     saladIngredients: [
@@ -255,44 +262,13 @@ export const mealSalads = [
     isLab: false
   },
   {
-    id: 'greek-expectations',
-    title: "Greek Expectations",
-    seoName: "Greek Salad with Grilled Shrimp",
-    cuisine: 'Greek',
-    serves: "2-3",
-    time: "20 mins",
-    headnote: "I literally got myself through most of university with this salad. It's my version of comfort food at this point. Grill the shrimp — don't skip that step. The dressing is sharp and oregano-forward.",
-    manifestoQuote: "A naked leaf is an unfulfilled promise.",
-    saladIngredients: [
-      { item: "Romaine lettuce", note: "~ 2 big handfuls" },
-      { item: "Red pepper", note: "~ 1 cup" },
-      { item: "Cucumber", note: "~ 1 cup" },
-      { item: "Red onion", note: "~ 1/4 cup" },
-      { item: "Kalamata olives", note: "~ 1/4 cup" },
-      { item: "Feta cheese", note: "~ 1/2 cup" },
-      { item: "Tomatoes", note: "~ 1 cup" },
-      { item: "Grilled shrimp", note: "~ generous amount" }
-    ],
-    dressingName: "Greek Vinaigrette",
-    dressingSlug: 'greek-vinaigrette',
-    dressingSeoName: "Greek Oregano Vinaigrette",
-    dressingMethod: "Whisk dressing ingredients together. Taste — it should be sharp and oregano-forward.",
-    dressingIngredients: [
-      { item: "¼ cup", name: "extra-virgin olive oil" },
-      { item: "3 Tbsp", name: "red wine vinegar" },
-      { item: "1 clove", name: "garlic, grated" },
-      { item: "1 Tbsp", name: "dried oregano" },
-      { item: "½ tsp", name: "Dijon mustard" }
-    ],
-    isLab: false
-  },
-  {
     id: 'romaine-calm',
     title: "Romaine Calm: Caesar's Got a Flame",
     seoName: "Grilled Romaine Caesar Salad with Bacon",
     cuisine: 'American',
     serves: "2",
     time: "30 mins",
+    difficulty: "Involved",
     headnote: "I've never loved Caesar salad. Crazy. And yet — when you grill romaine, something genuinely magical happens. It transforms. If you thought a caterpillar turning into a butterfly was something, try this.",
     manifestoQuote: "Your fork is a weapon. Choose your ingredients wisely.",
     saladIngredients: [
@@ -335,8 +311,9 @@ export const mealSalads = [
     title: "Winner, Winner, Wonton Dinner",
     seoName: "Chinese Chicken Salad with Wonton Crisps & Sesame Soy Dressing",
     cuisine: 'Chinese-American',
-    serves: "2-3",
+    serves: "2–3",
     time: "20 mins",
+    difficulty: "Medium",
     headnote: "I've always felt like this salad was almost too simple, too green — and then I make it and walk away feeling happy and refreshed every single time. The dressing is the real hero here.",
     manifestoQuote: "Boring salads are a moral failing.",
     saladIngredients: [
@@ -364,12 +341,46 @@ export const mealSalads = [
     isLab: false
   },
   {
+    id: 'greek-expectations',
+    title: "Greek Expectations",
+    seoName: "Greek Salad with Grilled Shrimp",
+    cuisine: 'Greek',
+    serves: "2–3",
+    time: "20 mins",
+    difficulty: "Medium",
+    headnote: "I literally got myself through most of university with this salad. It's my version of comfort food at this point. Grill the shrimp — don't skip that step. The dressing is sharp and oregano-forward.",
+    manifestoQuote: "A naked leaf is an unfulfilled promise.",
+    saladIngredients: [
+      { item: "Romaine lettuce", note: "~ 2 big handfuls" },
+      { item: "Red pepper", note: "~ 1 cup" },
+      { item: "Cucumber", note: "~ 1 cup" },
+      { item: "Red onion", note: "~ 1/4 cup" },
+      { item: "Kalamata olives", note: "~ 1/4 cup" },
+      { item: "Feta cheese", note: "~ 1/2 cup" },
+      { item: "Tomatoes", note: "~ 1 cup" },
+      { item: "Grilled shrimp", note: "~ generous amount" }
+    ],
+    dressingName: "Greek Vinaigrette",
+    dressingSlug: 'greek-vinaigrette',
+    dressingSeoName: "Greek Oregano Vinaigrette",
+    dressingMethod: "Whisk dressing ingredients together. Taste — it should be sharp and oregano-forward.",
+    dressingIngredients: [
+      { item: "¼ cup", name: "extra-virgin olive oil" },
+      { item: "3 Tbsp", name: "red wine vinegar" },
+      { item: "1 clove", name: "garlic, grated" },
+      { item: "1 Tbsp", name: "dried oregano" },
+      { item: "½ tsp", name: "Dijon mustard" }
+    ],
+    isLab: false
+  },
+  {
     id: 'thai-me-a-river',
     title: "Thai Me a River (of Peanut Sauce)",
     seoName: "Thai Chicken Salad with Peanut Dressing & Mango",
     cuisine: 'Thai',
-    serves: "2-3",
+    serves: "2–3",
     time: "25 mins",
+    difficulty: "Medium",
     headnote: "This is my love language in salad form. A chopped salad with that sauce and those ingredients is just so delicious — it hits every note. I firmly believe peanut sauce makes everything better.",
     manifestoQuote: "This isn't diet food. This is an editorial spread.",
     saladIngredients: [
@@ -406,6 +417,7 @@ export const mealSalads = [
     cuisine: 'French',
     serves: "2",
     time: "25 mins",
+    difficulty: "Medium",
     headnote: "This came together because I had a fridge full of randomly abandoned breakfast-adjacent ingredients and needed to do something about it. The result was this. Lock it in.",
     manifestoQuote: "More acid. More salt. More everything.",
     saladIngredients: [
@@ -436,8 +448,9 @@ export const mealSalads = [
     title: "Pack'n Pasta",
     seoName: "Mediterranean Pasta Salad with Preserved Lemon Dressing",
     cuisine: 'Mediterranean',
-    serves: "3-4",
+    serves: "3–4",
     time: "30 mins",
+    difficulty: "Medium",
     headnote: "I literally hike through the Yosemite backcountry with this in my backpack. A legit crowd-pleaser every time, on or off the trail. The preserved lemon dressing makes people look mildly shocked.",
     manifestoQuote: "Leave the sad desk salads in the 2010s.",
     saladIngredients: [
@@ -464,17 +477,15 @@ export const mealSalads = [
       { item: "½ tsp", name: "salt" }
     ],
     isLab: true
-  }
-];
-
-export const lighterSalads = [
+  },
   {
     id: 'bacon-me-crazy',
     title: "Bacon Me Crazy",
     seoName: "Spinach Salad with Millionaire's Bacon & a Runny Egg",
     cuisine: 'American',
-    serves: "1-2",
+    serves: "1–2",
     time: "15 mins",
+    difficulty: "Medium",
     video: "bacon-me-crazy-video.mp4",
     headnote: "Love me that runny fried egg. The whole premise here is that the yolk breaks and becomes part of the dressing — it's the reason the dressing itself is so minimal. The egg is not optional.",
     manifestoQuote: "Lettuce is merely a vehicle for aggressive flavor.",
@@ -511,68 +522,13 @@ export const lighterSalads = [
     isLab: true
   },
   {
-    id: 'salad-days',
-    title: "Salad Days and Sunny Ways",
-    seoName: "Prosciutto & Asparagus Salad with Frisée and a Runny Egg",
-    cuisine: 'French',
-    serves: "1-2",
-    time: "20 mins",
-    headnote: "Blanched asparagus doesn't get enough love and I'm here to change that. Pair it with prosciutto and a runny egg and you have a perfect plate.",
-    manifestoQuote: "A good salad should make you sweat a little.",
-    saladIngredients: [
-      { item: "Prosciutto", note: "~ generous amount" },
-      { item: "Frisee lettuce", note: "~ 2 big handfuls" },
-      { item: "Cucumber", note: "~ 1 cup" },
-      { item: "Red onion", note: "~ 1/4 cup" },
-      { item: "Radish", note: "~ 1 cup" },
-      { item: "Tomatoes", note: "~ 1 cup" },
-      { item: "Blanched asparagus", note: "~ generous amount" }
-    ],
-    dressingName: "Simple (Yolk)",
-    dressingSlug: 'simple-champagne-vinaigrette',
-    dressingSeoName: "Simple Champagne Vinaigrette (with a Runny Egg)",
-    dressingMethod: "Whisk dressing ingredients together. Dress lightly, then top with a fried egg whose yolk is completely runny and eat immediately.",
-    dressingIngredients: [
-      { item: "2 Tbsp", name: "champagne vinegar" },
-      { item: "4 Tbsp", name: "grapeseed oil" },
-      { item: "½ tsp", name: "Momofuku Tingly Salt" },
-      { item: "1 tsp", name: "maple syrup" },
-      { item: "Top with", name: "Runny fried egg" }
-    ],
-    isLab: true
-  },
-  {
-    id: 'caprese-edit',
-    title: "The Caprese Edit",
-    seoName: "Heirloom Tomato Caprese Salad",
-    cuisine: 'Italian',
-    serves: "2",
-    time: "10 mins",
-    headnote: "Three ingredients. No hiding. Wait for peak tomato season — a magnificent heirloom in August will make this one of the best things you eat all summer.",
-    manifestoQuote: "Respect the crunch. Worship the acid.",
-    saladIngredients: [
-      { item: "Heirloom tomatoes", note: "sliced" },
-      { item: "Fresh mozzarella", note: "~ generous amount" },
-      { item: "Fresh basil", note: "~ 1 handful" }
-    ],
-    dressingName: "No Measure",
-    dressingSlug: 'olive-oil-balsamic-drizzle',
-    dressingSeoName: "Olive Oil & Balsamic Reduction Drizzle",
-    dressingMethod: "Drizzle with the best olive oil you own, then drizzle balsamic reduction over the top. Finish with flaked sea salt. No measuring.",
-    dressingIngredients: [
-      { item: "Generous", name: "best olive oil you own" },
-      { item: "Drizzle", name: "balsamic reduction" },
-      { item: "To taste", name: "Flaked sea salt" }
-    ],
-    isLab: false
-  },
-  {
     id: 'couscous',
     title: "For the Love of Couscous",
     seoName: "Couscous Salad with Feta, Herbs & Shallot Fennel Vinaigrette",
     cuisine: 'Mediterranean',
-    serves: "3-4",
+    serves: "3–4",
     time: "25 mins",
+    difficulty: "Medium",
     headnote: "I used to forget that couscous could anchor a salad. This salad is a tribute to a dinner party. The watermelon radish is here for flavor and also because it's beautiful.",
     manifestoQuote: "If it doesn't stain your shirt, it's not dressed enough.",
     saladIngredients: [
@@ -600,14 +556,79 @@ export const lighterSalads = [
       { item: "2 Tbsp", name: "fennel fronds, chopped" }
     ],
     isLab: true
+  }
+];
+
+export const lighterSalads = [
+  {
+    id: 'salad-days',
+    title: "Salad Days and Sunny Ways",
+    seoName: "Prosciutto & Asparagus Salad with Frisée and a Runny Egg",
+    cuisine: 'French',
+    serves: "1–2",
+    time: "20 mins",
+    difficulty: "Medium",
+    headnote: "Blanched asparagus doesn't get enough love and I'm here to change that. Pair it with prosciutto and a runny egg and you have a perfect plate.",
+    manifestoQuote: "A good salad should make you sweat a little.",
+    saladIngredients: [
+      { item: "Prosciutto", note: "~ generous amount" },
+      { item: "Frisee lettuce", note: "~ 2 big handfuls" },
+      { item: "Cucumber", note: "~ 1 cup" },
+      { item: "Red onion", note: "~ 1/4 cup" },
+      { item: "Radish", note: "~ 1 cup" },
+      { item: "Tomatoes", note: "~ 1 cup" },
+      { item: "Blanched asparagus", note: "~ generous amount" }
+    ],
+    dressingName: "Simple (Yolk)",
+    dressingSlug: 'simple-champagne-vinaigrette',
+    dressingSeoName: "Simple Champagne Vinaigrette (with a Runny Egg)",
+    dressingMethod: "Whisk dressing ingredients together. Dress lightly, then top with a fried egg whose yolk is completely runny and eat immediately.",
+    dressingIngredients: [
+      { item: "2 Tbsp", name: "champagne vinegar" },
+      { item: "4 Tbsp", name: "grapeseed oil" },
+      { item: "½ tsp", name: "Momofuku Tingly Salt" },
+      { item: "1 tsp", name: "maple syrup" },
+      { item: "Top with", name: "Runny fried egg" }
+    ],
+    isLab: true
+  },
+  {
+    id: 'burrata-ultimatum',
+    title: "The Burrata Ultimatum",
+    seoName: "Heirloom Tomato & Burrata Salad with Soppressata",
+    cuisine: 'Italian',
+    serves: "2",
+    time: "10 mins",
+    difficulty: "Easy",
+    difficulty: "Easy",
+    headnote: "This started life as a caprese. Then burrata muscled out the mozzarella, spicy soppressata crashed the party, and the Castelvetranos never left. Somewhere along the way it stopped being a caprese and started being the thing I actually serve.",
+    manifestoQuote: "Mozzarella walked so burrata could run.",
+    saladIngredients: [
+      { item: "Heirloom tomatoes", note: "sliced thick" },
+      { item: "Burrata", note: "1 ball" },
+      { item: "Spicy soppressata", note: "thinly sliced" },
+      { item: "Castelvetrano olives", note: "¼ cup, torn" },
+      { item: "Fresh basil", note: "1 handful" }
+    ],
+    dressingName: "No-Measure Dressing",
+    dressingSlug: 'no-measure-dressing',
+    dressingSeoName: "No-Measure Olive Oil & Balsamic Dressing",
+    dressingMethod: "Drizzle with the best olive oil you own, then the balsamic reduction. Finish with flaked sea salt and plenty of cracked black pepper.",
+    dressingIngredients: [
+      { item: "Generous pour", name: "the best olive oil you own" },
+      { item: "Drizzle", name: "balsamic reduction (store-bought is fine)" },
+      { item: "To taste", name: "flaked sea salt" },
+      { item: "Plenty", name: "cracked black pepper" }
+    ]
   },
   {
     id: 'water-fire-feta',
     title: "Water, Fire...and Feta!",
     seoName: "Watermelon Feta Salad with Mint & Chili Lime Dressing",
     cuisine: 'Mediterranean',
-    serves: "2-3",
+    serves: "2–3",
     time: "10 mins",
+    difficulty: "Easy",
     headnote: "Summer. California. Flavors that contrast in the best way possible. The Korean chili flakes turn this from a sweet fruit salad into something with actual heat.",
     manifestoQuote: "Vegetables with an attitude problem.",
     saladIngredients: [
@@ -630,33 +651,67 @@ export const lighterSalads = [
     isLab: false
   },
   {
-    id: 'zest-coast',
-    title: "Zest Coast Salad",
-    seoName: "Watermelon, Mango & Pineapple Salad with Cotija and Tajín",
-    cuisine: 'Mexican',
-    serves: "2-3",
-    time: "15 mins",
-    headnote: "This is the newest one I'm playing with. The days are warm and I need more salads that scream 'fun light party in my mouth.' Tajín on fruit is one of those things that once you start, you cannot stop.",
+    id: 'fennel-countdown',
+    title: "Fennel Countdown",
+    seoName: "Shaved Fennel, Watermelon Radish & Blood Orange Salad",
+    cuisine: 'Mediterranean',
+    serves: "2–3",
+    time: "20 mins",
+    difficulty: "Easy",
+    difficulty: "Easy",
+    headnote: "This is my dinner-party opener: everything prepped and chilling by late afternoon, assembled at 6:15 while the guests pour wine. Shaved fennel, watermelon radish, blood orange — it looks like stained glass and crunches like it means it.",
     manifestoQuote: "Salad is a canvas; you are the tortured artist.",
     saladIngredients: [
-      { item: "Watermelon", note: "~ 1 cup" },
-      { item: "Cucumber", note: "~ 1 cup" },
-      { item: "Pineapple", note: "~ 1 cup" },
-      { item: "Mango", note: "~ 1 cup" },
-      { item: "Chopped cilantro", note: "~ 1 handful" },
-      { item: "Cotija cheese", note: "~ 1/2 cup" }
+      { item: "Fennel", note: "1 bulb, shaved thin" },
+      { item: "Watermelon radish", note: "1, sliced into thin rounds" },
+      { item: "Blood oranges", note: "2, segmented" },
+      { item: "Marcona almonds", note: "⅓ cup, roughly chopped" }
     ],
-    dressingName: "Citrus Tajín",
-    dressingSlug: 'citrus-tajin-dressing',
-    dressingSeoName: "Citrus Tajín Dressing",
-    dressingMethod: "Whisk lemon juice, lime juice, lime zest, honey, and Tajín together.",
+    dressingName: "Sumac Vinaigrette",
+    dressingSlug: 'sumac-vinaigrette',
+    dressingSeoName: "Sumac Vinaigrette with Lemon & Honey",
+    dressingMethod: "Whisk everything together, including any blood orange juice caught while segmenting. It keeps, fully prepped, for days — shake hard to re-emulsify before pouring.",
     dressingIngredients: [
-      { item: "1", name: "lemon, juiced" },
-      { item: "1", name: "lime, juiced" },
-      { item: "1", name: "lime, zest of" },
-      { item: "2 Tbsp", name: "honey" },
-      { item: "1 tsp", name: "Tajín" }
+      { item: "3 Tbsp", name: "extra-virgin olive oil" },
+      { item: "2 Tbsp", name: "fresh lemon juice" },
+      { item: "1 tsp", name: "red wine vinegar" },
+      { item: "1 tsp", name: "sumac" },
+      { item: "1 tsp", name: "honey" },
+      { item: "¼ tsp", name: "kosher salt" },
+      { item: "To taste", name: "freshly ground black pepper" }
+    ]
+  },
+  {
+    id: 'radicchio-ga-ga',
+    title: "Radicchio Ga Ga",
+    seoName: "Radicchio, Apple & Walnut Salad with Lemon-Dijon Vinaigrette",
+    cuisine: 'Italian',
+    serves: "2–3",
+    time: "20 mins",
+    difficulty: "Easy",
+    difficulty: "Easy",
+    headnote: "The fall salad for people who think they don't like radicchio. The apple and honey lean sweet, the Parmesan leans salty, the walnuts bring the crunch — and suddenly the bitterness is the best thing in the bowl.",
+    manifestoQuote: "Bitter is a feature, not a flaw.",
+    saladIngredients: [
+      { item: "Radicchio", note: "1 small head, sliced into ribbons" },
+      { item: "Arugula", note: "3 cups, loosely packed" },
+      { item: "Crisp apple or firm-ripe pear", note: "1, thinly sliced" },
+      { item: "Fennel", note: "½ bulb, very thinly shaved" },
+      { item: "Walnuts", note: "⅓ cup, toasted & chopped" },
+      { item: "Parmesan", note: "⅓ cup, shaved" }
     ],
-    isLab: false
+    dressingName: "Lemon-Dijon Vinaigrette",
+    dressingSlug: 'lemon-dijon-honey-vinaigrette',
+    dressingSeoName: "Lemon-Dijon Vinaigrette with Honey & Lemon Zest",
+    dressingMethod: "Whisk everything together until emulsified. Taste — a little more honey balances the lemon against the bitter greens.",
+    dressingIngredients: [
+      { item: "3 Tbsp", name: "extra-virgin olive oil" },
+      { item: "1½ Tbsp", name: "fresh lemon juice" },
+      { item: "1 tsp", name: "Dijon mustard" },
+      { item: "1 tsp", name: "honey or maple syrup" },
+      { item: "½ tsp", name: "finely grated lemon zest" },
+      { item: "¼ tsp", name: "kosher salt" },
+      { item: "To taste", name: "freshly ground black pepper" }
+    ]
   }
 ];

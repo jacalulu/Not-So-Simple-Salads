@@ -66,7 +66,7 @@ export const BookPage = () => (
         ['100', 'pages of premium color'],
         ['19', 'recipes built with intention'],
         ['14 + 5', 'meal salads, lighter salads'],
-        ['18', 'dressings, all from scratch'],
+        ['19', 'dressings, all from scratch'],
       ].map(([n, l]) => (
         <div className="book-stat" key={l}>
           <span className="book-stat-number">{n}</span>
@@ -146,7 +146,7 @@ export const BookPage = () => (
       <div className="book-inside-card stagger">
         <TitleLg className="book-inside-title">The dressings</TitleLg>
         <p className="book-inside-body">
-          Eighteen from scratch, about three minutes each. Store-bought has never once
+          Nineteen from scratch, about three minutes each. Store-bought has never once
           come close, and the book explains exactly why yours will.
         </p>
         <Link to="/dressings" className="book-inside-link">Meet the dressings &rarr;</Link>

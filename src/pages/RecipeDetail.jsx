@@ -45,6 +45,7 @@ export const RecipeDetail = ({ salad, onBack }) => {
           <div className="editorial-pills">
             <span className="editorial-pill">{salad.time}</span>
             <span className="editorial-pill">{salad.serves} SERVINGS</span>
+            {salad.difficulty && <span className="editorial-pill">{salad.difficulty.toUpperCase()}</span>}
             {salad.hero && <span className="editorial-pill">{salad.hero.substring(0, 15)}</span>}
           </div>
         </div>
