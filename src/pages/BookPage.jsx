@@ -7,10 +7,9 @@ import { imageSrcSet } from '../images';
 import '../components/Buttons.css';
 import './BookPage.css';
 
-// TODO: swap for the real Amazon product pages (ASIN links) once the listings are live.
 const BUY = {
-  hardcover: 'https://www.amazon.com/s?k=%22not+so+simple+salads%22+jaclyn+konzelmann',
-  paperback: 'https://www.amazon.com/s?k=%22not+so+simple+salads%22+jaclyn+konzelmann',
+  hardcover: 'https://www.amazon.com/dp/B0HQMW4CBJ',
+  paperback: 'https://www.amazon.com/dp/B0HQPB3ZFD',
 };
 
 const BookImage = ({ name, alt, sizes = '(max-width: 900px) 92vw, 44vw', eager = false, w = 1536, h = 2752 }) => (
