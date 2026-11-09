@@ -9,6 +9,7 @@ const allSalads = [...mealSalads, ...lighterSalads];
 export const STATIC_ROUTES = {
   '/': { type: 'home' },
   '/book': { type: 'book' },
+  '/shop': { type: 'shop' },
   '/introduction': { type: 'intro' },
   '/how-to-use': { type: 'how-to' },
   '/pantry': { type: 'pantry' },
@@ -31,6 +32,9 @@ export function normalizePath(pathname) {
   let p = (pathname || '/').split('?')[0].split('#')[0];
   if (p.length > 1 && p.endsWith('/')) p = p.slice(0, -1);
   if (p.endsWith('/index.html')) p = p.slice(0, -'/index.html'.length) || '/';
+  // Local/static servers without clean URLs serve the prerendered /x.html
+  // directly; route it like /x (production uses Vercel cleanUrls).
+  else if (p.endsWith('.html')) p = p.slice(0, -'.html'.length) || '/';
   return p || '/';
 }
 

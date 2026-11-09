@@ -169,6 +169,12 @@ const STATIC_META = {
       'The Not So Simple Salads cookbook by Jaclyn Konzelmann: 19 bold salad recipes, 19 from-scratch dressings, 100 pages of premium color. Hardcover and paperback, available on Amazon.',
     image: '/book-standing-slate.jpg',
   },
+  shop: {
+    title: 'The Shop — Merch & Signed Books | Not So Simple Salads',
+    description:
+      'Aprons, totes, and riso-printed sticker sheets from the Not So Simple Salads cookbook — plus signed copies, direct from the author. Romaine calm and shop on.',
+    image: '/book-standing-slate.jpg',
+  },
   intro: {
     title: 'Introduction | Not So Simple Salads',
     description:
